@@ -1,0 +1,131 @@
+@base <http://localhost/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix geosparql: <http://www.opengis.net/ont/geosparql#> .
+@prefix sf: <http://www.opengis.net/ont/sf#> .
+@prefix schema: <http://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa#> .
+@prefix sosa-ext: <http://www.w3.org/ns/ssn/ext#> .
+@prefix ssn: <http://www.w3.org/ns/ssn#> .
+@prefix ssn-system: <http://www.w3.org/ns/ssn/systems/> .
+@prefix envo: <http://purl.obolibrary.org/obo/> .
+@prefix ir: <http://www.ontologydesignpatterns.org/cp/owl/informationrealization.owl#> .
+@prefix st: <http://www.opengis.net/spec/iot_sensing/1.0/req/> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix drone: <http://schema.landrs.org/> .
+@prefix geoschemas: <http://geoschemas.org/> .
+@prefix td: <https://www.w3.org/2019/wot/td#> .
+@prefix eqp: <https://data.nasa.gov/ontologies/atmonto/equipment#> .
+@prefix atm: <https://data.nasa.gov/ontologies/atmonto/ATM#> .
+@prefix traj: <http://w3id.org/daselab/onto/trajectory#> .
+
+
+# Sample Drone Knowledge Graph
+
+<http://localhost/this#uav> a drone:UAV ;
+:title "My Drone Thing" ;
+:name "My Drone Thing" ;
+eqp:aircraftSerialNumber "XKFOENGENXWE" ;
+eqp:aircraftTypeDesignator "Drone" ;
+schema:Model "Mavic" ;
+schema:Brand "DJI" .
+
+
+<http://localhost/this#FLS> a drone:FlightControlSystem ;
+sosa:isHostedBy <http://localhost/this#uav> ;
+drone:isPartOf <http://localhost/this#uav> .
+
+<http://localhost/this#Autopilot> a drone:Autopilot ;
+drone:isPartOf <http://localhost/this#FLS> .
+
+<http://localhost/this#FlightControllerBoard> a drone:FlightControllerBoard ;
+drone:isPartOf <http://localhost/this#FLS> .
+
+
+
+
+
+
+
+
+
+
+# Some TBox URIs that would be part of geoschemas.org
+# https://www.faa.gov/air_traffic/technology/swim/governance/service_semantics/
+
+geoschemas:ResearchSite rdfs:subClassOf schema:Place .
+
+geoschemas:SpatialFeatureOfInterest a rdfs:Class ;
+rdfs:subClassOf sosa:FeatureOfInterest ;
+rdfs:subClassOf geosparql:Feature .
+
+geoschemas:MovingFeature rdfs:subClassOf geoschemas:SpatialFeatureOfInterest, traj:MovingObject .
+
+drone:UxV a rdfs:Class ;
+rdfs:label "UxV" ;
+rdfs:comment "Unmanned Vehicle" ;
+rdfs:subClassOf sosa:Platform ;
+rdfs:subClassOf td:Thing ;
+rdfs:subClassOf schema:Vehicle ;
+drone:hasPart drone:body .
+
+drone:UAV a rdfs:Class ;
+rdfs:label "UAV" ;
+rdfs:comment "Unmanned Arial Vehicle" ;
+rdfs:subClassOf drone:UxV ;
+rdfs:subClassOf eqp:Aircraft ;
+drone:hasPart drone:Airframe .
+
+drone:Body a rdfs:Class .
+
+drone:Airframe a rdfs:Class ;
+rdfs:subClassOf drone:Body .
+
+drone:Payload a rdfs:Class ;
+drone:isPartOf drone:UAV .
+
+drone:SensorPayload a rdfs:Class ;
+rdfs:label "Sensor Payload" ;
+rdfs:comment "Payload that is a instrument platform such as cameras, atmospheric sensors, etc" ;
+rdfs:subClassOf drone:payload ;
+rdfs:subClassOf sosa:System .
+
+drone:Autopilot a rdfs:Class ;
+rdfs:subClassOf aero:software-agent ;
+rdfs:subClassOf  eqp:AircraftNavigationSystem ;
+rdfs:subClassOf schema:SoftwareApplicaion ;
+rdfs:label "Autopilot" ;
+rdfs:comment "" ;
+skos:altLabel "Flight Controller " ;
+skos:altLabel "Flight Controller Board" .
+
+drone:FlightControllerBoard a rdfs:class .
+
+drone:FightControlSystem a rdfs:Class, owl:Class .
+
+# The alignment with flight is probably not quite right.
+drone:mission a rdfs:Class, drone:Event, atm:Flight .
+
+# Propeties
+
+drone:hasPart
+    a owl:ObjectProperty, owl:TransitiveProperty, rdfs:Class;
+    rdfs:comment
+        "A transitive relation expressing parthood between any entities, e.g. 'the human body has a brain as part'. When specializing this pattern, take care of restricting the domain and range appropriately, since it could be counterintuitive to use this relation arbitrarily, e.g. between animals and planets. For an intransitive partof pattern, see 'componency'.";
+    rdfs:domain owl:Thing;
+    rdfs:isDefinedBy <>;
+    rdfs:label "has part"@en;
+    rdfs:range owl:Thing;
+    owl:inverseOf :isPartOf.
+
+drone:isPartOf
+    a owl:ObjectProperty, owl:TransitiveProperty, rdfs:Class;
+    rdfs:comment
+        "A transitive relation expressing parthood between any entities, e.g. 'brain is a part of the human body'. When specializing this pattern, take care of restricting the domain and range appropriately, since it could be counterintuitive to use this relation arbitrarily, e.g. between animals and planets. For an intransitive partof pattern, see 'componency'.";
+    rdfs:domain owl:Thing;
+    rdfs:isDefinedBy <>;
+    rdfs:label "is part of"@en;
+    rdfs:range owl:Thing.
+
+

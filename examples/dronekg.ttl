@@ -10,6 +10,8 @@
 @prefix sosa-ext: <http://www.w3.org/ns/ssn/ext#> .
 @prefix ssn: <http://www.w3.org/ns/ssn#> .
 @prefix ssn-system: <http://www.w3.org/ns/ssn/systems/> .
+@prefix qudt-1-1: <http://qudt.org/1.1/schema/qudt#> .
+@prefix qudt-unit-1-1: <http://qudt.org/1.1/vocab/unit#> .
 @prefix envo: <http://purl.obolibrary.org/obo/> .
 @prefix ir: <http://www.ontologydesignpatterns.org/cp/owl/informationrealization.owl#> .
 @prefix st: <http://www.opengis.net/spec/iot_sensing/1.0/req/> .
@@ -66,26 +68,49 @@ sosa:hosts <actuator/35-207306-844818-0/T5008> .
 rdfs:label "TDK ICM-20629 Accelerometer-Gyroscope"@en ;
 rdfs:comment "ICM-20689 is a 6-axis MotionTracking device that combines a 3-axis gyroscope, 3-axis accelerometer" ;
 schema:sameAs <https://www.invensense.com/products/motion-tracking/6-axis/icm-20689/>;
-sosa:isHostedBy <http://localhost/this#FlightControllerBoard> .
+sosa:isHostedBy <http://localhost/this#FlightControllerBoard> ;
+sosa:observableProperty <http://sweetontology.net/propSpaceDirection/Orientation> ;
+sosa:observableProperty <http://sweetontology.net/propSpeed/Acceleration> .
 
 
 <sensor/35-207306-844818-0/BMI055> a sosa:Sensor ;
 rdfs:label "Bosh Sensortec 6-axis inertial measurement unit"@en ;
 rdfs:comment "THe BMI055 is an ultra-small, 6-axis inertial sensor, consisting of: A digital, triaxial 12bit acceleration sensor and a digital, triaxial 16bit, ±2000°/s gyroscope" ;
 schema:sameAs <https://www.bosch-sensortec.com/bst/products/all_products/bmi055> ;
-sosa:isHostedBy <http://localhost/this#FlightControllerBoard> .
+sosa:isHostedBy <http://localhost/this#FlightControllerBoard> ;
+sosa:observableProperty <http://sweetontology.net/propSpaceDirection/Orientation> ;
+sosa:observableProperty <http://sweetontology.net/propSpeed/Acceleration> .
 
 <sensor/35-207306-844818-0/IST8310> a sosa:Sensor ;
 rdfs:label "iSentek Three-axis Magnetometer" ;
 rdfs:comment "iSentek’s three-axis magnetometers use anisotropic magneto resistance (AMR)technology. They offer high spatial resolution, high precision and low power consumption performance. " ;
 schema:sameAs <http://www.isentek.com/en/the_product.php?pid=4> ;
-sosa:isHostedBy <http://localhost/this#FlightControllerBoard> .
+sosa:isHostedBy <http://localhost/this#FlightControllerBoard> ;
+sosa:observableProperty <http://sweetontology.net/propSpaceLocation/Position> .
 
 <sensor/35-207306-844818-0/MS5611> a sosa:Sensor ;
 rdfs:label "MS5611 Altimiter Pressure Sensor" ;
 rdfs:comment "Barometric pressure sensor optimized for altimeters and variometers with an altitude resolution of 10 cm" ;
 schema:sameAs <https://www.te.com/usa-en/product-CAT-BLPS0036.html> ;
-sosa:isHostedBy <http://localhost/this#FlightControllerBoard> .
+sosa:isHostedBy <http://localhost/this#FlightControllerBoard> ;
+sosa:observableProperty <http://sweetontology.net/propSpaceHeight/BarometricAltitude> ;
+ssn-system:hasOperatingRange <sensor/35-207306-844818-0/MS5611#AltimiterOperatingRange> .
+
+<sensor/35-207306-844818-0/MS5611#AltimiterOperatingRange> a ssn-system:OperatingRange ;
+rdfs:comment "The conditions in which the MS5611 Altimiter sensor is expected to operate."@en ;
+ssn-system:inCondition <NormalOperatingCondition> , <NormalPressureCondition> .
+
+<NormalOperatingCondition> a ssn-system:Condition , schema:PropertyValue ;
+  rdfs:comment "A temperature range of -40 to 85 Celsius."@en ;
+  schema:minValue -40.0 ;
+  schema:maxValue 85.0 ;
+  schema:unitCode qudt-unit-1-1:DegreeCelsius .
+
+<NormalPressureCondition> a ssn-system:Condition , schema:PropertyValue ;
+  rdfs:comment "A pressure range of 10 to 1200 mbar."@en ;
+  schema:minValue 10 ;
+  schema:maxValue 1200 ;
+  schema:unitCode qudt-unit-1-1:MilliBAR .
 
 <actuator/35-207306-844818-0/T5008> a sosa:Actuator ;
 rdfs:label "XOAR Titan T5008 Brushless Electric Motor Heavy Lifting Series" ;

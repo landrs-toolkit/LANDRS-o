@@ -3,12 +3,13 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix geosparql: <http://www.opengis.net/ont/geosparql#> .
+@prefix wgs: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix sf: <http://www.opengis.net/ont/sf#> .
 @prefix schema: <http://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix sosa: <http://www.w3.org/ns/sosa#> .
-@prefix sosa-ext: <http://www.w3.org/ns/ssn/ext#> .
-@prefix ssn: <http://www.w3.org/ns/ssn#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix sosa-ext: <http://www.w3.org/ns/ssn/ext/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
 @prefix ssn-system: <http://www.w3.org/ns/ssn/systems/> .
 @prefix qudt-1-1: <http://qudt.org/1.1/schema/qudt#> .
 @prefix qudt-unit-1-1: <http://qudt.org/1.1/vocab/unit#> .
@@ -24,6 +25,7 @@
 @prefix aero: <semantics.aero/pages/swim-vocabulary#> .
 @prefix traj: <http://w3id.org/daselab/onto/trajectory#> .
 @prefix step: <http://www.purl.org/net/step#> .
+
 
 
 # Sample Drone Knowledge Graph

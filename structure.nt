@@ -1,0 +1,11 @@
+/ group is alway `a schema:CreativeWork`
+<http://schema.landrs.org/games/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/CreativeWork> .
+/ it has a name
+<http://example.com/games/> <http://www.w3.org/2000/01/rdf-schema#label> "Games" .
+// and a description
+<http://example.com/games/> <http://www.w3.org/2000/01/rdf-schema#comment> "A lot of fun, sometimes" .
+// `schema:hasPart` is used to file things into this group, these things can either be
+// other groups, or rdfs:Classes
+<http://example.com/games/> <http://schema.org/hasPart> <http://example.com/games/board-games/> .
+<http://example.com/games/> <http://schema.org/hasPart> <http://example.com/games/card-games/> .
+<http://example.com/games/> <http://schema.org/hasPart> <http://example.com/games/dice-games/> .

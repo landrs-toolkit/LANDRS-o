@@ -9,6 +9,7 @@
 @prefix unit: <http://qudt.org/vocab/unit/> .
 @prefix quantitykind: <http://qudt.org/vocab/quantitykind/> .
 @prefix oa:    <http://www.w3.org/ns/oa#> .
+@prefix traj:  <http://w3id.org/daselab/onto/trajectory#> .
 
 # Semantic Trajectory using OWL-Time, temporal aggregates, and W3c Basic Geo
 # to capture a UAV trajectory.
@@ -102,7 +103,7 @@ ex:segment5
   time:intervalMetBy ex:segment4 .
 
 ex:fix1
-  a time:Instant, traj:fix, sosa:Observation ;
+  a time:Instant, traj:fix ;
   wgs:location ex:location1 ;
   rdfs:label "Spatial-Temporal Fix 1" ;
   time:inXSDDateTimeStamp "2016-09-28T17:37:11+00:00"^^xsd:dateTimeStamp ;

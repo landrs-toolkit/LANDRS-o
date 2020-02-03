@@ -1,4 +1,4 @@
-@base <http://localhost/this> .
+@base <https://ld.landrs.org/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -25,12 +25,13 @@
 @prefix aero: <semantics.aero/pages/swim-vocabulary#> .
 @prefix traj: <http://w3id.org/daselab/onto/trajectory#> .
 @prefix step: <http://www.purl.org/net/step#> .
-
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix wdt: <http://www.wikidata.org/prop/direct/> .
 
 
 # Sample Drone Knowledge Graph
 
-<http://localhost/this#uav> a drone:UAV ;
+<id/MjlmNmVmZTAtNGU1OS00N2I4LWI3MzYtODZkMDQ0MTRiNzcxCg==> a drone:UAV ;
 td:title "My Drone Thing" ;
 schema:name "My Drone Thing" ;
 eqp:aircraftSerialNumber "XKFOENGENXWE"@en ;
@@ -39,62 +40,74 @@ schema:Model "Mavic"@en;
 schema:Brand "DJI"@en .
 
 
-<http://localhost/this#FLS> a drone:FlightControlSystem ;
-sosa:isHostedBy <http://localhost/this#uav> ;
-drone:isPartOf <http://localhost/this#uav> .
+<id/YWUyMWRjMzAtOTA3NC00ZTYwLWI5ZTUtNjFhZmU1OTAzMTIyCg==> a drone:FlightControlSystem ;
+wdt:P31 wd:Q11481471 ;
+sosa:isHostedBy <id/MjlmNmVmZTAtNGU1OS00N2I4LWI3MzYtODZkMDQ0MTRiNzcxCg==> ;
+drone:isPartOf <id/MjlmNmVmZTAtNGU1OS00N2I4LWI3MzYtODZkMDQ0MTRiNzcxCg==> .
 
-<http://localhost/this#Autopilot> a drone:Autopilot ;
-drone:isPartOf <http://localhost/this#FLS> ;
+<id/MTgyNDE0YTEtZWMxMy00YTdjLWE0NzctNzA1YTcxYjc3MjcxCg==> a drone:Autopilot ;
+drone:isPartOf <id/YWUyMWRjMzAtOTA3NC00ZTYwLWI5ZTUtNjFhZmU1OTAzMTIyCg==> ;
 rdfs:label "PX4 Drone Autopilot Software"@en ;
-rdfs:comment "IPhone 7 - IMEI 35-207306-844818-0 - John Doe"@en ;
+rdfs:comment "PX4 Drone Autopilot Software"@en ;
+# instanceOf Software Agent
+wdt:P31 wd:Q2297769 ;
 schema:availableOnDevice "CUAV 5+ Autopilot"@en ;
 schema:SoftwareVersion "1.9.2"@en ;
 schema:Name "PX4 Drone Autopilot"@en ;
 schema:sameAs "https://px4.io/" ;
-drone:runsOn <http://localhost/this#FlightControllerBoard> .
+drone:runsOn <id/Mjc2MzRlZWUtZGRiYS00ZjE5LThjMDMtZDBmNDFjNmQzMTY0Cg==> .
 
 
-<http://localhost/this#FlightControllerBoard> a drone:FlightControllerBoard ;
-drone:isPartOf <http://localhost/this#FLS> ;
+<id/Mjc2MzRlZWUtZGRiYS00ZjE5LThjMDMtZDBmNDFjNmQzMTY0Cg==> a drone:FlightControllerBoard ;
+drone:isPartOf <id/YWUyMWRjMzAtOTA3NC00ZTYwLWI5ZTUtNjFhZmU1OTAzMTIyCg==> ;
 rdfs:label "CUAV 5+ Autopilot Board"@en ;
 rdfs:comment "V5+® is an advanced autopilot manufactured by CUAV®. It was designed by CUAV® in collaboration with the PX4 team."@en ;
 schema:sameAs <http://docs.px4.io/master/en/flight_controller/cuav_v5_plus.html> ;
 schema:Model "CUAV 5+"@en ;
-sosa:hosts <sensor/35-207306-844818-0/ICM-20689> ;
-sosa:hosts <sensor/35-207306-844818-0/BMI055> ;
-sosa:hosts <sensor/35-207306-844818-0/IST8310> ;
-sosa:hosts <sensor/35-207306-844818-0/MS5611> ;
-sosa:hosts <actuator/35-207306-844818-0/T5008> .
+wdt:P31 wd:Q220858 ;
+sosa:hosts <id/OGIxYjVjOGEtOTgwZS00NDZhLTgzNTAtMzYyMzZlMzhjZDQ3Cg==> ;
+sosa:hosts <id/Y2U1YThiZTYtZTljMC00ZWY3LTlmMzItZGZhZDk4MTJkNDExCg==> ;
+sosa:hosts <id/MmUwNzU4ZDctOTcxZS00N2JhLWIwNGEtNWU4NzAyMzY1YWUwCg==> ;
+sosa:hosts <id/ZmI3YzQ5NzMtMGFhMi00MTNhLWJjNzUtZjBmNmMxNTBkNjA3Cg==> ;
+sosa:hosts <id/OTNkMDI1YTctZGE4Ny00Y2IyLWI3MzgtMTU2YzVmMDU1MDI4Cg==> .
 
-<sensor/35-207306-844818-0/ICM-20689> a sosa:Sensor ;
+<id/OGIxYjVjOGEtOTgwZS00NDZhLTgzNTAtMzYyMzZlMzhjZDQ3Cg==> a sosa:Sensor ;
 rdfs:label "TDK ICM-20629 Accelerometer-Gyroscope"@en ;
 rdfs:comment "ICM-20689 is a 6-axis MotionTracking device that combines a 3-axis gyroscope, 3-axis accelerometer" ;
 schema:sameAs <https://www.invensense.com/products/motion-tracking/6-axis/icm-20689/>;
-sosa:isHostedBy <http://localhost/this#FlightControllerBoard> ;
+wdt:P31 wd:Q192940 ;
+wdt:P31 wd:Q483400 ;
+sosa:isHostedBy <id/Mjc2MzRlZWUtZGRiYS00ZjE5LThjMDMtZDBmNDFjNmQzMTY0Cg==> ;
 sosa:observableProperty <http://sweetontology.net/propSpaceDirection/Orientation> ;
 sosa:observableProperty <http://sweetontology.net/propSpeed/Acceleration> .
 
 
-<sensor/35-207306-844818-0/BMI055> a sosa:Sensor ;
+<id/Y2U1YThiZTYtZTljMC00ZWY3LTlmMzItZGZhZDk4MTJkNDExCg==> a sosa:Sensor ;
 rdfs:label "Bosh Sensortec 6-axis inertial measurement unit"@en ;
 rdfs:comment "THe BMI055 is an ultra-small, 6-axis inertial sensor, consisting of: A digital, triaxial 12bit acceleration sensor and a digital, triaxial 16bit, ±2000°/s gyroscope" ;
 schema:sameAs <https://www.bosch-sensortec.com/bst/products/all_products/bmi055> ;
-sosa:isHostedBy <http://localhost/this#FlightControllerBoard> ;
+# Wikidata instanceOf inertial measurement unit
+wdt:P31 wd:Q941680 ;
+sosa:isHostedBy <id/Mjc2MzRlZWUtZGRiYS00ZjE5LThjMDMtZDBmNDFjNmQzMTY0Cg==> ;
 sosa:observableProperty <http://sweetontology.net/propSpaceDirection/Orientation> ;
 sosa:observableProperty <http://sweetontology.net/propSpeed/Acceleration> .
 
-<sensor/35-207306-844818-0/IST8310> a sosa:Sensor ;
+<id/MmUwNzU4ZDctOTcxZS00N2JhLWIwNGEtNWU4NzAyMzY1YWUwCg==> a sosa:Sensor ;
 rdfs:label "iSentek Three-axis Magnetometer" ;
 rdfs:comment "iSentek’s three-axis magnetometers use anisotropic magneto resistance (AMR)technology. They offer high spatial resolution, high precision and low power consumption performance. " ;
 schema:sameAs <http://www.isentek.com/en/the_product.php?pid=4> ;
-sosa:isHostedBy <http://localhost/this#FlightControllerBoard> ;
+# Wikidata instanceOf magnetometer
+wdt:P31 wd:Q333921;
+sosa:isHostedBy <id/Mjc2MzRlZWUtZGRiYS00ZjE5LThjMDMtZDBmNDFjNmQzMTY0Cg==> ;
 sosa:observableProperty <http://sweetontology.net/propSpaceLocation/Position> .
 
-<sensor/35-207306-844818-0/MS5611> a sosa:Sensor ;
+<id/ZmI3YzQ5NzMtMGFhMi00MTNhLWJjNzUtZjBmNmMxNTBkNjA3Cg==> a sosa:Sensor ;
 rdfs:label "MS5611 Altimiter Pressure Sensor" ;
 rdfs:comment "Barometric pressure sensor optimized for altimeters and variometers with an altitude resolution of 10 cm" ;
 schema:sameAs <https://www.te.com/usa-en/product-CAT-BLPS0036.html> ;
-sosa:isHostedBy <http://localhost/this#FlightControllerBoard> ;
+# instanceOf Altimiter
+wdt:P31 wdt:Q216197 ;
+sosa:isHostedBy <id/Mjc2MzRlZWUtZGRiYS00ZjE5LThjMDMtZDBmNDFjNmQzMTY0Cg==> ;
 sosa:observableProperty <http://sweetontology.net/propSpaceHeight/BarometricAltitude> ;
 ssn-system:hasOperatingRange <sensor/35-207306-844818-0/MS5611#AltimiterOperatingRange> .
 
@@ -114,16 +127,16 @@ ssn-system:inCondition <NormalOperatingCondition> , <NormalPressureCondition> .
   schema:maxValue 1200 ;
   schema:unitCode qudt-unit-1-1:MilliBAR .
 
-<actuator/35-207306-844818-0/T5008> a sosa:Actuator ;
+<id/OTNkMDI1YTctZGE4Ny00Y2IyLWI3MzgtMTU2YzVmMDU1MDI4Cg==> a sosa:Actuator ;
 rdfs:label "XOAR Titan T5008 Brushless Electric Motor Heavy Lifting Series" ;
 rdfs:comment "XOAR Titan T5000 Brushless Electric Motor Heavy Lifting Series offers all multicopters and drones manufacturers, engineers, pilots and enthusiasts the best performance and reliable propulsion system with XOAR Precision Pair Propellers. XOAR Titan Brushless Electric Motors are specially designed with top grade materials and unique design to work with XOAR Precision Pair Propellers in order to offer the best balance in weight and performance. XOAR Titan T4000 Heavy Lifting Series includes T5008 - KV320, T5010 - KV300, T5012 - KV300, T5015 - KV285 which supports All Up Weight (AUW) for quadcopter, hexacopter, octocopter from min. 6.24 Kg, 9.36 Kg, 12.48 Kg to max. 12.4 Kg, 18.6 Kg and 24.8 Kg respectively. See below for more detailed specs and performance data." ;
 schema:sameAs <https://www.xoarintl.com/brushless-electric-motors/titan/titan-T5000-heavy-lifting-series/> ;
-sosa:isHostedBy <http://localhost/this#FlightControllerBoard> .
+sosa:isHostedBy <id/Mjc2MzRlZWUtZGRiYS00ZjE5LThjMDMtZDBmNDFjNmQzMTY0Cg==> .
 
-<propeller/35-207306-844818-0/> a drone:Propeller ;
+<id/YjlkYjMxMGYtODc3Ny00ZDZkLTg1MWItZTJjMjU3YmY5Yjg0Cg==> a drone:Propeller ;
 rdfs:label "Precision Pair Beechwood Propeller w/ Metallic Coating" ;
 schema:sameAs <https://www.xoarintl.com/multicopter-propellers/precision-pair/PJP-N-M-The-Electric-Sword-Percision-Pair/> ;
-drone:isPartOf <actuator/35-207306-844818-0/T5008> .
+drone:isPartOf <id/OTNkMDI1YTctZGE4Ny00Y2IyLWI3MzgtMTU2YzVmMDU1MDI4Cg==> .
 
 
 

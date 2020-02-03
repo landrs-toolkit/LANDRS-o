@@ -1,10 +1,5 @@
-// group is alway `a schema:CreativeWork`
 <http://schema.landrs.org/Thing/Product/Vehicle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/CreativeWork> .
-// it has a name
- <http://schema.landrs.org/Thing/Product/Vehicle> <http://www.w3.org/2000/01/rdf-schema#label> "Vehicle" .
-// and a description
- <http://schema.landrs.org/Thing/Product/Vehicle> <http://www.w3.org/2000/01/rdf-schema#comment> "Schema.org Vehicle Hierarchy" .
-// `schema:hasPart` is used to file things into this group, these things can either be
-// other groups, or rdfs:Classes
- <http://schema.landrs.org/Thing/Product/Vehicle> <http://schema.org/hasPart>  <http://schema.landrs.org/Thing/Product/Vehicle/UxV/> .
- <http://schema.landrs.org/Thing/Product/Vehicle/UxV> <http://schema.org/hasPart>  <http://schema.landrs.org/Thing/Product/Vehicle/UxV/UAV> .
+<http://schema.landrs.org/Thing/Product/Vehicle> <http://www.w3.org/2000/01/rdf-schema#label> "Vehicle" .
+<http://schema.landrs.org/Thing/Product/Vehicle> <http://www.w3.org/2000/01/rdf-schema#comment> "Schema.org Vehicle Hierarchy" .
+<http://schema.landrs.org/Thing/Product/Vehicle> <http://schema.org/hasPart>  <http://schema.landrs.org/Thing/Product/Vehicle/UxV/> .
+<http://schema.landrs.org/Thing/Product/Vehicle/UxV> <http://schema.org/hasPart>  <http://schema.landrs.org/Thing/Product/Vehicle/UxV/UAV> .

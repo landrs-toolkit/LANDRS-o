@@ -1,9 +1,8 @@
 _:b1 <http://schema.org/version> "0"^^<http://www.w3.org/2001/XMLSchema#integer> .
 _:b3 <http://schema.org/version> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
-<http://schema.landrs.org/Vehicle/> <http://schema.org/hasPart> <http://schema.landrs.org/Vehicle/UxV> .
+<http://schema.landrs.org/Vehicle/> <http://schema.org/hasPart> <http://schema.landrs.org/schema/Vehicle> .
 <http://schema.landrs.org/Vehicle/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/CreativeWork> .
 <http://schema.landrs.org/Vehicle/> <http://www.w3.org/2000/01/rdf-schema#label> "Vehicle" .
 <http://schema.landrs.org/Vehicle/UxV> <http://purl.org/dc/terms/modified> "2020-02-04"^^<http://www.w3.org/2001/XMLSchema#date> .
 <http://schema.landrs.org/domain/UxV> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/CreativeWork> .
-<http://schema.landrs.org/Vehicle/UxV> <http://www.w3.org/2000/01/rdf-schema#comment> "A domain is an entity we use to logically group data elements together for the role in the logistics chain that predominantly would provide the data.  It is intended to enably a quick access to schema needed. For the Cargo Handlers Domain, you will find data typically from the following documents; TBD." .
-<http://schema.landrs.org/Vehicle/UxV> <http://www.w3.org/2000/01/rdf-schema#label> "UxV" .
+<http://schema.landrs.org/Vehicle> <http://www.w3.org/2000/01/rdf-schema#comment> "A vehicle is a device that is designed or used to transport people or cargo over land, water, air, or through space." .

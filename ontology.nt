@@ -1,0 +1,6 @@
+<http://schema.landrs.org/schema/Vehicle> <http://purl.org/dc/terms/modified> "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://schema.landrs.org/schema/Vehicle> <http://purl.org/dc/terms/modified> "2018-06-06T21:03:26.478Z"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://schema.landrs.org/schema/Vehicle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://schema.landrs.org/schema/Vehicle> <http://www.w3.org/2000/01/rdf-schema#comment> "A vehicle is a device that is designed or used to transport people or cargo over land, water, air, or through space." .
+<http://schema.landrs.org/schema/Vehicle> <http://www.w3.org/2000/01/rdf-schema#description> "A vehicle is a device that is designed or used to transport people or cargo over land, water, air, or through space." .
+<http://editor.zazuko.com/schema/Vehicle> <http://www.w3.org/2000/01/rdf-schema#label> "Vehicle" .

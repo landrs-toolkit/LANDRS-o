@@ -1,6 +1,109 @@
-<http://schema.landrs.org/schema/Vehicle> <http://purl.org/dc/terms/modified> "2017-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
-<http://schema.landrs.org/schema/Vehicle> <http://purl.org/dc/terms/modified> "2018-06-06T21:03:26.478Z"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://schema.landrs.org/schema/Thing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://schema.landrs.org/schema/Thing> <http://www.w3.org/2000/01/rdf-schema#label> "Thing" .
+<http://schema.landrs.org/schema/Thing> <http://www.w3.org/2000/01/rdf-schema#comment> "The most generic type of item." .
+<http://schema.landrs.org/schema/Thing> <http://schema.org/sameAs> <http://schema.org/Thing> .
+<http://schema.landrs.org/schema/Thing> <http://www.w3.org/2002/07/owl#equivalentClass> <http://schema.org/Thing> .
+<http://schema.landrs.org/schema/Event> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://schema.landrs.org/schema/Event> <http://www.w3.org/2000/01/rdf-schema#label> "Event" .
+<http://schema.landrs.org/schema/Event> <http://www.w3.org/2000/01/rdf-schema#comment> "An event happening at a certain time and location, such as a concert, lecture, or festival. Ticketing information may be added via the <a class=\"localLink\" href=\"http://schema.org/offers\">offers</a> property. Repeated events may be structured as separate Event objects." .
+<http://schema.landrs.org/schema/Event> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Thing> .
+<http://schema.landrs.org/schema/Event> <http://www.w3.org/2002/07/owl#equivalentClass> <http://purl.org/dc/dcmitype/Event> .
+<http://schema.landrs.org/schema/Event> <http://www.w3.org/2002/07/owl#equivalentClass> <http://schema.org/Event> .
+<http://schema.landrs.org/schema/Product> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://schema.landrs.org/schema/Product> <http://www.w3.org/2000/01/rdf-schema#label> "Product" .
+<http://schema.landrs.org/schema/Product> <http://purl.org/dc/terms/source> <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms> .
+<http://schema.landrs.org/schema/Product> <http://www.w3.org/2000/01/rdf-schema#comment> "Any offered product or service. For example: a pair of shoes; a concert ticket; the rental of a car; a haircut; or an episode of a TV show streamed online." .
+<http://schema.landrs.org/schema/Product> <http://www.w3.org/2002/07/owl#equivalentClass> <http://schema.org/Product> .
+<http://schema.landrs.org/schema/Product> <http://schema.org/sameAs> <http://schema.org/Product> .
+<http://schema.landrs.org/schema/Product> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/Thing> .
+<http://schema.landrs.org/schema/Product> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Thing> .
 <http://schema.landrs.org/schema/Vehicle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://schema.landrs.org/schema/Vehicle> <http://www.w3.org/2000/01/rdf-schema#label> "Vehicle" .
 <http://schema.landrs.org/schema/Vehicle> <http://www.w3.org/2000/01/rdf-schema#comment> "A vehicle is a device that is designed or used to transport people or cargo over land, water, air, or through space." .
-<http://schema.landrs.org/schema/Vehicle> <http://www.w3.org/2000/01/rdf-schema#description> "A vehicle is a device that is designed or used to transport people or cargo over land, water, air, or through space." .
-<http://editor.zazuko.com/schema/Vehicle> <http://www.w3.org/2000/01/rdf-schema#label> "Vehicle" .
+<http://schema.landrs.org/schema/Vehicle> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Product> .
+<http://schema.landrs.org/schema/Vehicle> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/Product> .
+<http://schema.landrs.org/schema/Vehicle> <http://schema.org/sameAs> <http://schema.org/Vehicle> .
+<http://schema.landrs.org/schema/Vehicle> <http://www.w3.org/2002/07/owl#equivalentClass> <http://schema.org/Vehicle> .
+<http://schema.landrs.org/schema/UxV> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://schema.landrs.org/schema/UxV> <http://www.w3.org/2000/01/rdf-schema#label> "Unmanned Vehicle" .
+<http://schema.landrs.org/schema/UxV> <http://www.w3.org/2000/01/rdf-schema#comment> "An unmanned vehicle or uncrewed vehicle is a vehicle without a person on board. Uncrewed vehicles can either be remote controlled or remote guided vehicles, or they can be autonomous vehicles which are capable of sensing their environment and navigating on their own." .
+<http://schema.landrs.org/schema/UxV> <http://www.w3.org/2004/02/skos/core#prefLabel> "Unmanned Vehicle" .
+<http://schema.landrs.org/schema/UxV> <http://www.w3.org/2004/02/skos/core#altLabel> "UxV" .
+<http://schema.landrs.org/schema/UxV> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/Vehicle> .
+<http://schema.landrs.org/schema/UxV> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/Platform> .
+<http://schema.landrs.org/schema/UxV> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://www.w3.org/2019/wot/td#Thing> .
+<http://schema.landrs.org/schema/UxV> <http://www.w3.org/2002/07/owl#equivalentClass> <http://www.wikidata.org/entity/Q1527901> .
+<http://schema.landrs.org/schema/UAV> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://schema.landrs.org/schema/UAV> <http://www.w3.org/2000/01/rdf-schema#label> "Unmanned Aerial Vehicle" .
+<http://schema.landrs.org/schema/UAV> <http://www.w3.org/2000/01/rdf-schema#comment> "An aircraft without a human pilot on board and a type of unmanned vehicle. UAVs are a component of an unmanned aircraft system (UAS); which include a UAV, a ground-based controller, and a system of communications between the two. The flight of UAVs may operate with various degrees of autonomy: either under remote control by a human operator or autonomously by onboard computers." .
+<http://schema.landrs.org/schema/UAV> <http://www.w3.org/2004/02/skos/core#prefLabel> "Unmanned Aerial Vehicle" .
+<http://schema.landrs.org/schema/UAV> <http://www.w3.org/2004/02/skos/core#altLable> "UAV" .
+<http://schema.landrs.org/schema/UAV> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/UxV> .
+<http://schema.landrs.org/schema/UAV> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://data.nasa.gov/ontologies/atmonto/equipment#Aircraft> .
+<http://schema.landrs.org/schema/UAV> <http://www.w3.org/2002/07/owl#equivalentClass> <http://www.wikidata.org/entity/Q484000> .
+<http://schema.landrs.org/schema/UAS> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://schema.landrs.org/schema/UAS> <http://www.w3.org/2000/01/rdf-schema#label> "Unmanned Aircraft System" .
+<http://schema.landrs.org/schema/UAS> <http://www.w3.org/2000/01/rdf-schema#comment> "An Unmanned Aerial Vehicle, ground-based controller and communication system." .
+<http://schema.landrs.org/schema/UAS> <http://www.w3.org/2004/02/skos/core#prefLabel> "Unmanned Aircraft System" .
+<http://schema.landrs.org/schema/UAS> <http://www.w3.org/2004/02/skos/core#altLabel> "UAS" .
+<http://schema.landrs.org/schema/UAS> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/Product> .
+<http://schema.landrs.org/schema/Component> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://schema.landrs.org/schema/Component> <http://www.w3.org/2000/01/rdf-schema#label> "Component" .
+<http://schema.landrs.org/schema/Component> <http://www.w3.org/2000/01/rdf-schema#comment> "Component of a UxV" .
+<http://schema.landrs.org/schema/Component> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/Product> .
+<http://schema.landrs.org/schema/Component> <http://www.w3.org/2002/07/owl#equivalentClass> <http://www.wikidata.org/entity/Q811909> .
+<http://schema.landrs.org/schema/UAVComponent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://schema.landrs.org/schema/UAVComponent> <http://www.w3.org/2000/01/rdf-schema#label> "Unmanned Aircraft Component" .
+<http://schema.landrs.org/schema/UAVComponent> <http://www.w3.org/2000/01/rdf-schema#comment> "Component of a Unmanned Aerial Vehicle" .
+<http://schema.landrs.org/schema/UAVComponent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/Component> .
+<http://schema.landrs.org/schema/UAVComponent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.wikidata.org/entity/Q28816538> .
+<http://schema.landrs.org/schema/Body> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://schema.landrs.org/schema/Body> <http://www.w3.org/2000/01/rdf-schema#label> "UxV Body" .
+<http://schema.landrs.org/schema/Body> <http://www.w3.org/2000/01/rdf-schema#comment> "Body of the UxV, for a UAV this would be an airframe" .
+<http://schema.landrs.org/schema/Body> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/Product> .
+<http://schema.landrs.org/schema/bodyType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://schema.landrs.org/schema/bodyType> <http://www.w3.org/2000/01/rdf-schema#label> "bodyType" .
+<http://schema.landrs.org/schema/bodyType> <http://purl.org/dc/terms/source> <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group> .
+<http://schema.landrs.org/schema/bodyType> <http://schema.org/domainIncludes> <http://schema.org/Vehicle> .
+<http://schema.landrs.org/schema/bodyType> <http://schema.org/isPartOf> <http://auto.schema.org> .
+<http://schema.landrs.org/schema/bodyType> <http://schema.org/rangeIncludes> <http://schema.org/QualitativeValue> .
+<http://schema.landrs.org/schema/bodyType> <http://schema.org/rangeIncludes> <http://schema.org/Text> .
+<http://schema.landrs.org/schema/bodyType> <http://schema.org/rangeIncludes> <http://schema.org/URL> .
+<http://schema.landrs.org/schema/bodyType> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the design and body style of the vehicle (e.g. quadcopter, glider." .
+<http://schema.landrs.org/schema/Airframe> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://schema.landrs.org/schema/Airframe> <http://www.w3.org/2000/01/rdf-schema#label> "Airframe" .
+<http://schema.landrs.org/schema/Airframe> <http://www.w3.org/2000/01/rdf-schema#comment> "The mechanical structure of an aircraft is known as the airframe. This structure is typically considered to include the fuselage, undercarriage, empennage and wings, and exclude the propulsion system." .
+<http://schema.landrs.org/schema/Airframe> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/Body> .
+<http://schema.landrs.org/schema/Airframe> <http://www.w3.org/2002/07/owl#equivalentClass> <http://www.wikidata.org/entity/Q222946> .
+<http://schema.landrs.org/schema/Autopilot> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://schema.landrs.org/schema/Autopilot> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <file:///Users/cvardema/Development/landrs-toolkit/landrs-o/semantics.aero/pages/swim-vocabulary#software-agent> .
+<http://schema.landrs.org/schema/Autopilot> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://data.nasa.gov/ontologies/atmonto/equipment#AircraftNavigationSystem> .
+<http://schema.landrs.org/schema/Autopilot> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/SoftwareApplicaion> .
+<http://schema.landrs.org/schema/Autopilot> <http://www.w3.org/2000/01/rdf-schema#label> "Autopilot" .
+<http://schema.landrs.org/schema/Autopilot> <http://www.w3.org/2000/01/rdf-schema#comment> "Software to control and navigate an aircraft" .
+<http://schema.landrs.org/schema/Autopilot> <http://www.w3.org/2004/02/skos/core#altLabel> "Flight Controller " .
+<http://schema.landrs.org/schema/Autopilot> <http://www.w3.org/2004/02/skos/core#altLabel> "Flight Controller Board" .
+<http://schema.landrs.org/schema/Payload> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://schema.landrs.org/schema/Payload> <http://www.w3.org/2000/01/rdf-schema#label> "Payload" .
+<http://schema.landrs.org/schema/Payload> <http://www.w3.org/2000/01/rdf-schema#comment> "Unmanned vehicle payload" .
+<http://schema.landrs.org/schema/Payload> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.wikidata.org/entity/Q319224> .
+<http://schema.landrs.org/schema/SensorPayload> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://schema.landrs.org/schema/SensorPayload> <http://www.w3.org/2000/01/rdf-schema#label> "Sensor Payload" .
+<http://schema.landrs.org/schema/SensorPayload> <http://www.w3.org/2000/01/rdf-schema#comment> "Payload that is a instrument platform such as cameras, atmospheric sensors, etc" .
+<http://schema.landrs.org/schema/SensorPayload> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/payload> .
+<http://schema.landrs.org/schema/SensorPayload> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/System> .
+<http://schema.landrs.org/schema/FlightControllerBoard> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://schema.landrs.org/schema/FlightControllerBoard> <http://www.w3.org/2000/01/rdf-schema#label> "Flight Controller Board" .
+<http://schema.landrs.org/schema/FlightControllerBoard> <http://www.w3.org/2000/01/rdf-schema#comment> "A flight controller (FC) is a small circuit board of varying complexity. Its function is to direct the RPM of each motor in response to input. A command from the pilot for the multi-rotor to move forward is fed into the flight controller, which determines how to manipulate the motors accordingly." .
+<http://schema.landrs.org/schema/FlightControllerBoard> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/Product> .
+<http://schema.landrs.org/schema/FlightControllerBoard> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/system> .
+<http://schema.landrs.org/schema/FightControlSystem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://schema.landrs.org/schema/FightControlSystem> <http://www.w3.org/2000/01/rdf-schema#label> "Flight Control System" .
+<http://schema.landrs.org/schema/FightControlSystem> <http://www.w3.org/2000/01/rdf-schema#comment> "Aircraft system utilized to control flight surfaces" .
+<http://schema.landrs.org/schema/FightControlSystem> <http://www.w3.org/2002/07/owl#equivalentClass> <http://www.wikidata.org/entity/Q11481471> .
+<http://schema.landrs.org/schema/Mission> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://schema.landrs.org/schema/Mission> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.landrs.org/schema/Event> .
+<http://schema.landrs.org/schema/Mission> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://data.nasa.gov/ontologies/atmonto/ATM#Flight> .
+<http://schema.landrs.org/schema/Mission> <http://www.w3.org/2000/01/rdf-schema#label> "Mission" .
+<http://schema.landrs.org/schema/Mission> <http://www.w3.org/2000/01/rdf-schema#comment> "Event associated with the deployment of a UxV" .
+<http://schema.landrs.org/schema/Mission> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.wikidata.org/entity/Q13425175> .

@@ -1,0 +1,159 @@
+@prefix schema: <http://schema.org/> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dctype: <http://purl.org/dc/dcmitype/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix eqp: <https://data.nasa.gov/ontologies/atmonto/equipment#> .
+@prefix atm: <https://data.nasa.gov/ontologies/atmonto/ATM#> .
+@prefix aero: <semantics.aero/pages/swim-vocabulary#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix sosa-ext: <http://www.w3.org/ns/ssn/ext/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix ssn-system: <http://www.w3.org/ns/ssn/systems/> .
+@prefix td: <https://www.w3.org/2019/wot/td#> .
+
+@prefix landrs: <http://schema.landrs.org/schema/> .
+
+
+
+landrs:Thing a rdfs:Class ;
+  rdfs:label "Thing" ;
+  rdfs:comment "The most generic type of item." ;
+  schema:sameAs schema:Thing ;
+  owl:equivalentClass schema:Thing .
+
+landrs:Event a rdfs:Class ;
+    rdfs:label "Event" ;
+    rdfs:comment "An event happening at a certain time and location, such as a concert, lecture, or festival. Ticketing information may be added via the <a class=\"localLink\" href=\"http://schema.org/offers\">offers</a> property. Repeated events may be structured as separate Event objects." ;
+    rdfs:subClassOf schema:Thing ;
+    owl:equivalentClass dctype:Event ;
+    owl:equivalentClass schema:Event .
+
+
+landrs:Product a rdfs:Class ;
+  rdfs:label "Product" ;
+  dct:source <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms> ;
+  rdfs:comment "Any offered product or service. For example: a pair of shoes; a concert ticket; the rental of a car; a haircut; or an episode of a TV show streamed online." ;
+  owl:equivalentClass schema:Product ;
+  schema:sameAs schema:Product ;
+  rdfs:subClassOf landrs:Thing ;
+  rdfs:subClassOf schema:Thing .
+
+landrs:Vehicle a rdfs:Class ;
+  rdfs:label "Vehicle" ;
+  rdfs:comment "A vehicle is a device that is designed or used to transport people or cargo over land, water, air, or through space." ;
+  rdfs:subClassOf schema:Product ;
+  rdfs:subClassOf landrs:Product ;
+  schema:sameAs schema:Vehicle ;
+  owl:equivalentClass schema:Vehicle .
+
+landrs:UxV a rdfs:Class ;
+  rdfs:label "Unmanned Vehicle" ;
+  rdfs:comment "An unmanned vehicle or uncrewed vehicle is a vehicle without a person on board. Uncrewed vehicles can either be remote controlled or remote guided vehicles, or they can be autonomous vehicles which are capable of sensing their environment and navigating on their own." ;
+  skos:prefLabel "Unmanned Vehicle" ;
+  skos:altLabel "UxV" ;
+  rdfs:subClassOf landrs:Vehicle ;
+  rdfs:subClassOf sosa:Platform ;
+  rdfs:subClassOf td:Thing ;
+  owl:equivalentClass wd:Q1527901 .
+
+landrs:UAV a rdfs:Class ;
+  rdfs:label "Unmanned Aerial Vehicle" ;
+  rdfs:comment "An aircraft without a human pilot on board and a type of unmanned vehicle. UAVs are a component of an unmanned aircraft system (UAS); which include a UAV, a ground-based controller, and a system of communications between the two. The flight of UAVs may operate with various degrees of autonomy: either under remote control by a human operator or autonomously by onboard computers." ;
+  skos:prefLabel "Unmanned Aerial Vehicle" ;
+  skos:altLable "UAV" ;
+  rdfs:subClassOf landrs:UxV ;
+  rdfs:subClassOf eqp:Aircraft ;
+  owl:equivalentClass wd:Q484000 .
+
+
+landrs:UAS a rdfs:Class ;
+  rdfs:label "Unmanned Aircraft System" ;
+  rdfs:comment "An Unmanned Aerial Vehicle, ground-based controller and communication system." ;
+  skos:prefLabel "Unmanned Aircraft System";
+  skos:altLabel "UAS" ;
+  rdfs:subClassOf landrs:Product .
+
+landrs:Component a rdfs:Class ;
+  rdfs:label "Component" ;
+  rdfs:comment "Component of a UxV" ;
+  rdfs:subClassOf landrs:Product ;
+  owl:equivalentClass wd:Q811909 .
+
+landrs:UAVComponent a rdfs:Class ;
+  rdfs:label "Unmanned Aircraft Component";
+  rdfs:comment "Component of a Unmanned Aerial Vehicle";
+  rdfs:subClassOf landrs:Component ;
+  rdfs:subClassOf wd:Q28816538 .
+
+
+landrs:Body a rdfs:Class ;
+  rdfs:label "UxV Body" ;
+  rdfs:comment "Body of the UxV, for a UAV this would be an airframe" ;
+  rdfs:subClassOf landrs:Product .
+
+
+landrs:bodyType a rdf:Property ;
+    rdfs:label "bodyType" ;
+    dct:source <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group> ;
+    schema:domainIncludes schema:Vehicle ;
+    schema:isPartOf <http://auto.schema.org> ;
+    schema:rangeIncludes schema:QualitativeValue,
+        schema:Text,
+        schema:URL ;
+    rdfs:comment "Indicates the design and body style of the vehicle (e.g. quadcopter, glider." .
+
+
+landrs:Airframe a rdfs:Class ;
+  rdfs:label "Airframe" ;
+  rdfs:comment "The mechanical structure of an aircraft is known as the airframe. This structure is typically considered to include the fuselage, undercarriage, empennage and wings, and exclude the propulsion system." ;
+  rdfs:subClassOf landrs:Body ;
+  owl:equivalentClass wd:Q222946 .
+
+
+landrs:Autopilot a rdfs:Class ;
+  rdfs:subClassOf aero:software-agent ;
+  rdfs:subClassOf  eqp:AircraftNavigationSystem ;
+  rdfs:subClassOf schema:SoftwareApplicaion ;
+  rdfs:label "Autopilot" ;
+  rdfs:comment "Software to control and navigate an aircraft" ;
+  skos:altLabel "Flight Controller " ;
+  skos:altLabel "Flight Controller Board" .
+
+
+landrs:Payload a rdfs:Class ;
+  rdfs:label "Payload" ;
+  rdfs:comment "Unmanned vehicle payload" ;
+  rdfs:subClassOf wd:Q319224 .
+
+
+landrs:SensorPayload a rdfs:Class ;
+  rdfs:label "Sensor Payload" ;
+  rdfs:comment "Payload that is a instrument platform such as cameras, atmospheric sensors, etc" ;
+  rdfs:subClassOf landrs:payload ;
+  rdfs:subClassOf sosa:System .
+
+
+landrs:FlightControllerBoard a rdfs:Class ;
+  rdfs:label "Flight Controller Board" ;
+  rdfs:comment "A flight controller (FC) is a small circuit board of varying complexity. Its function is to direct the RPM of each motor in response to input. A command from the pilot for the multi-rotor to move forward is fed into the flight controller, which determines how to manipulate the motors accordingly." ;
+  rdfs:subClassOf landrs:Product ;
+  rdfs:subClassOf sosa:system .
+
+landrs:FightControlSystem a rdfs:Class ;
+  rdfs:label "Flight Control System" ;
+  rdfs:comment "Aircraft system utilized to control flight surfaces" ;
+  owl:equivalentClass wd:Q11481471 .
+
+landrs:Mission a rdfs:Class, landrs:Event, atm:Flight ;
+  rdfs:label "Mission" ;
+  rdfs:comment "Event associated with the deployment of a UxV";
+  rdfs:subClassOf wd:Q13425175 .

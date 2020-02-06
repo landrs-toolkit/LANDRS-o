@@ -97,10 +97,10 @@
 <http://schema.landrs.org/schema/FlightControllerBoard> <http://www.w3.org/2000/01/rdf-schema#comment> "A flight controller (FC) is a small circuit board of varying complexity. Its function is to direct the RPM of each motor in response to input. A command from the pilot for the multi-rotor to move forward is fed into the flight controller, which determines how to manipulate the motors accordingly." .
 <http://schema.landrs.org/schema/FlightControllerBoard> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/Product> .
 <http://schema.landrs.org/schema/FlightControllerBoard> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/system> .
-<http://schema.landrs.org/schema/FightControlSystem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
-<http://schema.landrs.org/schema/FightControlSystem> <http://www.w3.org/2000/01/rdf-schema#label> "Flight Control System" .
-<http://schema.landrs.org/schema/FightControlSystem> <http://www.w3.org/2000/01/rdf-schema#comment> "Aircraft system utilized to control flight surfaces" .
-<http://schema.landrs.org/schema/FightControlSystem> <http://www.w3.org/2002/07/owl#equivalentClass> <http://www.wikidata.org/entity/Q11481471> .
+<http://schema.landrs.org/schema/FlightControlSystem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://schema.landrs.org/schema/FlightControlSystem> <http://www.w3.org/2000/01/rdf-schema#label> "Flight Control System" .
+<http://schema.landrs.org/schema/FlightControlSystem> <http://www.w3.org/2000/01/rdf-schema#comment> "Aircraft system utilized to control flight surfaces" .
+<http://schema.landrs.org/schema/FlightControlSystem> <http://www.w3.org/2002/07/owl#equivalentClass> <http://www.wikidata.org/entity/Q11481471> .
 <http://schema.landrs.org/schema/Mission> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
 <http://schema.landrs.org/schema/Mission> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.landrs.org/schema/Event> .
 <http://schema.landrs.org/schema/Mission> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://data.nasa.gov/ontologies/atmonto/ATM#Flight> .

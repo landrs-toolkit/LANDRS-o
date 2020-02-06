@@ -148,7 +148,7 @@ landrs:FlightControllerBoard a rdfs:Class ;
   rdfs:subClassOf landrs:Product ;
   rdfs:subClassOf sosa:system .
 
-landrs:FightControlSystem a rdfs:Class ;
+landrs:FlightControlSystem a rdfs:Class ;
   rdfs:label "Flight Control System" ;
   rdfs:comment "Aircraft system utilized to control flight surfaces" ;
   owl:equivalentClass wd:Q11481471 .

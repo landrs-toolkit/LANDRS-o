@@ -1,34 +1,73 @@
-@prefix schema: <http://schema.org/> .
+
+@prefix atm: <https://data.nasa.gov/ontologies/atmonto/ATM#> .
+@prefix aero: <semantics.aero/pages/swim-vocabulary#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix dctype: <http://purl.org/dc/dcmitype/> .
+@prefix dbr:  <http://dbpedia.org/resource/> .
+@prefix eqp: <https://data.nasa.gov/ontologies/atmonto/equipment#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix void: <http://rdfs.org/ns/void#> .
-@prefix wd: <http://www.wikidata.org/entity/> .
-@prefix eqp: <https://data.nasa.gov/ontologies/atmonto/equipment#> .
-@prefix atm: <https://data.nasa.gov/ontologies/atmonto/ATM#> .
-@prefix aero: <semantics.aero/pages/swim-vocabulary#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix sosa-ext: <http://www.w3.org/ns/ssn/ext/> .
 @prefix ssn: <http://www.w3.org/ns/ssn/> .
 @prefix ssn-system: <http://www.w3.org/ns/ssn/systems/> .
+@prefix voaf: <http://purl.org/vocommons/voaf#> .
 @prefix td: <https://www.w3.org/2019/wot/td#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix cpo: <http://daselab.org/ContextualizedWinstonPartWhole#> .
+@prefix po: <http://daselab.org/WinstonPartWhole#> .
 
 @prefix landrs: <http://schema.landrs.org/schema/> .
 
+foaf:Agent a owl:Class .
+foaf:name a owl:AnnotationProperty .
+voaf:Vocabulary a owl:Class .
+dcterms:title a owl:AnnotationProperty .
+dcterms:description a owl:AnnotationProperty .
+dcterms:rights a owl:AnnotationProperty .
+dcterms:license a owl:AnnotationProperty .
+dcterms:created a owl:AnnotationProperty .
+dcterms:creator a owl:AnnotationProperty .
+skos:definition a owl:AnnotationProperty .
+skos:example a owl:AnnotationProperty .
+skos:note a owl:AnnotationProperty .
+vann:preferredNamespacePrefix a owl:AnnotationProperty .
+vann:preferredNamespaceUri a owl:AnnotationProperty .
+schema:domainIncludes a owl:AnnotationProperty .
+schema:rangeIncludes a owl:AnnotationProperty .
+schema:version a owl:AnnotationProperty .
+
+landrs: a owl:Ontology , voaf:Vocabulary ;
+  dcterms:title "Landrs Schema"@en ;
+  dcterms:description "This ontology is developed as part of the Sloan Funded LANDRS project to advance UxV data interoperability"@en ;
+  dcterms:creator [ a foaf:Agent ; foaf:name "LANDRS: Linked and Networked Drones"@en ] ;
+  dcterms:rights "Copyright 2020 University of Notre Dame." ;
+  dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+  dcterms:created "2020-02-01"^^xsd:date ;
+  vann:preferredNamespacePrefix "landrs" ;
+  vann:preferredNamespaceUri "http://schema.landrs.org/schema/" ;
+  owl:versionInfo "0.0.1" ;
+  schema:versionInfo "0.0.1" .
 
 
 landrs:Thing a rdfs:Class ;
   rdfs:label "Thing" ;
   rdfs:comment "The most generic type of item." ;
   schema:sameAs schema:Thing ;
-  owl:equivalentClass schema:Thing .
+  owl:equivalentClass schema:Thing ;
+  owl:equivalentClass owl:Thing .
 
 landrs:Event a rdfs:Class ;
     rdfs:label "Event" ;
@@ -72,7 +111,9 @@ landrs:UAV a rdfs:Class ;
   skos:altLable "UAV" ;
   rdfs:subClassOf landrs:UxV ;
   rdfs:subClassOf eqp:Aircraft ;
-  owl:equivalentClass wd:Q484000 .
+  owl:equivalentClass wd:Q484000 ;
+  owl:equivalentClass dbr:Unmanned_aerial_vehicle ;
+  landrs:component landrs:UAS .
 
 
 landrs:UAS a rdfs:Class ;
@@ -82,11 +123,27 @@ landrs:UAS a rdfs:Class ;
   skos:altLabel "UAS" ;
   rdfs:subClassOf landrs:Product .
 
+landrs:GroundControlStation a rdfs:Class ;
+  rdfs:label "Ground Control Station" ;
+  rdfs:comment "A ground control station (GCS) is a land- or sea-based control center that provides the facilities for human control of Unmanned Aerial Vehicles (UAVs or drones)." ;
+  rdfs:equivalentClass wd:Q4118990 ;
+  rdfs:subClassOf landrs:Product ;
+  rdfs:seeAlso <https://en.wikipedia.org/wiki/Ground_control_station> ;
+  landrs:component landrs:UAS .
+
+landrs:CommunicationSystem a rdfs:Class ;
+  rdfs:label "Communication System" ;
+  rdfs:comment "Communication System, frequency and protocol by which a UxS communicates. For example Civilian UAV communications systems typically operate on frequencies of 2.4 GHz and 5.8 GHz. UAV communications systems work by using one frequency to control the aerial vehicle from the ground via a remote pilot while the other frequency is used to beam or relay First-Person View (FPV) video. By utilizing high-quality, reliable communications links, civilian UAVs are able to relay aerial visuals and data to those on the ground with ease, while still remaining in flight." ;
+  rdfs:subclassOf landrs:Product ;
+  rdfs:subclassOf wd:Q31479975 ;
+  landrs:component landrs:UAS .
+
 landrs:Component a rdfs:Class ;
   rdfs:label "Component" ;
-  rdfs:comment "Component of a UxV" ;
+  rdfs:comment "Winston Part-Whole PO-Component-Type to enumerate composition of a UxV" ;
   rdfs:subClassOf landrs:Product ;
-  owl:equivalentClass wd:Q811909 .
+  owl:equivalentClass wd:Q811909 ;
+  owl:equivalentClass cpo:PO-Component-Type .
 
 landrs:UAVComponent a rdfs:Class ;
   rdfs:label "Unmanned Aircraft Component";
@@ -98,7 +155,12 @@ landrs:UAVComponent a rdfs:Class ;
 landrs:Body a rdfs:Class ;
   rdfs:label "UxV Body" ;
   rdfs:comment "Body of the UxV, for a UAV this would be an airframe" ;
-  rdfs:subClassOf landrs:Product .
+  rdfs:subClassOf landrs:Product ;
+  landrs:component landrs:UxV ;
+  landrs:isPartOf [
+    rdf:type landrs:Component;
+    landrs:hasWhole landrs:UxV
+  ] .
 
 
 landrs:bodyType a rdf:Property ;
@@ -132,7 +194,8 @@ landrs:Autopilot a rdfs:Class ;
 landrs:Payload a rdfs:Class ;
   rdfs:label "Payload" ;
   rdfs:comment "Unmanned vehicle payload" ;
-  rdfs:subClassOf wd:Q319224 .
+  rdfs:subClassOf wd:Q319224 ;
+  landrs:component landrs:UAS .
 
 
 landrs:SensorPayload a rdfs:Class ;
@@ -157,3 +220,30 @@ landrs:Mission a rdfs:Class, landrs:Event, atm:Flight ;
   rdfs:label "Mission" ;
   rdfs:comment "Event associated with the deployment of a UxV";
   rdfs:subClassOf wd:Q13425175 .
+
+
+landrs:component a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "Winston ODP Component p" ;
+  rdfs:comment "Winston Component part-of relation po-component" ;
+  owl:equivalentClass po:component .
+
+
+landrs:isPartOf a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "component";
+  rdfs:comment "Winston ODP PartOf relation for component-integral object." ;
+  schema:domainIncludes owl:Thing ;
+  schema:rangeIncludes landrs:Component ;
+  owl:equivalentProperty cpo:isPartOf ;
+  schema:inverseOf landrs:hasWhole ;
+  owl:inverseOf landrs:hasWhole .
+
+landrs:hasWhole a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "hasWhole" ;
+  rdfs:comment "Winston ODP Whole relation" ;
+  schema:domainIncludes landrs:component ;
+  schema:rangeIncludes owl:Thing ;
+  owl:equivalentProperty cpo:hasWhole ;
+  schema:inverseOf landrs:isPartOf ;
+  owl:inverseOf landrs:isPartOf .
+
+

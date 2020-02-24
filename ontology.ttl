@@ -65,14 +65,12 @@ landrs: a owl:Ontology , voaf:Vocabulary ;
 
 landrs:Thing a rdfs:Class ;
   rdfs:label "Thing"@en ;
-  rdfs:comment "The most generic type of item."@en ;
   schema:sameAs schema:Thing ;
   owl:equivalentClass schema:Thing ;
   owl:equivalentClass owl:Thing .
 
 landrs:Event a rdfs:Class ;
     rdfs:label "Event"@en ;
-    rdfs:comment "An event happening at a certain time and location, such as a concert, lecture, or festival. Ticketing information may be added via the <a class=\"localLink\" href=\"http://schema.org/offers\">offers</a> property. Repeated events may be structured as separate Event objects."@en ;
     rdfs:subClassOf schema:Thing ;
     owl:equivalentClass dctype:Event ;
     owl:equivalentClass schema:Event .
@@ -81,7 +79,6 @@ landrs:Event a rdfs:Class ;
 landrs:Product a rdfs:Class ;
   rdfs:label "Product"@en ;
   dct:source <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms> ;
-  rdfs:comment "Any offered product or service. For example: a pair of shoes; a concert ticket; the rental of a car; a haircut; or an episode of a TV show streamed online."@en ;
   owl:equivalentClass schema:Product ;
   schema:sameAs schema:Product ;
   rdfs:subClassOf landrs:Thing ;
@@ -89,7 +86,6 @@ landrs:Product a rdfs:Class ;
 
 landrs:Vehicle a rdfs:Class ;
   rdfs:label "Vehicle"@en ;
-  rdfs:comment "A vehicle is a device that is designed or used to transport people or cargo over land, water, air, or through space."@en ;
   rdfs:subClassOf schema:Product ;
   rdfs:subClassOf landrs:Product ;
   schema:sameAs schema:Vehicle ;
@@ -114,14 +110,12 @@ landrs:UnmotorizedVehicle a rdfs:Class ;
 
 landrs:Robot a rdfs:Class ;
   rdfs:label "Robot"@en;
-  rdfs:comment "Mechanical or virtual artificial agent carrying out physical activities"@en ;
   rdfs:subClassOf landrs:Product ;
   owl:equivalentClass wd:Q11012 ;
   owl:equivalentClass cor:Robot .
 
 landrs:AutonomousRobot a rdfs:Class ;
   rdfs:label "Autonomous Robot"@en ;
-  rdfs:comment "An autonomous robot is a robot that performs behaviors or tasks with a high degree of autonomy (without external influence)."@en ;
   rdfs:subClassOf landrs:Robot ;
   owl:equivalentClass wd:Q2916098 .
 
@@ -135,14 +129,12 @@ landrs:AutomatedRobot a rdfs:Class ;
 
 landrs:RoboticVehicle a rdfs:Class ;
   rdfs:label "Robotic Vehicle"@en;
-  rdfs:comment "Robotic vehicles are machines that move autonomously on the ground, in the air, undersea, or in space. Such vehicles are “unmanned,” in the sense that no humans are on board. In general, these vehicles move by themselves, under their own power, with sensors and computational resources onboard to guide their motion."@en ;
   rdfs:subClassOf landrs:Vehicle ;
   rdfs:subClassOf landrs:Robot ;
   rdfs:subClassOf wd:Q4810574 .
 
 landrs:UxV a rdfs:Class ;
   rdfs:label "Unmanned Vehicle"@en ;
-  rdfs:comment "An unmanned vehicle or uncrewed vehicle is a vehicle without a person on board. Uncrewed vehicles can either be remote controlled or remote guided vehicles, or they can be autonomous vehicles which are capable of sensing their environment and navigating on their own."@en ;
   skos:prefLabel "Unmanned Vehicle"@en ;
   skos:altLabel "UxV"@en ;
   rdfs:subClassOf landrs:Vehicle ;
@@ -152,7 +144,6 @@ landrs:UxV a rdfs:Class ;
 
 landrs:UAV a rdfs:Class ;
   rdfs:label "Unmanned Aerial Vehicle"@en ;
-  rdfs:comment "An aircraft without a human pilot on board and a type of unmanned vehicle. UAVs are a component of an unmanned aircraft system (UAS); which include a UAV, a ground-based controller, and a system of communications between the two. The flight of UAVs may operate with various degrees of autonomy: either under remote control by a human operator or autonomously by onboard computers." ;
   skos:prefLabel "Unmanned Aerial Vehicle"@en ;
   skos:altLable "UAV"@en ;
   rdfs:subClassOf landrs:UxV ;
@@ -164,14 +155,12 @@ landrs:UAV a rdfs:Class ;
 
 landrs:UAS a rdfs:Class ;
   rdfs:label "Unmanned Aircraft System"@en ;
-  rdfs:comment "An Unmanned Aerial Vehicle, ground-based controller and communication system."@en ;
   skos:prefLabel "Unmanned Aircraft System"@en ;
   skos:altLabel "UAS"@en ;
   rdfs:subClassOf landrs:Product .
 
 landrs:GroundControlStation a rdfs:Class ;
   rdfs:label "Ground Control Station"@en ;
-  rdfs:comment "A ground control station (GCS) is a land- or sea-based control center that provides the facilities for human control of Unmanned Aerial Vehicles (UAVs or drones)."@en ;
   rdfs:equivalentClass wd:Q4118990 ;
   rdfs:subClassOf landrs:Product ;
   rdfs:seeAlso <https://en.wikipedia.org/wiki/Ground_control_station> ;
@@ -179,28 +168,24 @@ landrs:GroundControlStation a rdfs:Class ;
 
 landrs:CommunicationSystem a rdfs:Class ;
   rdfs:label "Communication System"@en ;
-  rdfs:comment "Communication System, frequency and protocol by which a UxS communicates. For example Civilian UAV communications systems typically operate on frequencies of 2.4 GHz and 5.8 GHz. UAV communications systems work by using one frequency to control the aerial vehicle from the ground via a remote pilot while the other frequency is used to beam or relay First-Person View (FPV) video. By utilizing high-quality, reliable communications links, civilian UAVs are able to relay aerial visuals and data to those on the ground with ease, while still remaining in flight."@en ;
   rdfs:subclassOf landrs:Product ;
   rdfs:subclassOf wd:Q31479975 ;
   landrs:component landrs:UAS .
 
 landrs:Component a rdfs:Class ;
   rdfs:label "Component"@en ;
-  rdfs:comment "Winston Part-Whole PO-Component-Type to enumerate composition of a UxV"@en ;
   rdfs:subClassOf landrs:Product ;
   owl:equivalentClass wd:Q811909 ;
   owl:equivalentClass cpo:PO-Component-Type .
 
 landrs:UAVComponent a rdfs:Class ;
   rdfs:label "Unmanned Aircraft Component"@en;
-  rdfs:comment "Component of a Unmanned Aerial Vehicle"@en;
   rdfs:subClassOf landrs:Component ;
   rdfs:subClassOf wd:Q28816538 .
 
 
 landrs:Body a rdfs:Class ;
   rdfs:label "UxV Body"@en ;
-  rdfs:comment "Body of the UxV, for a UAV this would be an airframe"@en ;
   rdfs:subClassOf landrs:Product ;
   landrs:component landrs:UxV ;
   landrs:isPartOf [
@@ -216,13 +201,11 @@ landrs:bodyType a rdf:Property ;
     schema:isPartOf <http://auto.schema.org> ;
     schema:rangeIncludes schema:QualitativeValue,
         schema:Text,
-        schema:URL ;
-    rdfs:comment "Indicates the design and body style of the vehicle (e.g. quadcopter, glider."@en .
+        schema:URL . 
 
 
 landrs:Airframe a rdfs:Class ;
   rdfs:label "Airframe"@en ;
-  rdfs:comment "The mechanical structure of an aircraft is known as the airframe. This structure is typically considered to include the fuselage, undercarriage, empennage and wings, and exclude the propulsion system."@en ;
   rdfs:subClassOf landrs:Body ;
   owl:equivalentClass wd:Q222946 .
 
@@ -232,51 +215,43 @@ landrs:Autopilot a rdfs:Class ;
   rdfs:subClassOf  eqp:AircraftNavigationSystem ;
   rdfs:subClassOf schema:SoftwareApplicaion ;
   rdfs:label "Autopilot"@en ;
-  rdfs:comment "Software to control and navigate an aircraft"@en ;
   skos:altLabel "Flight Controller"@en ;
   skos:altLabel "Flight Controller Board"@en .
 
 
 landrs:Payload a rdfs:Class ;
   rdfs:label "Payload"@en ;
-  rdfs:comment "Unmanned vehicle payload"@en ;
   rdfs:subClassOf wd:Q319224 ;
   landrs:component landrs:UAS .
 
 
 landrs:SensorPayload a rdfs:Class ;
   rdfs:label "Sensor Payload"@en ;
-  rdfs:comment "Payload that is a instrument platform such as cameras, atmospheric sensors, etc"@en ;
   rdfs:subClassOf landrs:payload ;
   rdfs:subClassOf sosa:System .
 
 
 landrs:FlightControllerBoard a rdfs:Class ;
   rdfs:label "Flight Controller Board"@en ;
-  rdfs:comment "A flight controller (FC) is a small circuit board of varying complexity. Its function is to direct the RPM of each motor in response to input. A command from the pilot for the multi-rotor to move forward is fed into the flight controller, which determines how to manipulate the motors accordingly."@en ;
   rdfs:subClassOf landrs:Product ;
   rdfs:subClassOf sosa:system .
 
 landrs:FlightControlSystem a rdfs:Class ;
   rdfs:label "Flight Control System"@en ;
-  rdfs:comment "Aircraft system utilized to control flight surfaces"@en ;
   owl:equivalentClass wd:Q11481471 .
 
 landrs:Mission a rdfs:Class, landrs:Event, atm:Flight ;
   rdfs:label "Mission"@en ;
-  rdfs:comment "Event associated with the deployment of a UxV"@en;
   rdfs:subClassOf wd:Q13425175 .
 
 
 landrs:component a rdf:Property, owl:ObjectProperty ;
   rdfs:label "Winston ODP Component p"@en ;
-  rdfs:comment "Winston Component part-of relation po-component"@en ;
   owl:equivalentClass po:component .
 
 
 landrs:isPartOf a rdf:Property, owl:ObjectProperty ;
   rdfs:label "component"@en;
-  rdfs:comment "Winston ODP PartOf relation for component-integral object."@en ;
   schema:domainIncludes owl:Thing ;
   schema:rangeIncludes landrs:Component ;
   owl:equivalentProperty cpo:isPartOf ;
@@ -285,7 +260,6 @@ landrs:isPartOf a rdf:Property, owl:ObjectProperty ;
 
 landrs:hasWhole a rdf:Property, owl:ObjectProperty ;
   rdfs:label "hasWhole"@en ;
-  rdfs:comment "Winston ODP Whole relation"@en ;
   schema:domainIncludes landrs:component ;
   schema:rangeIncludes owl:Thing ;
   owl:equivalentProperty cpo:hasWhole ;

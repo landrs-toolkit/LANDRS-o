@@ -1,0 +1,64 @@
+@prefix hydra:     <http://www.w3.org/ns/hydra/core#> .
+@prefix hydra-box: <http://hydra-box.org/schema/> .
+@prefix code:      <https://code.described.at/> .
+@prefix landrs:    <https://schema.landrs.org/schema/> .
+@prefix api:       <https://ld.landrs.org/api#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:    <http://schema.org/> .
+@prefix impl:      <file:lib/express/handlers/data-sheet/>.
+
+api:componentCollection
+  a                        hydra:Link ;
+  rdfs:range               api:ComponentCollection ;
+  hydra:supportedOperation _:PostToCollection .
+
+_:PostToCollection a   hydra-box:View, schema:CreateAction ;
+   hydra:title        "Create a data sheet" ;
+   hydra:method       "POST" ;
+   hydra:expects      ds:DataSheet ;
+   code:implementedBy [
+      a  hydra-box:middlewareChain ;
+      code:arguments (
+          [
+           a  code:EcmaScript ;
+           code:link impl:create#post ;
+          ]
+      )
+   ] .
+
+ds:DataSheet a  hydra:Class ;
+    hydra:supportedProperty  [
+      hydra:property rdfs:label ;
+      hydra:required true
+    ] ;
+    hydra:supportedOperation _:Get, _:Update .
+
+_:Get  a   hydra-box:View ;
+       hydra:method       "GET" ;
+       code:implementedBy [
+         a hydra-box:middlewareChain ;
+           code:arguments (
+              [
+                a  code:EcmaScript ;
+                code:link impl:instance#get ;
+              ]
+            )
+       ] .
+
+_:Update  a   hydra-box:View, schema:UpdateAction ;
+   hydra:method       "PUT" ;
+   code:implementedBy [
+     a hydra-box:middlewareChain ;
+        code:arguments (
+          [
+            a         code:EcmaScript ;
+            code:link impl:instance#put ;
+          ]
+          [
+            a         code:EcmaScript ;
+            code:link impl:instance#get ;
+          ]
+        )
+  ] .
+
+<data-sheet/:id> a ds:DataSheet .

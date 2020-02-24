@@ -1,0 +1,32 @@
+@prefix api: <https://wikibus.org/api#> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix code: <https://code.described.at/> .
+@prefix hydra-box: <http://hydra-box.org/schema/> .
+
+<api> a hydra:ApiDocumentation ;
+  hydra:entrypoint <> ;
+  hydra:supportedClass api:EntryPoint .
+
+## Entrypoint
+
+api:EntryPoint a hydra:Class ;
+  hydra:title "Base resourece for LANDRS APIs" ;
+  hydra:supportedProperty [
+    hydra:property api:components ;
+    hydra:title "Link to UxV Components API"
+  ] ;
+  hydra:supportedOperation [
+    a hydra:SupportedOperation, hydra-box:View ;
+      hydra:title "Get the entrypoint resource" ;
+      hydra:method "GET" ;
+      code:implementedBy [
+        a code:EcmaScript ;
+        code:link <file:handlers/entrypoint#get>
+      ]
+  ] .
+
+api:components a hydra:Link .
+
+## Routes
+
+<> a api:EntryPoint .

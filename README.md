@@ -7,4 +7,4 @@ UxS-core is a lightweight family of vocabularies for [Unmanned Systems](https://
 ## Mavlink-o
 Mavlink-o is a lightweight taxonomy modeled in a similar style to the [Vehicle Signal and Attribute Ontology](https://github.com/klotzbenjamin/vss-ontology/) for automotive applications. Just as VSSo is based on the proposed [Vehicle Signal Specification standard](https://github.com/GENIVI/vehicle_signal_specification), Mavlink-o proposes to provide a lightweight semantic layer on top of the [Mavlink](https://mavlink.io/en/) lightweight messaging protocol for communicating with drones and between onboard drone components. A alignment module will provide a crosswalk between VSSo and Mavlink-o with the aim of providing a common bridge between signal specifications used in the UAV and UGV application space.
 
-(ontology.png)[ontology.png] was generated using this webservice: (http://www.ldf.fi/service/rdf-grapher)[http://www.ldf.fi/service/rdf-grapher]
+[ontology.png](ontology.png) was generated using this webservice: [http://www.ldf.fi/service/rdf-grapher]http://www.ldf.fi/service/rdf-grapher)

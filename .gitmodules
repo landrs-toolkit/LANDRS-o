@@ -1,0 +1,3 @@
+[submodule "Widoco"]
+	path = Widoco
+	url = git@github.com:dgarijo/Widoco.git

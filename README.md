@@ -28,4 +28,4 @@ $ ln -s index-en.html index.html
 $ python3 -m http.server 8080
 View in browser.
 ```
-!(Eg:)[OntologyDocs.png]
+![OntologyDocs](OntologyDocs.png)

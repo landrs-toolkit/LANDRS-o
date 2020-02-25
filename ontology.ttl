@@ -12,6 +12,7 @@
 @prefix eqp: <https://data.nasa.gov/ontologies/atmonto/equipment#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <http://schema.org/> .
@@ -139,6 +140,72 @@ landrs:RoboticVehicle a rdfs:Class ;
   rdfs:subClassOf landrs:Vehicle ;
   rdfs:subClassOf landrs:Robot ;
   rdfs:subClassOf wd:Q4810574 .
+
+landrs:UnderwaterRobot a rdfs:Class ;
+  rdfs:label "Underwater Robot"@en ;
+  rdfs:comment "Underwater Robots are vehicles that move autonomously underwater."@en ;
+  rdfs:subClassOf landrs:RoboticVehice ;
+  rdfs:subClassOf landrs:UnderwaterVehicle .
+
+landrs:SurfaceRobot a rdfs:Class ;
+  rdfs:label "Underwater Robot"@en ;
+  rdfs:comment "Surface Robots are vehicles that move autonomously on the water surface."@en ;
+  rdfs:subClassOf landrs:RoboticVehicle ;
+  rdfs:subClassOf landrs:SurfaceVehicle .
+
+landrs:AUV a rdfs:Class ;
+  rdfs:label "Autonomous Underwater Vehicle"@en ;
+  skos:altLabel "AUV"@en ;
+  rdfs:comment "An autonomous underwater vehicle (AUV) is a robot that travels underwater without requiring input from an operator."@en ;
+  rdfs:subClassOf landrs:UnderwaterRobot ;
+  rdfs:subClassOf landrs:AutonomousRobot ;
+  owl:equivalentClass wd:Q257406 .
+
+landrs:ROV a rdfs:Class ;
+  rdfs:label "Remotely Operated Underwater Vehicle"@en ;
+  skos:altLabel "ROV"@en ;
+  rdfs:subClassOf landrs:UnderwaterRobot ;
+  rdfs:subClassOf landrs:MotorizedVehicle ;
+  owl:equivalentClass wd:Q618465 .
+
+
+landrs:UnderwaterGlider a rdfs:Class ;
+  rdfs:label "Underwater Glider"@en ;
+  rdfs:comment "An underwater glider is a type of autonomous underwater vehicle (AUV) that employs variable-buoyancy propulsion instead of traditional propellers or thrusters. It employs variable buoyancy in a similar way to a profiling float, but unlike a float, which can only move up and down, an underwater glider is fitted with hydrofoils (underwater wings) that allow it to glide forward while descending through the water. At a certain depth, the glider switches to positive buoyancy to climb back up, and the cycle is then repeated."@en ;
+  rdfs:subClassOf landrs:AUV ;
+  rdfs:subClassOf landrs:UnmotorizedVehicle ;
+  owl:equivalentClass wd:Q2634473 .
+
+landrs:ASV a rdfs:Class ;
+  rdfs:label "Autonomous Surface Vehicle"@en ;
+  skos:altLabel "ASV";
+  rdfs:comment "Vehicle that operates on the surface of the water without a crew"@en ;
+  rdfs:subClassOf landrs:AutonomousRobot ;
+  rdfs:subClassOf landrs:SurfaceRobot .
+
+# This may be a problem since wikidata treats ASV and USV as equivalent
+landrs:USV a rdfs:Class ;
+  rdfs:label "Unmanned Surface Vehicle"@en ;
+  skos:altLabel "USV"@en ;
+  rdfs:comment "Vehicle that operates on the surface of the water without a crew"@en ;
+  rdfs:subClassOf landrs:SurfaceRobot ;
+  rdfs:subClassOf landrs:MotorizedVehicle ;
+  owl:equivalentClass wd:Q4419860 .
+
+landrs:Vessel a rdfs:Class ;
+  rdfs:label "Vessel"@en ;
+  rdfs:comment "Vehicle that is a watercraft, boat, or ship. Note: Wikidata definition of vessel includes spaceship this landrs:Vessel is a subClassOf wikidata vessel."@en ;
+  rdfs:subClassOf landrs:SurfaceVehicle ;
+  rdfs:subClassOf landrs:MotorizedVehicle ;
+  rdfs:subClassOf wd:Q16391167 .
+
+landrs:Buoy a rdfs:Class ;
+  rdfs:label "Buoy"@en ;
+  rdfs:comment "A floating device that can be anchored (stationary) or allowed to drift with ocean currents."@en ;
+  rdfs:subClassOf landrs:UnmotorizedVehicle ;
+  owl:equivalentClass wd:Q30026 .
+
+
 
 landrs:UxV a rdfs:Class ;
   rdfs:label "Unmanned Vehicle"@en ;

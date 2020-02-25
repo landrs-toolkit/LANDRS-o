@@ -102,7 +102,7 @@ landrs:UnderwaterVehicle a rdfs:Class ;
 
 landrs:SurfaceVehicle a rdfs:Class ;
   rdfs:label "Surface Vehicle"@en ;
-  rdfs:subClassOf lanrds:Vehicle .
+  rdfs:subClassOf landrs:Vehicle .
 
 landrs:MotorizedVehicle a rdfs:Class ;
   rdfs:label "Motorized Vehicle"@en ;
@@ -110,7 +110,7 @@ landrs:MotorizedVehicle a rdfs:Class ;
 
 landrs:UnmotorizedVehicle a rdfs:Class ;
   rdfs:label "Unmotorized Vehicle"@en ;
-  rdfs:subClassOf lanrds:Vehicle .
+  rdfs:subClassOf landrs:Vehicle .
 
 landrs:Robot a rdfs:Class ;
   rdfs:label "Robot"@en;

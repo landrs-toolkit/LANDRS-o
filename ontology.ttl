@@ -13,6 +13,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix pav:  <http://purl.org/pav/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <http://schema.org/> .
@@ -51,7 +52,12 @@ schema:domainIncludes a owl:AnnotationProperty .
 schema:rangeIncludes a owl:AnnotationProperty .
 schema:version a owl:AnnotationProperty .
 
-landrs: a owl:Ontology , voaf:Vocabulary ;
+
+
+
+
+# URI for the fully dereferencable ontology
+<http://schema.landrs.org/rdf> a owl:Ontology , voaf:Vocabulary, prov:Entity ;
   dcterms:title "Landrs Schema"@en ;
   dcterms:description "This ontology is developed as part of the Sloan Funded LANDRS project to advance UxV data interoperability"@en ;
   dcterms:creator [ a foaf:Agent ; foaf:name "LANDRS: Linked and Networked Drones"@en ] ;
@@ -62,6 +68,7 @@ landrs: a owl:Ontology , voaf:Vocabulary ;
   vann:preferredNamespaceUri "http://schema.landrs.org/schema/" ;
   owl:versionInfo "0.0.1" ;
   schema:versionInfo "0.0.1" .
+
 
 
 landrs:Thing a rdfs:Class ;

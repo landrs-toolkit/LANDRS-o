@@ -28,7 +28,7 @@
   foaf:givenName "Jane" ;
   foaf:familyName "Wyngaard" .
 
-<http://nd.edu> a foaf:Organization, schema:Organization, prov:Organization ;
+<http://nd.edu> a foaf:Organization, schema:Organization, prov:Organization .
 
 # Software
 :zom a prov:SoftwareAgent ;

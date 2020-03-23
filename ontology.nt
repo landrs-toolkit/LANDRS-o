@@ -46,6 +46,12 @@ _:genid1 <http://xmlns.com/foaf/0.1/name> "LANDRS: Linked and Networked Drones"@
 <http://schema.landrs.org/schema/Event> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Thing> .
 <http://schema.landrs.org/schema/Event> <http://www.w3.org/2002/07/owl#equivalentClass> <http://purl.org/dc/dcmitype/Event> .
 <http://schema.landrs.org/schema/Event> <http://www.w3.org/2002/07/owl#equivalentClass> <http://schema.org/Event> .
+<http://schema.landrs.org/schema/Intangible> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://schema.landrs.org/schema/Intangible> <http://www.w3.org/2000/01/rdf-schema#label> "Intangible" .
+<http://schema.landrs.org/schema/Intangible> <http://schema.org/sameAs> <http://schema.org/Intangible> .
+<http://schema.landrs.org/schema/Intangible> <http://www.w3.org/2002/07/owl#equivalentClass> <http://schema.org/Intangible> .
+<http://schema.landrs.org/schema/Intangible> <http://www.w3.org/2000/01/rdf-schema#comment> "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc." .
+<http://schema.landrs.org/schema/Intangible> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Thing> .
 <http://schema.landrs.org/schema/Product> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
 <http://schema.landrs.org/schema/Product> <http://www.w3.org/2000/01/rdf-schema#label> "Product"@en .
 <http://schema.landrs.org/schema/Product> <http://purl.org/dc/terms/source> <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms> .
@@ -54,6 +60,36 @@ _:genid1 <http://xmlns.com/foaf/0.1/name> "LANDRS: Linked and Networked Drones"@
 <http://schema.landrs.org/schema/Product> <http://schema.org/sameAs> <http://schema.org/Product> .
 <http://schema.landrs.org/schema/Product> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/Thing> .
 <http://schema.landrs.org/schema/Product> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Thing> .
+<http://schema.landrs.org/schema/ProductModel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://schema.landrs.org/schema/ProductModel> <http://www.w3.org/2000/01/rdf-schema#label> "ProductModel" .
+<http://schema.landrs.org/schema/ProductModel> <http://purl.org/dc/terms/alternative:source> <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass> .
+<http://schema.landrs.org/schema/ProductModel> <http://www.w3.org/2000/01/rdf-schema#comment> "A datasheet or vendor specification of a product (in the sense of a prototypical description)." .
+<http://schema.landrs.org/schema/ProductModel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Product> .
+<http://schema.landrs.org/schema/ProductModel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/Product> .
+<http://schema.landrs.org/schema/ProductModel> <http://schema.org/sameAs> <http://schema.org/ProductModel> .
+<http://schema.landrs.org/schema/ProductModel> <http://www.w3.org/2002/07/owl#equivalentClass> <http://schema.org/ProductModel> .
+<http://schema.landrs.org/schema/QuantitativeValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://schema.landrs.org/schema/QuantitativeValue> <http://www.w3.org/2000/01/rdf-schema#label> "QuantitativeValue" .
+<http://schema.landrs.org/schema/QuantitativeValue> <http://schema.org/sameAs> <http://schema.org/QuantitativeValue> .
+<http://schema.landrs.org/schema/QuantitativeValue> <http://www.w3.org/2002/07/owl#equivalentClass> <http://schema.org/QuantitativeValue> .
+<http://schema.landrs.org/schema/QuantitativeValue> <http://purl.org/dc/terms/source> <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass> .
+<http://schema.landrs.org/schema/QuantitativeValue> <http://www.w3.org/2000/01/rdf-schema#comment> "A point value or interval for product characteristics and other purposes." .
+<http://schema.landrs.org/schema/QuantitativeValue> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/StructuredValue> .
+<http://schema.landrs.org/schema/QuantitativeValue> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/StructuredValue> .
+<http://schema.landrs.org/schema/PropertyValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://schema.landrs.org/schema/PropertyValue> <http://www.w3.org/2000/01/rdf-schema#label> "PropertyValue" .
+<http://schema.landrs.org/schema/PropertyValue> <http://www.w3.org/2002/07/owl#equivalentClass> <http://schema.org/PropertyValue> .
+<http://schema.landrs.org/schema/PropertyValue> <http://schema.org/sameAs> <http://schema.org/PropertyValue> .
+<http://schema.landrs.org/schema/PropertyValue> <http://purl.org/dc/terms/source> <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass> .
+<http://schema.landrs.org/schema/PropertyValue> <http://www.w3.org/2000/01/rdf-schema#comment> "A property-value pair, e.g. representing a feature of a product or place. Use the 'name' property for the name of the property. If there is an additional human-readable version of the value, put that into the 'description' property.<br/><br/>\nAlways use specific schema.org properties when a) they exist and b) you can populate them. Using PropertyValue as a substitute will typically not trigger the same effect as using the original, specific property." .
+<http://schema.landrs.org/schema/PropertyValue> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/StructuredValue> .
+<http://schema.landrs.org/schema/PropertyValue> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/StructuredValue> .
+<http://schema.landrs.org/schema/StructuredValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://schema.landrs.org/schema/StructuredValue> <http://www.w3.org/2000/01/rdf-schema#label> "StructuredValue" .
+<http://schema.landrs.org/schema/StructuredValue> <http://schema.org/sameAs> <http://schema.org/StructuredValue> .
+<http://schema.landrs.org/schema/StructuredValue> <http://www.w3.org/2002/07/owl#equivalentClass> <http://schema.org/StructuredValue> .
+<http://schema.landrs.org/schema/StructuredValue> <http://www.w3.org/2000/01/rdf-schema#comment> "Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing." .
+<http://schema.landrs.org/schema/StructuredValue> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Intangible> .
 <http://schema.landrs.org/schema/Vehicle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
 <http://schema.landrs.org/schema/Vehicle> <http://www.w3.org/2000/01/rdf-schema#label> "Vehicle"@en .
 <http://schema.landrs.org/schema/Vehicle> <http://www.w3.org/2000/01/rdf-schema#comment> "A vehicle is a device that is designed or used to transport people or cargo over land, water, air, or through space."@en .
@@ -337,7 +373,7 @@ _:genid22 <http://schema.landrs.org/schema/hasWhole> <http://schema.landrs.org/s
 _:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.landrs.org/schema/Component> .
 _:genid23 <http://schema.landrs.org/schema/hasWhole> <http://schema.landrs.org/schema/FlightControlSystem> .
 <http://schema.landrs.org/schema/Autopilot> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
-<http://schema.landrs.org/schema/Autopilot> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <file:///Users/cvardema/Development/landrs-toolkit/landrs-o/semantics.aero/pages/swim-vocabulary#software-agent> .
+<http://schema.landrs.org/schema/Autopilot> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://semantics.aero/pages/swim-vocabulary#software-agent> .
 <http://schema.landrs.org/schema/Autopilot> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://data.nasa.gov/ontologies/atmonto/equipment#AircraftNavigationSystem> .
 <http://schema.landrs.org/schema/Autopilot> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/SoftwareApplicaion> .
 <http://schema.landrs.org/schema/Autopilot> <http://www.w3.org/2000/01/rdf-schema#label> "Autopilot"@en .
@@ -405,3 +441,127 @@ _:genid25 <http://schema.landrs.org/schema/hasWhole> <http://schema.landrs.org/s
 <http://schema.landrs.org/schema/hasWhole> <http://schema.org/inverseOf> <http://schema.landrs.org/schema/isPartOf> .
 <http://schema.landrs.org/schema/hasWhole> <http://www.w3.org/2002/07/owl#inverseOf> <http://schema.landrs.org/schema/isPartOf> .
 <http://schema.landrs.org/schema/hasWhole> <http://ontologydesignpatterns.org/opla#isNativeTo> <https://raw.githubusercontent.com/cogan-shimizu-wsu/ContextualizedWinstonPartWhole/master/ContextualizedWinstonPartWhole.owl> .
+<http://schema.landrs.org/schema/isVariantOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://schema.landrs.org/schema/isVariantOf> <http://www.w3.org/2000/01/rdf-schema#label> "isVariantOf" .
+<http://schema.landrs.org/schema/isVariantOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://schema.org/isVariantOf> .
+<http://schema.landrs.org/schema/isVariantOf> <http://purl.org/dc/terms/source> <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms> .
+<http://schema.landrs.org/schema/isVariantOf> <http://schema.org/domainIncludes> <http://schema.landrs.org/schema/ProductModel> .
+<http://schema.landrs.org/schema/isVariantOf> <http://schema.org/rangeIncludes> <http://schema.landrs.org/schema/ProductModel> .
+<http://schema.landrs.org/schema/isVariantOf> <http://www.w3.org/2000/01/rdf-schema#comment> "A pointer to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive." .
+<http://schema.landrs.org/schema/predecessorOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://schema.landrs.org/schema/predecessorOf> <http://www.w3.org/2000/01/rdf-schema#label> "predecessorOf" .
+<http://schema.landrs.org/schema/predecessorOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://schema.org/predecessorOf> .
+<http://schema.landrs.org/schema/predecessorOf> <http://purl.org/dc/terms/source> <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms> .
+<http://schema.landrs.org/schema/predecessorOf> <http://schema.org/domainIncludes> <http://schema.landrs.org/schema/ProductModel> .
+<http://schema.landrs.org/schema/predecessorOf> <http://schema.org/rangeIncludes> <http://schema.landrs.org/schema/ProductModel> .
+<http://schema.landrs.org/schema/predecessorOf> <http://www.w3.org/2000/01/rdf-schema#comment> "A pointer from a previous, often discontinued variant of the product to its newer variant." .
+<http://schema.org/successorOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://schema.org/successorOf> <http://www.w3.org/2000/01/rdf-schema#label> "successorOf" .
+<http://schema.org/successorOf> <http://www.w3.org/2002/07/owl#subPropertyOf> <http://schema.org/successorOf> .
+<http://schema.org/successorOf> <http://purl.org/dc/terms/source> <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms> .
+<http://schema.org/successorOf> <http://schema.org/domainIncludes> <http://schema.landrs.org/schema/ProductModel> .
+<http://schema.org/successorOf> <http://schema.org/rangeIncludes> <http://schema.landrs.org/schema/ProductModel> .
+<http://schema.org/successorOf> <http://www.w3.org/2000/01/rdf-schema#comment> "A pointer from a newer variant of a product  to its previous, often discontinued predecessor." .
+<http://schema.landrs.org/schema/additionalProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://schema.landrs.org/schema/additionalProperty> <http://www.w3.org/2000/01/rdf-schema#label> "additionalProperty" .
+<http://schema.landrs.org/schema/additionalProperty> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://schema.org/additionalProperty> .
+<http://schema.landrs.org/schema/additionalProperty> <http://schema.org/domainIncludes> <http://schema.landrs.org/schema/Product> .
+<http://schema.landrs.org/schema/additionalProperty> <http://schema.org/rangeIncludes> <http://schema.org/PropertyValue> .
+<http://schema.landrs.org/schema/additionalProperty> <http://www.w3.org/2000/01/rdf-schema#comment> "A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/> Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism." .
+<http://schema.landrs.org/schema/category> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://schema.landrs.org/schema/category> <http://www.w3.org/2000/01/rdf-schema#label> "category" .
+<http://schema.landrs.org/schema/category> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://schema.org/category> .
+<http://schema.landrs.org/schema/category> <http://purl.org/dc/terms/source> <https://github.com/schemaorg/schemaorg/issues/1741> .
+<http://schema.landrs.org/schema/category> <http://purl.org/dc/terms/source> <https://github.com/schemaorg/schemaorg/issues/2490> .
+<http://schema.landrs.org/schema/category> <http://schema.org/category> "issue-1741" .
+<http://schema.landrs.org/schema/category> <http://schema.org/domainIncludes> <http://schema.landrs.org/schema/Product> .
+<http://schema.landrs.org/schema/category> <http://schema.org/rangeIncludes> <http://schema.org/Text> .
+<http://schema.landrs.org/schema/category> <http://schema.org/rangeIncludes> <http://schema.org/Thing> .
+<http://schema.landrs.org/schema/category> <http://www.w3.org/2000/01/rdf-schema#comment> "A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy." .
+<http://schema.landrs.org/schema/isAccessoryOrSparePartFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://schema.landrs.org/schema/isAccessoryOrSparePartFor> <http://www.w3.org/2000/01/rdf-schema#label> "isAccessoryOrSparePartFor" .
+<http://schema.landrs.org/schema/isAccessoryOrSparePartFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://schema.org/isAccessoryOrSparePartFor> .
+<http://schema.landrs.org/schema/isAccessoryOrSparePartFor> <http://purl.org/dc/terms/source> <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms> .
+<http://schema.landrs.org/schema/isAccessoryOrSparePartFor> <http://schema.org/domainIncludes> <http://schema.landrs.org/schema/Product> .
+<http://schema.landrs.org/schema/isAccessoryOrSparePartFor> <http://schema.org/rangeIncludes> <http://schema.landrs.org/schema/Product> .
+<http://schema.landrs.org/schema/isAccessoryOrSparePartFor> <http://www.w3.org/2000/01/rdf-schema#comment> "A pointer to another product (or multiple products) for which this product is an accessory or spare part." .
+<http://schema.landrs.org/schema/isConsumableFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://schema.landrs.org/schema/isConsumableFor> <http://www.w3.org/2000/01/rdf-schema#label> "isConsumableFor" .
+<http://schema.landrs.org/schema/isConsumableFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://schema.org/isConsumableFor> .
+<http://schema.landrs.org/schema/isConsumableFor> <http://purl.org/dc/terms/source> <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms> .
+<http://schema.landrs.org/schema/isConsumableFor> <http://schema.org/domainIncludes> <http://schema.landrs.org/schema/Product> .
+<http://schema.landrs.org/schema/isConsumableFor> <http://schema.org/rangeIncludes> <http://schema.landrs.org/schema/Product> .
+<http://schema.landrs.org/schema/isConsumableFor> <http://www.w3.org/2000/01/rdf-schema#comment> "A pointer to another product (or multiple products) for which this product is a consumable." .
+<http://schema.landrs.org/schema/isRelatedTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://schema.landrs.org/schema/isRelatedTo> <http://www.w3.org/2000/01/rdf-schema#label> "isRelatedTo" .
+<http://schema.landrs.org/schema/isRelatedTo> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://schema.org/isRelatedTo> .
+<http://schema.landrs.org/schema/isRelatedTo> <http://purl.org/dc/terms/source> <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms> .
+<http://schema.landrs.org/schema/isRelatedTo> <http://schema.org/domainIncludes> <http://schema.landrs.org/schema/Product> .
+<http://schema.landrs.org/schema/isRelatedTo> <http://schema.org/rangeIncludes> <http://schema.landrs.org/schema/Product> .
+<http://schema.landrs.org/schema/isRelatedTo> <http://www.w3.org/2000/01/rdf-schema#comment> "A pointer to another, somehow related product (or multiple products)." .
+<http://schema.landrs.org/schema/isSimilarTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://schema.landrs.org/schema/isSimilarTo> <http://www.w3.org/2000/01/rdf-schema#label> "isSimilarTo" .
+<http://schema.landrs.org/schema/isSimilarTo> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://schema.org/isSimilarTo> .
+<http://schema.landrs.org/schema/isSimilarTo> <http://purl.org/dc/terms/source> <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms> .
+<http://schema.landrs.org/schema/isSimilarTo> <http://schema.org/domainIncludes> <http://schema.org/Product> .
+<http://schema.landrs.org/schema/isSimilarTo> <http://schema.org/rangeIncludes> <http://schema.org/Product> .
+<http://schema.landrs.org/schema/isSimilarTo> <http://www.w3.org/2000/01/rdf-schema#comment> "A pointer to another, functionally similar product (or multiple products)." .
+<http://schema.landrs.org/schema/depth> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://schema.landrs.org/schema/depth> <http://www.w3.org/2000/01/rdf-schema#label> "depth" .
+<http://schema.landrs.org/schema/depth> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/depth> .
+<http://schema.landrs.org/schema/depth> <http://purl.org/dc/terms/source> <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms> .
+<http://schema.landrs.org/schema/depth> <http://schema.org/domainIncludes> <http://schema.landrs.org/schema/Product> .
+<http://schema.landrs.org/schema/depth> <http://schema.org/rangeIncludes> <http://schema.org/Distance> .
+<http://schema.landrs.org/schema/depth> <http://schema.org/rangeIncludes> <http://schema.org/QuantitativeValue> .
+<http://schema.landrs.org/schema/depth> <http://www.w3.org/2000/01/rdf-schema#comment> "The depth of the item." .
+<http://schema.landrs.org/schema/height> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://schema.landrs.org/schema/height> <http://www.w3.org/2000/01/rdf-schema#label> "height" .
+<http://schema.landrs.org/schema/height> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://schema.org/height> .
+<http://schema.landrs.org/schema/height> <http://schema.org/domainIncludes> <http://schema.landrs.org/schema/Product> .
+<http://schema.landrs.org/schema/height> <http://schema.org/rangeIncludes> <http://schema.org/Distance> .
+<http://schema.landrs.org/schema/height> <http://schema.org/rangeIncludes> <http://schema.org/QuantitativeValue> .
+<http://schema.landrs.org/schema/height> <http://www.w3.org/2000/01/rdf-schema#comment> "The height of the item." .
+<http://schema.landrs.org/schema/manufacturer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://schema.landrs.org/schema/manufacturer> <http://www.w3.org/2000/01/rdf-schema#label> "manufacturer" .
+<http://schema.landrs.org/schema/manufacturer> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://schema.org/manufacturer> .
+<http://schema.landrs.org/schema/manufacturer> <http://schema.org/domainIncludes> <http://schema.org/Product> .
+<http://schema.landrs.org/schema/manufacturer> <http://schema.org/rangeIncludes> <http://schema.org/Organization> .
+<http://schema.landrs.org/schema/manufacturer> <http://www.w3.org/2000/01/rdf-schema#comment> "The manufacturer of the product." .
+<http://schema.landrs.org/schema/material> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://schema.landrs.org/schema/material> <http://www.w3.org/2000/01/rdf-schema#label> "material" .
+<http://schema.landrs.org/schema/material> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://schema.org/material> .
+<http://schema.landrs.org/schema/material> <http://schema.org/domainIncludes> <http://schema.landrs.org/schema/Product> .
+<http://schema.landrs.org/schema/material> <http://schema.org/rangeIncludes> <http://schema.landrs.org/schema/Product> .
+<http://schema.landrs.org/schema/material> <http://schema.org/rangeIncludes> <http://schema.org/Text> .
+<http://schema.landrs.org/schema/material> <http://schema.org/rangeIncludes> <http://schema.org/URL> .
+<http://schema.landrs.org/schema/material> <http://www.w3.org/2000/01/rdf-schema#comment> "A material that something is made from, e.g. leather, wool, cotton, paper." .
+<http://schema.landrs.org/schema/model> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://schema.landrs.org/schema/model> <http://www.w3.org/2000/01/rdf-schema#label> "model" .
+<http://schema.landrs.org/schema/model> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/model> .
+<http://schema.landrs.org/schema/model> <http://schema.org/domainIncludes> <http://schema.landrs.org/schema/Product> .
+<http://schema.landrs.org/schema/model> <http://schema.org/rangeIncludes> <http://schema.landrs.org/schema/ProductModel> .
+<http://schema.landrs.org/schema/model> <http://schema.org/rangeIncludes> <http://schema.org/Text> .
+<http://schema.landrs.org/schema/model> <http://www.w3.org/2000/01/rdf-schema#comment> "The model of the product. Use with the URL of a ProductModel or a textual representation of the model identifier. The URL of the ProductModel can be from an external source. It is recommended to additionally provide strong product identifiers via the gtin8/gtin13/gtin14 and mpn properties." .
+<http://schema.landrs.org/schema/mpn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://schema.landrs.org/schema/mpn> <http://www.w3.org/2000/01/rdf-schema#label> "mpn" .
+<http://schema.landrs.org/schema/mpn> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://schema.org/mpn> .
+<http://schema.landrs.org/schema/mpn> <http://purl.org/dc/terms/source> <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms> .
+<http://schema.landrs.org/schema/mpn> <http://schema.org/domainIncludes> <http://schema.org/Demand> .
+<http://schema.landrs.org/schema/mpn> <http://schema.org/domainIncludes> <http://schema.org/Offer> .
+<http://schema.landrs.org/schema/mpn> <http://schema.org/domainIncludes> <http://schema.landrs.org/schema/Product> .
+<http://schema.landrs.org/schema/mpn> <http://schema.org/rangeIncludes> <http://schema.org/Text> .
+<http://schema.landrs.org/schema/mpn> <http://www.w3.org/2000/01/rdf-schema#comment> "The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers." .
+<http://schema.landrs.org/schema/weight> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://schema.landrs.org/schema/weight> <http://www.w3.org/2000/01/rdf-schema#label> "weight" .
+<http://schema.landrs.org/schema/weight> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://schema.org/weight> .
+<http://schema.landrs.org/schema/weight> <http://purl.org/dc/terms/source> <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms> .
+<http://schema.landrs.org/schema/weight> <http://schema.org/domainIncludes> <http://schema.landrs.org/schema/Product> .
+<http://schema.landrs.org/schema/weight> <http://schema.org/rangeIncludes> <http://schema.org/QuantitativeValue> .
+<http://schema.landrs.org/schema/weight> <http://www.w3.org/2000/01/rdf-schema#comment> "The weight of the product or person." .
+<http://schema.landrs.org/schema/width> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://schema.landrs.org/schema/width> <http://www.w3.org/2000/01/rdf-schema#label> "width" .
+<http://schema.landrs.org/schema/width> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://schema.org/width> .
+<http://schema.landrs.org/schema/width> <http://schema.org/domainIncludes> <http://schema.landrs.org/schema/Product> .
+<http://schema.landrs.org/schema/width> <http://schema.org/rangeIncludes> <http://schema.org/Distance> .
+<http://schema.landrs.org/schema/width> <http://schema.org/rangeIncludes> <http://schema.org/QuantitativeValue> .
+<http://schema.landrs.org/schema/width> <http://www.w3.org/2000/01/rdf-schema#comment> "The width of the item." .

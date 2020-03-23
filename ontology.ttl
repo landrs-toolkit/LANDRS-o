@@ -1,6 +1,6 @@
 
 @prefix atm: <https://data.nasa.gov/ontologies/atmonto/ATM#> .
-@prefix aero: <semantics.aero/pages/swim-vocabulary#> .
+@prefix aero: <https://semantics.aero/pages/swim-vocabulary#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cor: <http://purl.org/ieee1872-owl/cora-bare#>.
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
@@ -72,6 +72,7 @@ schema:version a owl:AnnotationProperty .
   schema:versionInfo "0.0.1" ;
   opla:reusesPatternAsTemplate <https://raw.githubusercontent.com/cogan-shimizu-wsu/WinstonPartWhole/master/WinstonPartWhole.owl> .
 
+#### Classes Derived from Schema.org
 landrs:Thing a rdfs:Class ;
   rdfs:label "Thing"@en ;
   rdfs:comment "The most generic type of item."@en ;
@@ -86,6 +87,12 @@ landrs:Event a rdfs:Class ;
     owl:equivalentClass dctype:Event ;
     owl:equivalentClass schema:Event .
 
+landrs:Intangible a rdfs:Class ;
+    rdfs:label "Intangible" ;
+    schema:sameAs schema:Intangible ;
+    owl:equivalentClass schema:Intangible ;
+    rdfs:comment "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc." ;
+    rdfs:subClassOf schema:Thing .
 
 landrs:Product a rdfs:Class ;
   rdfs:label "Product"@en ;
@@ -96,6 +103,42 @@ landrs:Product a rdfs:Class ;
   rdfs:subClassOf landrs:Thing ;
   rdfs:subClassOf schema:Thing .
 
+landrs:ProductModel a rdfs:Class ;
+  rdfs:label "ProductModel" ;
+  dct:source <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass> ;
+  rdfs:comment "A datasheet or vendor specification of a product (in the sense of a prototypical description)." ;
+  rdfs:subClassOf schema:Product ;
+  rdfs:subClassOf landrs:Product ;
+  schema:sameAs schema:ProductModel ;
+  owl:equivalentClass schema:ProductModel .
+
+landrs:QuantitativeValue a rdfs:Class ;
+    rdfs:label "QuantitativeValue" ;
+    schema:sameAs schema:QuantitativeValue ;
+    owl:equivalentClass schema:QuantitativeValue ;
+    dct:source <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass> ;
+    rdfs:comment "A point value or interval for product characteristics and other purposes." ;
+    rdfs:subClassOf schema:StructuredValue ;
+    rdfs:subClassOf landrs:StructuredValue .
+
+landrs:PropertyValue a rdfs:Class ;
+    rdfs:label "PropertyValue" ;
+    owl:equivalentClass schema:PropertyValue ;
+    schema:sameAs schema:PropertyValue ;
+    dct:source <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass> ;
+    rdfs:comment """A property-value pair, e.g. representing a feature of a product or place. Use the 'name' property for the name of the property. If there is an additional human-readable version of the value, put that into the 'description' property.<br/><br/>
+Always use specific schema.org properties when a) they exist and b) you can populate them. Using PropertyValue as a substitute will typically not trigger the same effect as using the original, specific property.""" ;
+    rdfs:subClassOf schema:StructuredValue ;
+    rdfs:subClassOf landrs:StructuredValue .
+
+landrs:StructuredValue a rdfs:Class ;
+    rdfs:label "StructuredValue" ;
+    schema:sameAs schema:StructuredValue ;
+    owl:equivalentClass schema:StructuredValue ;
+    rdfs:comment "Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing." ;
+    rdfs:subClassOf schema:Intangible .
+
+
 landrs:Vehicle a rdfs:Class ;
   rdfs:label "Vehicle"@en ;
   rdfs:comment "A vehicle is a device that is designed or used to transport people or cargo over land, water, air, or through space."@en ;
@@ -104,6 +147,9 @@ landrs:Vehicle a rdfs:Class ;
   schema:sameAs schema:Vehicle ;
   owl:equivalentClass schema:Vehicle .
 
+
+
+### Classes derived from SWARMs
 landrs:AerialVehicle a rdfs:Class ;
   rdfs:label "Aerial Vehicle"@en ;
   rdfs:comment "A machine that is able to fly by gaining support from the air other than the reactions of the air against the earth’s surface" ;
@@ -521,3 +567,145 @@ landrs:hasWhole a rdf:Property, owl:ObjectProperty ;
   opla:isNativeTo <https://raw.githubusercontent.com/cogan-shimizu-wsu/ContextualizedWinstonPartWhole/master/ContextualizedWinstonPartWhole.owl> .
 
 
+landrs:isVariantOf a rdf:Property ;
+    rdfs:label "isVariantOf" ;
+    rdfs:subPropertyOf schema:isVariantOf ;
+    dct:source <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms> ;
+    schema:domainIncludes landrs:ProductModel ;
+    schema:rangeIncludes landrs:ProductModel ;
+    rdfs:comment "A pointer to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive." .
+
+landrs:predecessorOf a rdf:Property ;
+    rdfs:label "predecessorOf" ;
+    rdfs:subPropertyOf schema:predecessorOf ;
+    dct:source <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms> ;
+    schema:domainIncludes landrs:ProductModel ;
+    schema:rangeIncludes landrs:ProductModel ;
+    rdfs:comment "A pointer from a previous, often discontinued variant of the product to its newer variant." .
+
+schema:successorOf a rdf:Property ;
+    rdfs:label "successorOf" ;
+    owl:subPropertyOf schema:successorOf ;
+    dct:source <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms> ;
+    schema:domainIncludes landrs:ProductModel ;
+    schema:rangeIncludes landrs:ProductModel ;
+    rdfs:comment "A pointer from a newer variant of a product  to its previous, often discontinued predecessor." .
+
+landrs:additionalProperty a rdf:Property ;
+    rdfs:label "additionalProperty" ;
+    rdfs:subPropertyOf schema:additionalProperty ;
+    schema:domainIncludes landrs:Product ;
+    schema:rangeIncludes schema:PropertyValue ;
+    rdfs:comment """A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/> Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.""" .
+
+landrs:category a rdf:Property ;
+    rdfs:label "category" ;
+    rdfs:subPropertyOf schema:category;
+    dct:source <https://github.com/schemaorg/schemaorg/issues/1741>,
+        <https://github.com/schemaorg/schemaorg/issues/2490> ;
+    schema:category "issue-1741" ;
+    schema:domainIncludes landrs:Product ;
+
+    schema:rangeIncludes schema:Text,
+        schema:Thing ;
+    rdfs:comment "A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy." .
+
+landrs:isAccessoryOrSparePartFor a rdf:Property ;
+    rdfs:label "isAccessoryOrSparePartFor" ;
+    rdfs:subPropertyOf schema:isAccessoryOrSparePartFor ;
+    dct:source <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms> ;
+    schema:domainIncludes landrs:Product ;
+    schema:rangeIncludes landrs:Product ;
+    rdfs:comment "A pointer to another product (or multiple products) for which this product is an accessory or spare part." .
+
+landrs:isConsumableFor a rdf:Property ;
+    rdfs:label "isConsumableFor" ;
+    rdfs:subPropertyOf schema:isConsumableFor ;
+    dct:source <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms> ;
+    schema:domainIncludes landrs:Product ;
+    schema:rangeIncludes landrs:Product ;
+    rdfs:comment "A pointer to another product (or multiple products) for which this product is a consumable." .
+
+landrs:isRelatedTo a rdf:Property ;
+    rdfs:label "isRelatedTo" ;
+    rdfs:subPropertyOf schema:isRelatedTo ;
+    dct:source <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms> ;
+    schema:domainIncludes landrs:Product ;
+    schema:rangeIncludes landrs:Product ;
+    rdfs:comment "A pointer to another, somehow related product (or multiple products)." .
+
+landrs:isSimilarTo a rdf:Property ;
+    rdfs:label "isSimilarTo" ;
+    rdfs:subPropertyOf schema:isSimilarTo ;
+    dct:source <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms> ;
+    schema:domainIncludes schema:Product;
+    schema:rangeIncludes schema:Product;
+    rdfs:comment "A pointer to another, functionally similar product (or multiple products)." .
+
+
+landrs:depth a rdf:Property ;
+    rdfs:label "depth" ;
+    rdfs:subClassOf schema:depth ;
+    dct:source <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms> ;
+    schema:domainIncludes landrs:Product;
+    schema:rangeIncludes schema:Distance,
+        schema:QuantitativeValue ;
+    rdfs:comment "The depth of the item." .
+
+landrs:height a rdf:Property ;
+    rdfs:label "height" ;
+    rdfs:subPropertyOf schema:height ;
+    schema:domainIncludes landrs:Product ;
+    schema:rangeIncludes schema:Distance,
+        schema:QuantitativeValue ;
+    rdfs:comment "The height of the item." .
+
+landrs:manufacturer a rdf:Property ;
+    rdfs:label "manufacturer" ;
+    rdfs:subPropertyOf schema:manufacturer ;
+    schema:domainIncludes schema:Product ;
+    schema:rangeIncludes schema:Organization ;
+    rdfs:comment "The manufacturer of the product." .
+
+landrs:material a rdf:Property ;
+    rdfs:label "material" ;
+    rdfs:subPropertyOf schema:material ;
+    schema:domainIncludes landrs:Product ;
+    schema:rangeIncludes landrs:Product,
+        schema:Text,
+        schema:URL ;
+    rdfs:comment "A material that something is made from, e.g. leather, wool, cotton, paper." .
+
+landrs:model a rdf:Property ;
+    rdfs:label "model" ;
+    rdfs:subClassOf schema:model ;
+    schema:domainIncludes landrs:Product ;
+    schema:rangeIncludes landrs:ProductModel,
+        schema:Text ;
+    rdfs:comment "The model of the product. Use with the URL of a ProductModel or a textual representation of the model identifier. The URL of the ProductModel can be from an external source. It is recommended to additionally provide strong product identifiers via the gtin8/gtin13/gtin14 and mpn properties." .
+
+landrs:mpn a rdf:Property ;
+    rdfs:label "mpn" ;
+    rdfs:subPropertyOf schema:mpn ;
+    dct:source <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms> ;
+    schema:domainIncludes schema:Demand,
+        schema:Offer,
+        landrs:Product ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment "The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers." .
+
+landrs:weight a rdf:Property ;
+    rdfs:label "weight" ;
+    rdfs:subPropertyOf schema:weight ;
+    dct:source <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms> ;
+    schema:domainIncludes landrs:Product ;
+    schema:rangeIncludes schema:QuantitativeValue ;
+    rdfs:comment "The weight of the product or person." .
+
+landrs:width a rdf:Property ;
+    rdfs:label "width" ;
+    rdfs:subPropertyOf schema:width ;
+    schema:domainIncludes landrs:Product,
+    schema:rangeIncludes schema:Distance,
+        schema:QuantitativeValue ;
+    rdfs:comment "The width of the item." .

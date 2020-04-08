@@ -2,6 +2,7 @@
 @prefix atm: <https://data.nasa.gov/ontologies/atmonto/ATM#> .
 @prefix aero: <https://semantics.aero/pages/swim-vocabulary#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix cdt: <http://w3id.org/lindt/custom_datatypes#> .
 @prefix cor: <http://purl.org/ieee1872-owl/cora-bare#>.
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
@@ -16,6 +17,7 @@
 @prefix pav:  <http://purl.org/pav/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix s3n: <http://w3id.org/s3n/> .
 @prefix schema: <http://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
@@ -24,10 +26,14 @@
 @prefix ssn-system: <http://www.w3.org/ns/ssn/systems/> .
 @prefix voaf: <http://purl.org/vocommons/voaf#> .
 @prefix td: <https://www.w3.org/2019/wot/td#> .
+@prefix tern-ssn: <https://w3id.org/tern/ontologies/ssn/> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix void: <http://rdfs.org/ns/void#> .
+@prefix vsso: <http://automotive.eurecom.fr/vsso#> .
 @prefix wd: <http://www.wikidata.org/entity/> .
+@prefix wdt: <http://www.wikidata.org/prop/direct/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
 
 @prefix cpo: <http://daselab.org/ContextualizedWinstonPartWhole#> .
 @prefix po: <http://daselab.org/WinstonPartWhole#> .
@@ -82,8 +88,8 @@ landrs:Thing a rdfs:Class ;
 
 landrs:Event a rdfs:Class ;
     rdfs:label "Event"@en ;
-    rdfs:comment "An event happening at a certain time and location, such as a concert, lecture, or festival. Ticketing information may be added via the <a class=\"localLink\" href=\"http://schema.org/offers\">offers</a> property. Repeated events may be structured as separate Event objects."@en ;
-    rdfs:subClassOf schema:Thing ;
+    rdfs:comment "An event happening at a certain time and location, such as a concert, lecture, or festival. Ticketing information may be added via the offers property. Repeated events may be structured as separate Event objects."@en ;
+    rdfs:subClassOf landrs:Thing ;
     owl:equivalentClass dctype:Event ;
     owl:equivalentClass schema:Event .
 
@@ -92,7 +98,7 @@ landrs:Intangible a rdfs:Class ;
     schema:sameAs schema:Intangible ;
     owl:equivalentClass schema:Intangible ;
     rdfs:comment "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc." ;
-    rdfs:subClassOf schema:Thing .
+    rdfs:subClassOf landrs:Thing .
 
 landrs:Product a rdfs:Class ;
   rdfs:label "Product"@en ;
@@ -100,14 +106,12 @@ landrs:Product a rdfs:Class ;
   rdfs:comment "Any offered product or service. For example: a pair of shoes; a concert ticket; the rental of a car; a haircut; or an episode of a TV show streamed online."@en ;
   owl:equivalentClass schema:Product ;
   schema:sameAs schema:Product ;
-  rdfs:subClassOf landrs:Thing ;
-  rdfs:subClassOf schema:Thing .
+  rdfs:subClassOf landrs:Thing .
 
 landrs:ProductModel a rdfs:Class ;
   rdfs:label "ProductModel" ;
   dcterms:alternative:source <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass> ;
   rdfs:comment "A datasheet or vendor specification of a product (in the sense of a prototypical description)." ;
-  rdfs:subClassOf schema:Product ;
   rdfs:subClassOf landrs:Product ;
   schema:sameAs schema:ProductModel ;
   owl:equivalentClass schema:ProductModel .
@@ -118,7 +122,6 @@ landrs:QuantitativeValue a rdfs:Class ;
     owl:equivalentClass schema:QuantitativeValue ;
     dcterms:source <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass> ;
     rdfs:comment "A point value or interval for product characteristics and other purposes." ;
-    rdfs:subClassOf schema:StructuredValue ;
     rdfs:subClassOf landrs:StructuredValue .
 
 landrs:PropertyValue a rdfs:Class ;
@@ -128,7 +131,6 @@ landrs:PropertyValue a rdfs:Class ;
     dcterms:source <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass> ;
     rdfs:comment """A property-value pair, e.g. representing a feature of a product or place. Use the 'name' property for the name of the property. If there is an additional human-readable version of the value, put that into the 'description' property.<br/><br/>
 Always use specific schema.org properties when a) they exist and b) you can populate them. Using PropertyValue as a substitute will typically not trigger the same effect as using the original, specific property.""" ;
-    rdfs:subClassOf schema:StructuredValue ;
     rdfs:subClassOf landrs:StructuredValue .
 
 landrs:StructuredValue a rdfs:Class ;
@@ -136,17 +138,47 @@ landrs:StructuredValue a rdfs:Class ;
     schema:sameAs schema:StructuredValue ;
     owl:equivalentClass schema:StructuredValue ;
     rdfs:comment "Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing." ;
-    rdfs:subClassOf schema:Intangible .
+    rdfs:subClassOf landrs:Intangible .
 
 
 landrs:Vehicle a rdfs:Class ;
   rdfs:label "Vehicle"@en ;
   rdfs:comment "A vehicle is a device that is designed or used to transport people or cargo over land, water, air, or through space."@en ;
-  rdfs:subClassOf schema:Product ;
   rdfs:subClassOf landrs:Product ;
+  rdfs:subClassOf td:Thing ;
   schema:sameAs schema:Vehicle ;
   owl:equivalentClass schema:Vehicle .
 
+# Classes added by VSSO Vehicle Sensors Ontology
+landrs:Branch a rdfs:Class, owl:Class;
+  schema:sameAs vsso:Branch ;
+  rdfs:label "Branch"@en;
+  rdfs:comment "Branch of the vehicle. Either a component (Body, Chassis...) or the complete vehicle"@en ;
+  rdfs:subClassOf landrs:Component .
+
+# General signal class.
+landrs:Signal a rdfs:Class, owl:Class ;
+  rdfs:label "Signal"@en ;
+  rdfs:comment "Signals protocol used by a vehicle such as Mavlink or VSS" ;
+  rdfs:subClassOf td:PropertyAffordance .
+
+landrs:SignalProtocol a rdfs:Class, owl:Class ;
+  rdfs:label "Signal Protocol"@en ;
+  rdfs:comment "Type of signal protocol used in the vehicls such as MAVLink or VSS" .
+
+
+landrs:ObservableSignal a rdfs:Class, owl:Class;
+  rdfs:subClassOf sosa:ObservableProperty;
+  schema:sameAs vsso:ObservableSignal ;
+  rdfs:label "Observable signal"@en;
+  rdfs:comment "All observable signals that can dynamically be updated by the vehicle"@en.
+
+landrs:ActuableSignal a rdfs:Class, owl:Class;
+  rdfs:subClassOf sosa:ActuableProperty;
+  schema:sameAs vsso:ObservableSignal ;
+  rdfs:subClassOf td:ActionAffordance ;
+  rdfs:label "Actuable signal"@en;
+  rdfs:comment "All actuable signals that can dynamically be updated by the vehicle"@en.
 
 
 ### Classes derived from SWARMs
@@ -155,8 +187,8 @@ landrs:AerialVehicle a rdfs:Class ;
   rdfs:comment "A machine that is able to fly by gaining support from the air other than the reactions of the air against the earth’s surface" ;
   rdfs:comment "Synonym with Aircraft" ;
   rdfs:subClassOf landrs:Vehicle ;
-  owl:equivalentClass wd:Q11436 ;
-  owl:equivalentClass eqp:Aircraft .
+  rdfs:subClassOf wd:Q11436 ;
+  rdfs:subClassOf eqp:Aircraft .
 
 
 landrs:UnderwaterVehicle a rdfs:Class ;
@@ -203,8 +235,8 @@ landrs:Robot a rdfs:Class ;
   rdfs:label "Robot"@en;
   rdfs:comment "Mechanical or virtual artificial agent carrying out physical activities"@en ;
   rdfs:subClassOf landrs:Product ;
-  owl:equivalentClass wd:Q11012 ;
-  owl:equivalentClass cor:Robot ;
+  rdfs:subClassOf wd:Q11012 ;
+  rdfs:subClassOf cor:Robot ;
   prov:wasDerivedFrom [
     a prov:Entity ;
     dcterms:source <https://www.mdpi.com/185614> ;
@@ -216,7 +248,7 @@ landrs:AutonomousRobot a rdfs:Class ;
   rdfs:label "Autonomous Robot"@en ;
   rdfs:comment "An autonomous robot is a robot that performs behaviors or tasks with a high degree of autonomy (without external influence)."@en ;
   rdfs:subClassOf landrs:Robot ;
-  owl:equivalentClass wd:Q2916098 ;
+  rdfs:subClassOf wd:Q2916098 ;
   prov:wasDerivedFrom [
     a prov:Entity ;
     dcterms:source <https://www.mdpi.com/185614> ;
@@ -295,7 +327,7 @@ landrs:AUV a rdfs:Class ;
   rdfs:comment "An autonomous underwater vehicle (AUV) is a robot that travels underwater without requiring input from an operator."@en ;
   rdfs:subClassOf landrs:UnderwaterRobot ;
   rdfs:subClassOf landrs:AutonomousRobot ;
-  owl:equivalentClass wd:Q257406 ;
+  rdfs:subClassOf wd:Q257406 ;
   prov:wasDerivedFrom [
     a prov:Entity ;
     dcterms:source <https://www.mdpi.com/185614> ;
@@ -308,7 +340,7 @@ landrs:ROV a rdfs:Class ;
   skos:altLabel "ROV"@en ;
   rdfs:subClassOf landrs:UnderwaterRobot ;
   rdfs:subClassOf landrs:MotorizedVehicle ;
-  owl:equivalentClass wd:Q618465 ;
+  rdfs:subClassOf wd:Q618465 ;
   prov:wasDerivedFrom [
     a prov:Entity ;
     dcterms:source <https://www.mdpi.com/185614> ;
@@ -322,7 +354,7 @@ landrs:UnderwaterGlider a rdfs:Class ;
   rdfs:comment "An underwater glider is a type of autonomous underwater vehicle (AUV) that employs variable-buoyancy propulsion instead of traditional propellers or thrusters. It employs variable buoyancy in a similar way to a profiling float, but unlike a float, which can only move up and down, an underwater glider is fitted with hydrofoils (underwater wings) that allow it to glide forward while descending through the water. At a certain depth, the glider switches to positive buoyancy to climb back up, and the cycle is then repeated."@en ;
   rdfs:subClassOf landrs:AUV ;
   rdfs:subClassOf landrs:UnmotorizedVehicle ;
-  owl:equivalentClass wd:Q2634473 ;
+  rdfs:subClassOf wd:Q2634473 ;
   prov:wasDerivedFrom [
     a prov:Entity ;
     dcterms:source <https://www.mdpi.com/185614> ;
@@ -350,7 +382,7 @@ landrs:USV a rdfs:Class ;
   rdfs:comment "Vehicle that operates on the surface of the water without a crew"@en ;
   rdfs:subClassOf landrs:SurfaceRobot ;
   rdfs:subClassOf landrs:MotorizedVehicle ;
-  owl:equivalentClass wd:Q4419860 ;
+  rdfs:subClassOf wd:Q4419860 ;
   prov:wasDerivedFrom [
     a prov:Entity ;
     dcterms:source <https://www.mdpi.com/185614> ;
@@ -375,7 +407,7 @@ landrs:Buoy a rdfs:Class ;
   rdfs:label "Buoy"@en ;
   rdfs:comment "A floating device that can be anchored (stationary) or allowed to drift with ocean currents."@en ;
   rdfs:subClassOf landrs:UnmotorizedVehicle ;
-  owl:equivalentClass wd:Q30026 ;
+  rdfs:subClassOf wd:Q30026 ;
   prov:wasDerivedFrom [
     a prov:Entity ;
     dcterms:source <https://www.mdpi.com/185614> ;
@@ -392,7 +424,6 @@ landrs:UxV a rdfs:Class ;
   skos:altLabel "UxV"@en ;
   rdfs:subClassOf landrs:Vehicle ;
   rdfs:subClassOf sosa:Platform ;
-  rdfs:subClassOf td:Thing ;
   owl:equivalentClass wd:Q1527901 .
 
 landrs:UAV a rdfs:Class ;
@@ -404,8 +435,10 @@ landrs:UAV a rdfs:Class ;
   rdfs:subClassOf eqp:Aircraft ;
   rdfs:subClassOf landrs:AerialRobot ;
   rdfs:subClassOf landrs:MotorizedVehicle ;
-  owl:equivalentClass wd:Q484000 ;
-  owl:equivalentClass dbr:Unmanned_aerial_vehicle ;
+  rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/6D/> ;
+  rdfs:subClassOf <https://mmisw.org/ont/ioos/platform/unmanned_aerial_vehicle> ;
+  rdfs:subClassOf wd:Q484000 ;
+  rdfs:subClassOf dbr:Unmanned_aerial_vehicle ;
   landrs:component landrs:UAS .
 
 
@@ -431,8 +464,10 @@ landrs:GroundControlStation a rdfs:Class ;
 landrs:CommunicationSystem a rdfs:Class ;
   rdfs:label "Communication System"@en ;
   rdfs:comment "Communication System, frequency and protocol by which a UxS communicates. For example Civilian UAV communications systems typically operate on frequencies of 2.4 GHz and 5.8 GHz. UAV communications systems work by using one frequency to control the aerial vehicle from the ground via a remote pilot while the other frequency is used to beam or relay First-Person View (FPV) video. By utilizing high-quality, reliable communications links, civilian UAVs are able to relay aerial visuals and data to those on the ground with ease, while still remaining in flight."@en ;
-  rdfs:subclassOf landrs:Product ;
-  rdfs:subclassOf wd:Q31479975 ;
+  rdfs:subClassOf landrs:Product ;
+  rdfs:subClassOf ssn:System ;
+  rdfs:subClassOf wd:Q31479975 ;
+  rdfs:subClassOf s3n:CommunicatingSystem ;
   landrs:component landrs:UAS ;
   landrs:isPartOf [
     rdf:type landrs:Component, landrs:UAVComponent ;
@@ -487,6 +522,7 @@ landrs:Autopilot a rdfs:Class ;
   rdfs:subClassOf aero:software-agent ;
   rdfs:subClassOf  eqp:AircraftNavigationSystem ;
   rdfs:subClassOf schema:SoftwareApplicaion ;
+  rdfs:subClassOf s3n:Algorithm ;
   rdfs:label "Autopilot"@en ;
   rdfs:comment "Software to control and navigate an aircraft"@en ;
   skos:altLabel "Flight Controller"@en ;
@@ -508,6 +544,12 @@ landrs:Payload a rdfs:Class ;
     landrs:hasWhole landrs:UAS
   ] .
 
+landrs:SmartSensor a rdfs:Class, owl:Class ;
+  rdfs:label "Smart Sensor"@en;
+  rdfs:comment "Smart-Sensor - A SmartSensor is composed of one or more Sensors together with a MicroController that implements different Algorithms, and makes Algorithm Executions on the result of the Observations these Sensors make to output a resulting value for some Indicator. This value may then be communicated by some CommunicatingSystemCommunicatingSystem."@en;
+  schema:sameAs s3n:SmartSensor ;
+  rdfs:subClassOf ssn:System ;
+  rdfs:subClassOf sosa:Platform .
 
 landrs:SensorPayload a rdfs:Class ;
   rdfs:label "Sensor Payload"@en ;
@@ -515,12 +557,23 @@ landrs:SensorPayload a rdfs:Class ;
   rdfs:subClassOf landrs:payload ;
   rdfs:subClassOf sosa:System .
 
+landrs:CompanionComputer a rdfs:Class ;
+  rdfs:label "Companion Computer"@en ;
+  rdfs:comment "A companion computer is a device that travels on-board the vehicle and controls/communicates with the autopilot over a low-latency link. Apps running on a companion computer can perform computationally intensive or time-sensitive tasks, and add much greater intelligence than is provided by the autopilot alone." ;
+  rdfs:subClassOf landrs:payload ;
+  rdfs:subClassOf ssn:System ;
+  rdfs:subClassOf landrs:Product ;
+  rdfs:subClassOf wd:Q944780 ;
+  rdfs:subClassOf s3n:MicroController ;
+  wdt:P279 wd:Q944780 .
 
 landrs:FlightControllerBoard a rdfs:Class ;
   rdfs:label "Flight Controller Board"@en ;
   rdfs:comment "A flight controller (FC) is a small circuit board of varying complexity. Its function is to direct the RPM of each motor in response to input. A command from the pilot for the multi-rotor to move forward is fed into the flight controller, which determines how to manipulate the motors accordingly."@en ;
+  rdfs:seeAlso <https://dronekit-python.readthedocs.io/en/latest/develop/companion-computers.html> ;
   rdfs:subClassOf landrs:Product ;
-  rdfs:subClassOf sosa:system ;
+  rdfs:subClassOf sosa:System ;
+  rdfs:subClassOf s3n:MicroController ;
   landrs:component landrs:FlightControlSystem ;
   landrs:isPartOf [
     rdf:type landrs:Component ;
@@ -559,7 +612,7 @@ landrs:hasWhole a rdf:Property, owl:ObjectProperty ;
   opla:isNativeTo <>;
   rdfs:label "hasWhole"@en ;
   rdfs:comment "Winston ODP Whole relation"@en ;
-  schema:domainIncludes landrs:component ;
+  schema:domainIncludes landrs:Component ;
   schema:rangeIncludes owl:Thing ;
   owl:equivalentProperty cpo:hasWhole ;
   schema:inverseOf landrs:isPartOf ;
@@ -709,3 +762,44 @@ landrs:width a rdf:Property ;
     schema:rangeIncludes schema:Distance,
         schema:QuantitativeValue ;
     rdfs:comment "The width of the item." .
+
+
+## Properties from VSSO
+vsso:partOfBranch a owl:ObjectProperty, owl:TransitiveProperty, rdf:Property;
+  rdfs:label "part of"@en;
+  rdfs:comment "Relationship between 2 branches where one is a component of the second"@en;
+  rdfs:domain landrs:Branch;
+  rdfs:range landrs:Branch ;
+  schema:domainIncludes landrs:Branch ;
+  schema:rangeIncludes landrs:Branch ;
+  rdfs:subPropertyOf landrs:isPartOf .
+
+landrs:hasSignal a owl:ObjectProperty, rdf:Property;
+  rdfs:label "has signal"@en;
+  rdfs:comment "Property of having signals in a branch"@en;
+  rdfs:domain vsso:Branch;
+  rdfs:range [owl:unionOf vsso:ObservableSignal, vsso:ActuableSignal] ;
+  schema:domainIncludes landrs:Branch ;
+  schema:rangeIncludes landrs:ObservableSignal, landrs:ActuableSignal .
+
+landrs:attribute a owl:ObjectProperty, rdf:Property;
+  rdfs:label "Attribute"@en;
+  schema:sameAs vsso:attribute ;
+  rdfs:comment "Attribute signals that do not change during the power cycle of a vehicle."@en;
+  rdfs:domain landrs:Branch ;
+  schema:domainIncludes landrs:Branch .
+
+landrs:componentPosition a owl:ObjectProperty, rdf:Property;
+  rdfs:label "component position"@en;
+  rdfs:comment "Position of the branch within the vehicle"@en;
+  schema:sameAs vsso:position ;
+  rdfs:domain landrs:Branch ;
+  schema:domainIncludes landrs:Branch .
+
+landrs:hasProtocol a owl:ObjectProperty, rdf:Property ;
+  rdfs:label "hasProtocol"@en;
+  rdfs:comment "Type a protocol a signal uses" ;
+  schema:domainIncludes landrs:Signal ;
+  schema:rangeIncludes landrs:signalProtocol ;
+  rdfs:domain landrs:Signal ;
+  rdfs:range landrs:SignalProtocol .

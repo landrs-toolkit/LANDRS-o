@@ -1,0 +1,1025 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+<http://automotive.eurecom.fr/vsso#partOfBranch>
+    <http://schema.org/domainIncludes> <http://schema.landrs.org/schema/Branch> ;
+    <http://schema.org/rangeIncludes> <http://schema.landrs.org/schema/Branch> ;
+    a rdf:Property, <http://www.w3.org/2002/07/owl#ObjectProperty>, <http://www.w3.org/2002/07/owl#TransitiveProperty> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "Relationship between 2 branches where one is a component of the second"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#domain> <http://daselab.org/ContextualizedWinstonPartWhole#PO-Component-Type>, <http://schema.landrs.org/schema/Branch>, <http://schema.landrs.org/schema/Component>, <http://schema.landrs.org/schema/Product>, <http://schema.landrs.org/schema/Thing>, <http://schema.org/Product>, <http://schema.org/Thing>, <http://www.w3.org/2002/07/owl#Thing>, <http://www.wikidata.org/entity/Q811909> ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "part of"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#range> <http://daselab.org/ContextualizedWinstonPartWhole#PO-Component-Type>, <http://schema.landrs.org/schema/Branch>, <http://schema.landrs.org/schema/Component>, <http://schema.landrs.org/schema/Product>, <http://schema.landrs.org/schema/Thing>, <http://schema.org/Product>, <http://schema.org/Thing>, <http://www.w3.org/2002/07/owl#Thing>, <http://www.wikidata.org/entity/Q811909> ;
+    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://automotive.eurecom.fr/vsso#partOfBranch>, <http://daselab.org/ContextualizedWinstonPartWhole#isPartOf>, <http://schema.landrs.org/schema/isPartOf> ;
+    <http://www.w3.org/2002/07/owl#equivalentProperty> <http://automotive.eurecom.fr/vsso#partOfBranch> .
+
+<http://daselab.org/ContextualizedWinstonPartWhole#PO-Component-Type>
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/Component>, <http://schema.landrs.org/schema/Product>, <http://schema.landrs.org/schema/Thing>, <http://schema.org/Product>, <http://schema.org/Thing>, <http://www.w3.org/2002/07/owl#Thing>, <http://www.wikidata.org/entity/Q811909> ;
+    <http://www.w3.org/2002/07/owl#equivalentClass> <http://schema.landrs.org/schema/Component>, <http://www.wikidata.org/entity/Q811909> .
+
+<http://daselab.org/ContextualizedWinstonPartWhole#hasWhole>
+    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://schema.landrs.org/schema/hasWhole> ;
+    <http://www.w3.org/2002/07/owl#equivalentProperty> <http://schema.landrs.org/schema/hasWhole> .
+
+<http://daselab.org/ContextualizedWinstonPartWhole#isPartOf>
+    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://schema.landrs.org/schema/isPartOf> ;
+    <http://www.w3.org/2002/07/owl#equivalentProperty> <http://schema.landrs.org/schema/isPartOf> .
+
+<http://daselab.org/WinstonPartWhole#po-component>
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/component> ;
+    <http://www.w3.org/2002/07/owl#equivalentClass> <http://schema.landrs.org/schema/component> .
+
+<http://ontologydesignpatterns.org/opla#isNativeTo>
+    a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+
+<http://ontologydesignpatterns.org/opla#reusesPatternAsTemplate>
+    a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+
+<http://purl.org/dc/dcmitype/Event>
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/Event>, <http://schema.landrs.org/schema/Thing>, <http://schema.org/Event>, <http://schema.org/Thing>, <http://www.w3.org/2002/07/owl#Thing> ;
+    <http://www.w3.org/2002/07/owl#equivalentClass> <http://schema.landrs.org/schema/Event>, <http://schema.org/Event> .
+
+<http://purl.org/dc/terms/created>
+    a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+
+<http://purl.org/dc/terms/creator>
+    a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+
+<http://purl.org/dc/terms/description>
+    a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+
+<http://purl.org/dc/terms/license>
+    a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+
+<http://purl.org/dc/terms/rights>
+    a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+
+<http://purl.org/dc/terms/title>
+    a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+
+<http://purl.org/vocab/vann/preferredNamespacePrefix>
+    a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+
+<http://purl.org/vocab/vann/preferredNamespaceUri>
+    a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+
+<http://purl.org/vocommons/voaf#Vocabulary>
+    a <http://www.w3.org/2002/07/owl#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/vocommons/voaf#Vocabulary>, <http://schema.landrs.org/schema/Thing>, <http://schema.org/Thing>, <http://www.w3.org/2002/07/owl#Thing> ;
+    <http://www.w3.org/2002/07/owl#equivalentClass> <http://purl.org/vocommons/voaf#Vocabulary> .
+
+<http://schema.landrs.org/rdf>
+    <http://ontologydesignpatterns.org/opla#reusesPatternAsTemplate> <https://raw.githubusercontent.com/cogan-shimizu-wsu/WinstonPartWhole/master/WinstonPartWhole.owl> ;
+    <http://purl.org/dc/terms/created> "2020-02-01"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    <http://purl.org/dc/terms/creator> [
+        a <http://www.w3.org/ns/prov#Agent>, <http://xmlns.com/foaf/0.1/Agent> ;
+        <http://xmlns.com/foaf/0.1/name> "LANDRS: Linked and Networked Drones"@en
+    ], [
+        a <http://schema.landrs.org/schema/Thing>, <http://schema.org/Thing>, <http://www.w3.org/2002/07/owl#Thing>, <http://www.w3.org/ns/prov#Agent>, <http://xmlns.com/foaf/0.1/Agent> ;
+        <http://xmlns.com/foaf/0.1/name> "LANDRS: Linked and Networked Drones"@en
+    ] ;
+    <http://purl.org/dc/terms/description> "This ontology is developed as part of the Sloan Funded LANDRS project to advance UxV data interoperability"@en ;
+    <http://purl.org/dc/terms/license> <https://creativecommons.org/publicdomain/zero/1.0/> ;
+    <http://purl.org/dc/terms/rights> "Copyright 2020 University of Notre Dame." ;
+    <http://purl.org/dc/terms/title> "Landrs Schema"@en ;
+    <http://purl.org/vocab/vann/preferredNamespacePrefix> "landrs" ;
+    <http://purl.org/vocab/vann/preferredNamespaceUri> "http://schema.landrs.org/schema/" ;
+    <http://schema.org/versionInfo> "0.0.1" ;
+    a <http://purl.org/vocommons/voaf#Vocabulary>, <http://schema.landrs.org/schema/Thing>, <http://schema.org/Thing>, <http://www.w3.org/2002/07/owl#Ontology>, <http://www.w3.org/2002/07/owl#Thing>, <http://www.w3.org/ns/prov#Entity> ;
+    <http://www.w3.org/2002/07/owl#versionInfo> "0.0.1" .
+
+<http://schema.landrs.org/schema/ASV>
+    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "Vehicle that operates on the surface of the water without a crew"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Autonomous Surface Vehicle"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/ieee1872-owl/cora-bare#Robot>, <http://schema.landrs.org/schema/AutonomousRobot>, <http://schema.landrs.org/schema/Product>, <http://schema.landrs.org/schema/Robot>, <http://schema.landrs.org/schema/RoboticVehicle>, <http://schema.landrs.org/schema/SurfaceRobot>, <http://schema.landrs.org/schema/SurfaceVehicle>, <http://schema.landrs.org/schema/Thing>, <http://schema.landrs.org/schema/Vehicle>, <http://schema.org/Product>, <http://schema.org/Thing>, <http://schema.org/Vehicle>, <http://www.w3.org/2002/07/owl#Thing>, <http://www.wikidata.org/entity/Q11012>, <http://www.wikidata.org/entity/Q2916098>, <http://www.wikidata.org/entity/Q4810574> ;
+    <http://www.w3.org/2004/02/skos/core#altLabel> "ASV" ;
+    <http://www.w3.org/ns/prov#wasDerivedFrom> [
+        <http://purl.org/dc/terms/source> <https://www.mdpi.com/185614> ;
+        <http://purl.org/dc/terms/title> "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en ;
+        <http://schema.org/identifier> "https://dx.doi.org/10.3390%2Fs17030569" ;
+        a <http://www.w3.org/ns/prov#Entity>
+    ], [
+        <http://purl.org/dc/terms/source> <https://www.mdpi.com/185614> ;
+        <http://purl.org/dc/terms/title> "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en ;
+        <http://schema.org/identifier> "https://dx.doi.org/10.3390%2Fs17030569" ;
+        a <http://www.w3.org/ns/prov#Entity>
+    ] .
+
+<http://schema.landrs.org/schema/AUV>
+    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "An autonomous underwater vehicle (AUV) is a robot that travels underwater without requiring input from an operator."@en ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Autonomous Underwater Vehicle"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/ieee1872-owl/cora-bare#Robot>, <http://schema.landrs.org/schema/AutonomousRobot>, <http://schema.landrs.org/schema/Product>, <http://schema.landrs.org/schema/Robot>, <http://schema.landrs.org/schema/RoboticVehice>, <http://schema.landrs.org/schema/Thing>, <http://schema.landrs.org/schema/UnderwaterRobot>, <http://schema.landrs.org/schema/UnderwaterVehicle>, <http://schema.landrs.org/schema/Vehicle>, <http://schema.org/Product>, <http://schema.org/Thing>, <http://schema.org/Vehicle>, <http://www.w3.org/2002/07/owl#Thing>, <http://www.wikidata.org/entity/Q11012>, <http://www.wikidata.org/entity/Q257406>, <http://www.wikidata.org/entity/Q2916098> ;
+    <http://www.w3.org/2004/02/skos/core#altLabel> "AUV"@en ;
+    <http://www.w3.org/ns/prov#wasDerivedFrom> [
+        <http://purl.org/dc/terms/source> <https://www.mdpi.com/185614> ;
+        <http://purl.org/dc/terms/title> "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en ;
+        <http://schema.org/identifier> "https://dx.doi.org/10.3390%2Fs17030569" ;
+        a <http://www.w3.org/ns/prov#Entity>
+    ], [
+        <http://purl.org/dc/terms/source> <https://www.mdpi.com/185614> ;
+        <http://purl.org/dc/terms/title> "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en ;
+        <http://schema.org/identifier> "https://dx.doi.org/10.3390%2Fs17030569" ;
+        a <http://www.w3.org/ns/prov#Entity>
+    ] .
+
+<http://schema.landrs.org/schema/ActuableSignal>
+    <http://schema.org/sameAs> <http://automotive.eurecom.fr/vsso#ObservableSignal> ;
+    a <http://www.w3.org/2000/01/rdf-schema#Class>, <http://www.w3.org/2002/07/owl#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "All actuable signals that can dynamically be updated by the vehicle"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Actuable signal"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/ActuableProperty>, <https://www.w3.org/2019/wot/td#ActionAffordance> .
+
+<http://schema.landrs.org/schema/AerialRobot>
+    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "Aerial Robots are vehicles that move autonomously in the air."@en ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Aerial Robot"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/AerialVehicle>, <http://schema.landrs.org/schema/Product>, <http://schema.landrs.org/schema/RoboticVehice>, <http://schema.landrs.org/schema/Thing>, <http://schema.landrs.org/schema/Vehicle>, <http://schema.org/Product>, <http://schema.org/Thing>, <http://schema.org/Vehicle>, <http://www.wikidata.org/entity/Q11436>, <https://data.nasa.gov/ontologies/atmonto/equipment#Aircraft>, <https://www.w3.org/2019/wot/td#Thing> .
+
+<http://schema.landrs.org/schema/AerialVehicle>
+    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "A machine that is able to fly by gaining support from the air other than the reactions of the air against the earth’s surface", "Synonym with Aircraft" ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Aerial Vehicle"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/Product>, <http://schema.landrs.org/schema/Thing>, <http://schema.landrs.org/schema/Vehicle>, <http://schema.org/Product>, <http://schema.org/Thing>, <http://schema.org/Vehicle>, <http://www.wikidata.org/entity/Q11436>, <https://data.nasa.gov/ontologies/atmonto/equipment#Aircraft>, <https://www.w3.org/2019/wot/td#Thing> .
+
+<http://schema.landrs.org/schema/Airframe>
+    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "The mechanical structure of an aircraft is known as the airframe. This structure is typically considered to include the fuselage undercarriage empennage and wings and exclude the propulsion system."@en ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Airframe"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/Body>, <http://schema.landrs.org/schema/Product>, <http://schema.landrs.org/schema/Thing>, <http://schema.org/Product>, <http://schema.org/Thing>, <http://www.w3.org/2002/07/owl#Thing>, <http://www.wikidata.org/entity/Q222946> ;
+    <http://www.w3.org/2002/07/owl#equivalentClass> <http://www.wikidata.org/entity/Q222946> .
+
+<http://schema.landrs.org/schema/AutomatedRobot>
+    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Automated Robot"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/ieee1872-owl/cora-bare#Robot>, <http://schema.landrs.org/schema/Product>, <http://schema.landrs.org/schema/Robot>, <http://schema.landrs.org/schema/Thing>, <http://schema.org/Product>, <http://schema.org/Thing>, <http://www.w3.org/2002/07/owl#Thing>, <http://www.wikidata.org/entity/Q11012> ;
+    <http://www.w3.org/ns/prov#wasDerivedFrom> [
+        <http://purl.org/dc/terms/source> <https://www.mdpi.com/185614> ;
+        <http://purl.org/dc/terms/title> "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en ;
+        <http://schema.org/identifier> "https://dx.doi.org/10.3390%2Fs17030569" ;
+        a <http://www.w3.org/ns/prov#Entity>
+    ], [
+        <http://purl.org/dc/terms/source> <https://www.mdpi.com/185614> ;
+        <http://purl.org/dc/terms/title> "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en ;
+        <http://schema.org/identifier> "https://dx.doi.org/10.3390%2Fs17030569" ;
+        a <http://www.w3.org/ns/prov#Entity>
+    ] .
+
+<http://schema.landrs.org/schema/AutonomousRobot>
+    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "An autonomous robot is a robot that performs behaviors or tasks with a high degree of autonomy (without external influence)."@en ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Autonomous Robot"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/ieee1872-owl/cora-bare#Robot>, <http://schema.landrs.org/schema/Product>, <http://schema.landrs.org/schema/Robot>, <http://schema.landrs.org/schema/Thing>, <http://schema.org/Product>, <http://schema.org/Thing>, <http://www.w3.org/2002/07/owl#Thing>, <http://www.wikidata.org/entity/Q11012>, <http://www.wikidata.org/entity/Q2916098> ;
+    <http://www.w3.org/ns/prov#wasDerivedFrom> [
+        <http://purl.org/dc/terms/source> <https://www.mdpi.com/185614> ;
+        <http://purl.org/dc/terms/title> "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en ;
+        <http://schema.org/identifier> "https://dx.doi.org/10.3390%2Fs17030569" ;
+        a <http://www.w3.org/ns/prov#Entity>
+    ], [
+        <http://purl.org/dc/terms/source> <https://www.mdpi.com/185614> ;
+        <http://purl.org/dc/terms/title> "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en ;
+        <http://schema.org/identifier> "https://dx.doi.org/10.3390%2Fs17030569" ;
+        a <http://www.w3.org/ns/prov#Entity>
+    ] .
+
+<http://schema.landrs.org/schema/Autopilot>
+    <http://daselab.org/ContextualizedWinstonPartWhole#isPartOf> _:448 ;
+    <http://schema.landrs.org/schema/component> <http://schema.landrs.org/schema/FlightControlSystem> ;
+    <http://schema.landrs.org/schema/isPartOf> [
+        <http://schema.landrs.org/schema/hasWhole> <http://schema.landrs.org/schema/FlightControlSystem> ;
+        a <http://schema.landrs.org/schema/Component>
+    ], _:448 ;
+    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "Software to control and navigate an aircraft"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Autopilot"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/SoftwareApplicaion>, <http://w3id.org/s3n/Algorithm>, <https://data.nasa.gov/ontologies/atmonto/equipment#AircraftNavigationSystem>, <https://semantics.aero/pages/swim-vocabulary#software-agent> ;
+    <http://www.w3.org/2004/02/skos/core#altLabel> "Flight Controller"@en, "Flight Controller Board"@en .
+
+<http://schema.landrs.org/schema/Body>
+    <http://daselab.org/ContextualizedWinstonPartWhole#isPartOf> _:430 ;
+    <http://schema.landrs.org/schema/component> <http://schema.landrs.org/schema/UxV> ;
+    <http://schema.landrs.org/schema/isPartOf> [
+        <http://schema.landrs.org/schema/hasWhole> <http://schema.landrs.org/schema/UxV> ;
+        a <http://schema.landrs.org/schema/Component>, <http://schema.landrs.org/schema/UAVComponent>
+    ], _:430 ;
+    a <http://daselab.org/ContextualizedWinstonPartWhole#PO-Component-Type>, <http://schema.landrs.org/schema/Component>, <http://schema.landrs.org/schema/Product>, <http://schema.landrs.org/schema/Thing>, <http://schema.landrs.org/schema/UAVComponent>, <http://schema.org/Product>, <http://schema.org/Thing>, <http://www.w3.org/2000/01/rdf-schema#Class>, <http://www.w3.org/2002/07/owl#Thing>, <http://www.wikidata.org/entity/Q28816538>, <http://www.wikidata.org/entity/Q811909> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "Body of the UxV for a UAV this would be an airframe"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "UxV Body"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/Product>, <http://schema.landrs.org/schema/Thing>, <http://schema.org/Product>, <http://schema.org/Thing>, <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://schema.landrs.org/schema/Branch>
+    <http://schema.org/sameAs> <http://automotive.eurecom.fr/vsso#Branch> ;
+    a <http://www.w3.org/2000/01/rdf-schema#Class>, <http://www.w3.org/2002/07/owl#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "Branch of the vehicle. Either a component (Body Chassis...) or the complete vehicle"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Branch"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://daselab.org/ContextualizedWinstonPartWhole#PO-Component-Type>, <http://schema.landrs.org/schema/Component>, <http://schema.landrs.org/schema/Product>, <http://schema.landrs.org/schema/Thing>, <http://schema.org/Product>, <http://schema.org/Thing>, <http://www.w3.org/2002/07/owl#Thing>, <http://www.wikidata.org/entity/Q811909> .
+
+<http://schema.landrs.org/schema/Buoy>
+    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "A floating device that can be anchored (stationary) or allowed to drift with ocean currents."@en ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Buoy"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/Product>, <http://schema.landrs.org/schema/Thing>, <http://schema.landrs.org/schema/UnmotorizedVehicle>, <http://schema.landrs.org/schema/Vehicle>, <http://schema.org/Product>, <http://schema.org/Thing>, <http://schema.org/Vehicle>, <http://www.wikidata.org/entity/Q30026>, <https://www.w3.org/2019/wot/td#Thing> ;
+    <http://www.w3.org/ns/prov#wasDerivedFrom> [
+        <http://purl.org/dc/terms/source> <https://www.mdpi.com/185614> ;
+        <http://purl.org/dc/terms/title> "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en ;
+        <http://schema.org/identifier> "https://dx.doi.org/10.3390%2Fs17030569" ;
+        a <http://www.w3.org/ns/prov#Entity>
+    ], [
+        <http://purl.org/dc/terms/source> <https://www.mdpi.com/185614> ;
+        <http://purl.org/dc/terms/title> "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en ;
+        <http://schema.org/identifier> "https://dx.doi.org/10.3390%2Fs17030569" ;
+        a <http://www.w3.org/ns/prov#Entity>
+    ] .
+
+<http://schema.landrs.org/schema/CommunicationSystem>
+    <http://daselab.org/ContextualizedWinstonPartWhole#isPartOf> _:447 ;
+    <http://schema.landrs.org/schema/component> <http://schema.landrs.org/schema/UAS> ;
+    <http://schema.landrs.org/schema/isPartOf> [
+        <http://schema.landrs.org/schema/hasWhole> <http://schema.landrs.org/schema/UAS> ;
+        a <http://schema.landrs.org/schema/Component>, <http://schema.landrs.org/schema/UAVComponent>
+    ], _:447 ;
+    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "Communication System frequency and protocol by which a UxS communicates. For example Civilian UAV communications systems typically operate on frequencies of 2.4 GHz and 5.8 GHz. UAV communications systems work by using one frequency to control the aerial vehicle from the ground via a remote pilot while the other frequency is used to beam or relay First-Person View (FPV) video. By utilizing high-quality reliable communications links civilian UAVs are able to relay aerial visuals and data to those on the ground with ease while still remaining in flight."@en ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Communication System"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/Product>, <http://schema.landrs.org/schema/Thing>, <http://schema.org/Product>, <http://schema.org/Thing>, <http://w3id.org/s3n/CommunicatingSystem>, <http://www.w3.org/2002/07/owl#Thing>, <http://www.w3.org/ns/ssn/System>, <http://www.wikidata.org/entity/Q31479975> .
+
+<http://schema.landrs.org/schema/CompanionComputer>
+    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "A companion computer is a device that travels on-board the vehicle and controls/communicates with the autopilot over a low-latency link. Apps running on a companion computer can perform computationally intensive or time-sensitive tasks and add much greater intelligence than is provided by the autopilot alone." ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Companion Computer"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/Product>, <http://schema.landrs.org/schema/Thing>, <http://schema.landrs.org/schema/payload>, <http://schema.org/Product>, <http://schema.org/Thing>, <http://w3id.org/s3n/MicroController>, <http://www.w3.org/2002/07/owl#Thing>, <http://www.w3.org/ns/ssn/System>, <http://www.wikidata.org/entity/Q944780> ;
+    <http://www.wikidata.org/prop/direct/P279> <http://www.wikidata.org/entity/Q944780> .
+
+<http://schema.landrs.org/schema/Component>
+    <http://ontologydesignpatterns.org/opla#isNativeTo> <https://raw.githubusercontent.com/cogan-shimizu-wsu/ContextualizedWinstonPartWhole/master/ContextualizedWinstonPartWhole.owl> ;
+    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "Winston Part-Whole PO-Component-Type to enumerate composition of a UxV"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Component"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://daselab.org/ContextualizedWinstonPartWhole#PO-Component-Type>, <http://schema.landrs.org/schema/Product>, <http://schema.landrs.org/schema/Thing>, <http://schema.org/Product>, <http://schema.org/Thing>, <http://www.w3.org/2002/07/owl#Thing>, <http://www.wikidata.org/entity/Q811909> ;
+    <http://www.w3.org/2002/07/owl#equivalentClass> <http://daselab.org/ContextualizedWinstonPartWhole#PO-Component-Type>, <http://www.wikidata.org/entity/Q811909> .
+
+<http://schema.landrs.org/schema/Event>
+    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "An event happening at a certain time and location such as a concert lecture or festival. Ticketing information may be added via the offers property. Repeated events may be structured as separate Event objects."@en ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Event"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/dc/dcmitype/Event>, <http://schema.landrs.org/schema/Thing>, <http://schema.org/Event>, <http://schema.org/Thing>, <http://www.w3.org/2002/07/owl#Thing> ;
+    <http://www.w3.org/2002/07/owl#equivalentClass> <http://purl.org/dc/dcmitype/Event>, <http://schema.org/Event> .
+
+<http://schema.landrs.org/schema/FlightControlSystem>
+    <http://daselab.org/ContextualizedWinstonPartWhole#isPartOf> _:448, _:450 ;
+    <http://schema.landrs.org/schema/isPartOf> _:448, _:450 ;
+    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "Aircraft system utilized to control flight surfaces"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Flight Control System"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.wikidata.org/entity/Q11481471> ;
+    <http://www.w3.org/2002/07/owl#equivalentClass> <http://www.wikidata.org/entity/Q11481471> .
+
+<http://schema.landrs.org/schema/FlightControllerBoard>
+    <http://daselab.org/ContextualizedWinstonPartWhole#isPartOf> _:450 ;
+    <http://schema.landrs.org/schema/component> <http://schema.landrs.org/schema/FlightControlSystem> ;
+    <http://schema.landrs.org/schema/isPartOf> [
+        <http://schema.landrs.org/schema/hasWhole> <http://schema.landrs.org/schema/FlightControlSystem> ;
+        a <http://schema.landrs.org/schema/Component>
+    ], _:450 ;
+    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "A flight controller (FC) is a small circuit board of varying complexity. Its function is to direct the RPM of each motor in response to input. A command from the pilot for the multi-rotor to move forward is fed into the flight controller which determines how to manipulate the motors accordingly."@en ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Flight Controller Board"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <https://dronekit-python.readthedocs.io/en/latest/develop/companion-computers.html> ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/Product>, <http://schema.landrs.org/schema/Thing>, <http://schema.org/Product>, <http://schema.org/Thing>, <http://w3id.org/s3n/MicroController>, <http://www.w3.org/2002/07/owl#Thing>, <http://www.w3.org/ns/sosa/System> .
+
+<http://schema.landrs.org/schema/GroundControlStation>
+    <http://daselab.org/ContextualizedWinstonPartWhole#isPartOf> _:446 ;
+    <http://schema.landrs.org/schema/component> <http://schema.landrs.org/schema/UAS> ;
+    <http://schema.landrs.org/schema/isPartOf> [
+        <http://schema.landrs.org/schema/hasWhole> <http://schema.landrs.org/schema/UAS> ;
+        a <http://schema.landrs.org/schema/Component>
+    ], _:446 ;
+    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "A ground control station (GCS) is a land- or sea-based control center that provides the facilities for human control of Unmanned Aerial Vehicles (UAVs or drones)."@en ;
+    <http://www.w3.org/2000/01/rdf-schema#equivalentClass> <http://www.wikidata.org/entity/Q4118990> ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Ground Control Station"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso> <https://en.wikipedia.org/wiki/Ground_control_station> ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/Product>, <http://schema.landrs.org/schema/Thing>, <http://schema.org/Product>, <http://schema.org/Thing>, <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://schema.landrs.org/schema/Intangible>
+    <http://schema.org/sameAs> <http://schema.org/Intangible> ;
+    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities structured values etc." ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Intangible" ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/Thing>, <http://schema.org/Intangible>, <http://schema.org/Thing>, <http://www.w3.org/2002/07/owl#Thing> ;
+    <http://www.w3.org/2002/07/owl#equivalentClass> <http://schema.org/Intangible> .
+
+<http://schema.landrs.org/schema/Mission>
+    a <http://purl.org/dc/dcmitype/Event>, <http://schema.landrs.org/schema/Event>, <http://schema.landrs.org/schema/Thing>, <http://schema.org/Event>, <http://schema.org/Thing>, <http://www.w3.org/2000/01/rdf-schema#Class>, <http://www.w3.org/2002/07/owl#Thing>, <https://data.nasa.gov/ontologies/atmonto/ATM#Flight> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "Event associated with the deployment of a UxV"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Mission"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.wikidata.org/entity/Q13425175> .
+
+<http://schema.landrs.org/schema/MotorizedVehicle>
+    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Motorized Vehicle"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/Product>, <http://schema.landrs.org/schema/Thing>, <http://schema.landrs.org/schema/Vehicle>, <http://schema.org/Product>, <http://schema.org/Thing>, <http://schema.org/Vehicle>, <https://www.w3.org/2019/wot/td#Thing> ;
+    <http://www.w3.org/ns/prov#wasDerivedFrom> [
+        <http://purl.org/dc/terms/source> <https://www.mdpi.com/185614> ;
+        <http://purl.org/dc/terms/title> "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en ;
+        <http://schema.org/identifier> "https://dx.doi.org/10.3390%2Fs17030569" ;
+        a <http://www.w3.org/ns/prov#Entity>
+    ], [
+        <http://purl.org/dc/terms/source> <https://www.mdpi.com/185614> ;
+        <http://purl.org/dc/terms/title> "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en ;
+        <http://schema.org/identifier> "https://dx.doi.org/10.3390%2Fs17030569" ;
+        a <http://www.w3.org/ns/prov#Entity>
+    ] .
+
+<http://schema.landrs.org/schema/ObservableSignal>
+    <http://schema.org/sameAs> <http://automotive.eurecom.fr/vsso#ObservableSignal> ;
+    a <http://www.w3.org/2000/01/rdf-schema#Class>, <http://www.w3.org/2002/07/owl#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "All observable signals that can dynamically be updated by the vehicle"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Observable signal"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/ObservableProperty> .
+
+<http://schema.landrs.org/schema/Payload>
+    <http://daselab.org/ContextualizedWinstonPartWhole#isPartOf> _:449 ;
+    <http://schema.landrs.org/schema/component> <http://schema.landrs.org/schema/UAS> ;
+    <http://schema.landrs.org/schema/isPartOf> [
+        <http://schema.landrs.org/schema/hasWhole> <http://schema.landrs.org/schema/UAS> ;
+        a <http://schema.landrs.org/schema/Component>
+    ], _:449 ;
+    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "Unmanned vehicle payload"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Payload"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.wikidata.org/entity/Q319224> .
+
+<http://schema.landrs.org/schema/Product>
+    <http://purl.org/dc/terms/source> <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms> ;
+    <http://schema.org/sameAs> <http://schema.org/Product> ;
+    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "Any offered product or service. For example: a pair of shoes; a concert ticket; the rental of a car; a haircut; or an episode of a TV show streamed online."@en ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Product"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/Thing>, <http://schema.org/Product>, <http://schema.org/Thing>, <http://www.w3.org/2002/07/owl#Thing> ;
+    <http://www.w3.org/2002/07/owl#equivalentClass> <http://schema.org/Product> .
+
+<http://schema.landrs.org/schema/ProductModel>
+    <http://purl.org/dc/terms/alternative:source> <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass> ;
+    <http://schema.org/sameAs> <http://schema.org/ProductModel> ;
+    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "A datasheet or vendor specification of a product (in the sense of a prototypical description)." ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "ProductModel" ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/Product>, <http://schema.landrs.org/schema/Thing>, <http://schema.org/Product>, <http://schema.org/ProductModel>, <http://schema.org/Thing>, <http://www.w3.org/2002/07/owl#Thing> ;
+    <http://www.w3.org/2002/07/owl#equivalentClass> <http://schema.org/ProductModel> .
+
+<http://schema.landrs.org/schema/PropertyValue>
+    <http://purl.org/dc/terms/source> <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass> ;
+    <http://schema.org/sameAs> <http://schema.org/PropertyValue> ;
+    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> """A property-value pair e.g. representing a feature of a product or place. Use the 'name' property for the name of the property. If there is an additional human-readable version of the value put that into the 'description' property.<br/><br/>
+Always use specific schema.org properties when a) they exist and b) you can populate them. Using PropertyValue as a substitute will typically not trigger the same effect as using the original specific property.""", "A property-value pair e.g. representing a feature of a product or place. Use the 'name' property for the name of the property. If there is an additional human-readable version of the value put that into the 'description' property.<br/><br/>Always use specific schema.org properties when a) they exist and b) you can populate them. Using PropertyValue as a substitute will typically not trigger the same effect as using the original specific property." ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "PropertyValue" ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/Intangible>, <http://schema.landrs.org/schema/StructuredValue>, <http://schema.landrs.org/schema/Thing>, <http://schema.org/Intangible>, <http://schema.org/PropertyValue>, <http://schema.org/StructuredValue>, <http://schema.org/Thing>, <http://www.w3.org/2002/07/owl#Thing> ;
+    <http://www.w3.org/2002/07/owl#equivalentClass> <http://schema.org/PropertyValue> .
+
+<http://schema.landrs.org/schema/QuantitativeValue>
+    <http://purl.org/dc/terms/source> <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass> ;
+    <http://schema.org/sameAs> <http://schema.org/QuantitativeValue> ;
+    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "A point value or interval for product characteristics and other purposes." ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "QuantitativeValue" ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/Intangible>, <http://schema.landrs.org/schema/StructuredValue>, <http://schema.landrs.org/schema/Thing>, <http://schema.org/Intangible>, <http://schema.org/QuantitativeValue>, <http://schema.org/StructuredValue>, <http://schema.org/Thing>, <http://www.w3.org/2002/07/owl#Thing> ;
+    <http://www.w3.org/2002/07/owl#equivalentClass> <http://schema.org/QuantitativeValue> .
+
+<http://schema.landrs.org/schema/ROV>
+    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Remotely Operated Underwater Vehicle"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/MotorizedVehicle>, <http://schema.landrs.org/schema/Product>, <http://schema.landrs.org/schema/RoboticVehice>, <http://schema.landrs.org/schema/Thing>, <http://schema.landrs.org/schema/UnderwaterRobot>, <http://schema.landrs.org/schema/UnderwaterVehicle>, <http://schema.landrs.org/schema/Vehicle>, <http://schema.org/Product>, <http://schema.org/Thing>, <http://schema.org/Vehicle>, <http://www.wikidata.org/entity/Q618465>, <https://www.w3.org/2019/wot/td#Thing> ;
+    <http://www.w3.org/2004/02/skos/core#altLabel> "ROV"@en ;
+    <http://www.w3.org/ns/prov#wasDerivedFrom> [
+        <http://purl.org/dc/terms/source> <https://www.mdpi.com/185614> ;
+        <http://purl.org/dc/terms/title> "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en ;
+        <http://schema.org/identifier> "https://dx.doi.org/10.3390%2Fs17030569" ;
+        a <http://www.w3.org/ns/prov#Entity>
+    ], [
+        <http://purl.org/dc/terms/source> <https://www.mdpi.com/185614> ;
+        <http://purl.org/dc/terms/title> "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en ;
+        <http://schema.org/identifier> "https://dx.doi.org/10.3390%2Fs17030569" ;
+        a <http://www.w3.org/ns/prov#Entity>
+    ] .
+
+<http://schema.landrs.org/schema/RemotelyPilotedRobot>
+    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Remotely Piloted Robot"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/ieee1872-owl/cora-bare#Robot>, <http://schema.landrs.org/schema/Product>, <http://schema.landrs.org/schema/Robot>, <http://schema.landrs.org/schema/Thing>, <http://schema.org/Product>, <http://schema.org/Thing>, <http://www.w3.org/2002/07/owl#Thing>, <http://www.wikidata.org/entity/Q11012> ;
+    <http://www.w3.org/ns/prov#wasDerivedFrom> [
+        <http://purl.org/dc/terms/source> <https://www.mdpi.com/185614> ;
+        <http://purl.org/dc/terms/title> "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en ;
+        <http://schema.org/identifier> "https://dx.doi.org/10.3390%2Fs17030569" ;
+        a <http://www.w3.org/ns/prov#Entity>
+    ], [
+        <http://purl.org/dc/terms/source> <https://www.mdpi.com/185614> ;
+        <http://purl.org/dc/terms/title> "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en ;
+        <http://schema.org/identifier> "https://dx.doi.org/10.3390%2Fs17030569" ;
+        a <http://www.w3.org/ns/prov#Entity>
+    ] .
+
+<http://schema.landrs.org/schema/Robot>
+    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "Mechanical or virtual artificial agent carrying out physical activities"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Robot"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/ieee1872-owl/cora-bare#Robot>, <http://schema.landrs.org/schema/Product>, <http://schema.landrs.org/schema/Thing>, <http://schema.org/Product>, <http://schema.org/Thing>, <http://www.w3.org/2002/07/owl#Thing>, <http://www.wikidata.org/entity/Q11012> ;
+    <http://www.w3.org/ns/prov#wasDerivedFrom> [
+        <http://purl.org/dc/terms/source> <https://www.mdpi.com/185614> ;
+        <http://purl.org/dc/terms/title> "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en ;
+        <http://schema.org/identifier> "https://dx.doi.org/10.3390%2Fs17030569" ;
+        a <http://www.w3.org/ns/prov#Entity>
+    ], [
+        <http://purl.org/dc/terms/source> <https://www.mdpi.com/185614> ;
+        <http://purl.org/dc/terms/title> "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en ;
+        <http://schema.org/identifier> "https://dx.doi.org/10.3390%2Fs17030569" ;
+        a <http://www.w3.org/ns/prov#Entity>
+    ] .
+
+<http://schema.landrs.org/schema/RoboticVehicle>
+    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "Robotic vehicles are machines that move autonomously on the ground in the air undersea or in space. Such vehicles are “unmanned” in the sense that no humans are on board. In general these vehicles move by themselves under their own power with sensors and computational resources onboard to guide their motion."@en ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Robotic Vehicle"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/ieee1872-owl/cora-bare#Robot>, <http://schema.landrs.org/schema/Product>, <http://schema.landrs.org/schema/Robot>, <http://schema.landrs.org/schema/Thing>, <http://schema.landrs.org/schema/Vehicle>, <http://schema.org/Product>, <http://schema.org/Thing>, <http://schema.org/Vehicle>, <http://www.wikidata.org/entity/Q11012>, <http://www.wikidata.org/entity/Q4810574>, <https://www.w3.org/2019/wot/td#Thing> ;
+    <http://www.w3.org/ns/prov#wasDerivedFrom> [
+        <http://purl.org/dc/terms/source> <https://www.mdpi.com/185614> ;
+        <http://purl.org/dc/terms/title> "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en ;
+        <http://schema.org/identifier> "https://dx.doi.org/10.3390%2Fs17030569" ;
+        a <http://www.w3.org/ns/prov#Entity>
+    ], [
+        <http://purl.org/dc/terms/source> <https://www.mdpi.com/185614> ;
+        <http://purl.org/dc/terms/title> "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en ;
+        <http://schema.org/identifier> "https://dx.doi.org/10.3390%2Fs17030569" ;
+        a <http://www.w3.org/ns/prov#Entity>
+    ] .
+
+<http://schema.landrs.org/schema/SensorPayload>
+    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "Payload that is a instrument platform such as cameras atmospheric sensors etc"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Sensor Payload"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/payload>, <http://www.w3.org/ns/sosa/System> .
+
+<http://schema.landrs.org/schema/Signal>
+    a <http://www.w3.org/2000/01/rdf-schema#Class>, <http://www.w3.org/2002/07/owl#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "Signals protocol used by a vehicle such as Mavlink or VSS" ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Signal"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://www.w3.org/2019/wot/td#PropertyAffordance> .
+
+<http://schema.landrs.org/schema/SignalProtocol>
+    a <http://www.w3.org/2000/01/rdf-schema#Class>, <http://www.w3.org/2002/07/owl#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "Type of signal protocol used in the vehicls such as MAVLink or VSS" ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Signal Protocol"@en .
+
+<http://schema.landrs.org/schema/SmartSensor>
+    <http://schema.org/sameAs> <http://w3id.org/s3n/SmartSensor> ;
+    a <http://www.w3.org/2000/01/rdf-schema#Class>, <http://www.w3.org/2002/07/owl#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "Smart-Sensor - A SmartSensor is composed of one or more Sensors together with a MicroController that implements different Algorithms and makes Algorithm Executions on the result of the Observations these Sensors make to output a resulting value for some Indicator. This value may then be communicated by some CommunicatingSystemCommunicatingSystem."@en ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Smart Sensor"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/Platform>, <http://www.w3.org/ns/ssn/System> .
+
+<http://schema.landrs.org/schema/StructuredValue>
+    <http://schema.org/sameAs> <http://schema.org/StructuredValue> ;
+    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing." ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "StructuredValue" ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/Intangible>, <http://schema.landrs.org/schema/Thing>, <http://schema.org/Intangible>, <http://schema.org/StructuredValue>, <http://schema.org/Thing>, <http://www.w3.org/2002/07/owl#Thing> ;
+    <http://www.w3.org/2002/07/owl#equivalentClass> <http://schema.org/StructuredValue> .
+
+<http://schema.landrs.org/schema/SurfaceRobot>
+    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "Surface Robots are vehicles that move autonomously on the water surface."@en ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Underwater Robot"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/ieee1872-owl/cora-bare#Robot>, <http://schema.landrs.org/schema/Product>, <http://schema.landrs.org/schema/Robot>, <http://schema.landrs.org/schema/RoboticVehicle>, <http://schema.landrs.org/schema/SurfaceVehicle>, <http://schema.landrs.org/schema/Thing>, <http://schema.landrs.org/schema/Vehicle>, <http://schema.org/Product>, <http://schema.org/Thing>, <http://schema.org/Vehicle>, <http://www.wikidata.org/entity/Q11012>, <http://www.wikidata.org/entity/Q4810574>, <https://www.w3.org/2019/wot/td#Thing> ;
+    <http://www.w3.org/ns/prov#wasDerivedFrom> [
+        <http://purl.org/dc/terms/source> <https://www.mdpi.com/185614> ;
+        <http://purl.org/dc/terms/title> "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en ;
+        <http://schema.org/identifier> "https://dx.doi.org/10.3390%2Fs17030569" ;
+        a <http://www.w3.org/ns/prov#Entity>
+    ], [
+        <http://purl.org/dc/terms/source> <https://www.mdpi.com/185614> ;
+        <http://purl.org/dc/terms/title> "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en ;
+        <http://schema.org/identifier> "https://dx.doi.org/10.3390%2Fs17030569" ;
+        a <http://www.w3.org/ns/prov#Entity>
+    ] .
+
+<http://schema.landrs.org/schema/SurfaceVehicle>
+    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Surface Vehicle"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/Product>, <http://schema.landrs.org/schema/Thing>, <http://schema.landrs.org/schema/Vehicle>, <http://schema.org/Product>, <http://schema.org/Thing>, <http://schema.org/Vehicle>, <https://www.w3.org/2019/wot/td#Thing> ;
+    <http://www.w3.org/ns/prov#wasDerivedFrom> [
+        <http://purl.org/dc/terms/source> <https://www.mdpi.com/185614> ;
+        <http://purl.org/dc/terms/title> "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en ;
+        <http://schema.org/identifier> "https://dx.doi.org/10.3390%2Fs17030569" ;
+        a <http://www.w3.org/ns/prov#Entity>
+    ], [
+        <http://purl.org/dc/terms/source> <https://www.mdpi.com/185614> ;
+        <http://purl.org/dc/terms/title> "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en ;
+        <http://schema.org/identifier> "https://dx.doi.org/10.3390%2Fs17030569" ;
+        a <http://www.w3.org/ns/prov#Entity>
+    ] .
+
+<http://schema.landrs.org/schema/Thing>
+    <http://schema.org/sameAs> <http://schema.org/Thing> ;
+    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "The most generic type of item."@en ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Thing"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Thing>, <http://www.w3.org/2002/07/owl#Thing> ;
+    <http://www.w3.org/2002/07/owl#equivalentClass> <http://schema.org/Thing>, <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://schema.landrs.org/schema/UAS>
+    <http://daselab.org/ContextualizedWinstonPartWhole#isPartOf> _:446, _:447, _:449 ;
+    <http://schema.landrs.org/schema/isPartOf> _:446, _:447, _:449 ;
+    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "An Unmanned Aerial Vehicle ground-based controller and communication system."@en ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Unmanned Aircraft System"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/Product>, <http://schema.landrs.org/schema/Thing>, <http://schema.org/Product>, <http://schema.org/Thing>, <http://www.w3.org/2002/07/owl#Thing> ;
+    <http://www.w3.org/2004/02/skos/core#altLabel> "UAS"@en ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Unmanned Aircraft System"@en .
+
+<http://schema.landrs.org/schema/UAV>
+    <http://schema.landrs.org/schema/component> <http://schema.landrs.org/schema/UAS> ;
+    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "An aircraft without a human pilot on board and a type of unmanned vehicle. UAVs are a component of an unmanned aircraft system (UAS); which include a UAV a ground-based controller and a system of communications between the two. The flight of UAVs may operate with various degrees of autonomy: either under remote control by a human operator or autonomously by onboard computers." ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Unmanned Aerial Vehicle"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://dbpedia.org/resource/Unmanned_aerial_vehicle>, <http://schema.landrs.org/schema/AerialRobot>, <http://schema.landrs.org/schema/AerialVehicle>, <http://schema.landrs.org/schema/MotorizedVehicle>, <http://schema.landrs.org/schema/Product>, <http://schema.landrs.org/schema/RoboticVehice>, <http://schema.landrs.org/schema/Thing>, <http://schema.landrs.org/schema/UxV>, <http://schema.landrs.org/schema/Vehicle>, <http://schema.org/Product>, <http://schema.org/Thing>, <http://schema.org/Vehicle>, <http://vocab.nerc.ac.uk/collection/L06/current/6D/>, <http://www.w3.org/ns/sosa/Platform>, <http://www.wikidata.org/entity/Q11436>, <http://www.wikidata.org/entity/Q1527901>, <http://www.wikidata.org/entity/Q484000>, <https://data.nasa.gov/ontologies/atmonto/equipment#Aircraft>, <https://mmisw.org/ont/ioos/platform/unmanned_aerial_vehicle>, <https://www.w3.org/2019/wot/td#Thing> ;
+    <http://www.w3.org/2004/02/skos/core#altLable> "UAV"@en ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Unmanned Aerial Vehicle"@en .
+
+<http://schema.landrs.org/schema/UAVComponent>
+    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "Component of a Unmanned Aerial Vehicle"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Unmanned Aircraft Component"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://daselab.org/ContextualizedWinstonPartWhole#PO-Component-Type>, <http://schema.landrs.org/schema/Component>, <http://schema.landrs.org/schema/Product>, <http://schema.landrs.org/schema/Thing>, <http://schema.org/Product>, <http://schema.org/Thing>, <http://www.w3.org/2002/07/owl#Thing>, <http://www.wikidata.org/entity/Q28816538>, <http://www.wikidata.org/entity/Q811909> .
+
+<http://schema.landrs.org/schema/USV>
+    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "Vehicle that operates on the surface of the water without a crew"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Unmanned Surface Vehicle"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/ieee1872-owl/cora-bare#Robot>, <http://schema.landrs.org/schema/MotorizedVehicle>, <http://schema.landrs.org/schema/Product>, <http://schema.landrs.org/schema/Robot>, <http://schema.landrs.org/schema/RoboticVehicle>, <http://schema.landrs.org/schema/SurfaceRobot>, <http://schema.landrs.org/schema/SurfaceVehicle>, <http://schema.landrs.org/schema/Thing>, <http://schema.landrs.org/schema/Vehicle>, <http://schema.org/Product>, <http://schema.org/Thing>, <http://schema.org/Vehicle>, <http://www.wikidata.org/entity/Q11012>, <http://www.wikidata.org/entity/Q4419860>, <http://www.wikidata.org/entity/Q4810574>, <https://www.w3.org/2019/wot/td#Thing> ;
+    <http://www.w3.org/2004/02/skos/core#altLabel> "USV"@en ;
+    <http://www.w3.org/ns/prov#wasDerivedFrom> [
+        <http://purl.org/dc/terms/source> <https://www.mdpi.com/185614> ;
+        <http://purl.org/dc/terms/title> "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en ;
+        <http://schema.org/identifier> "https://dx.doi.org/10.3390%2Fs17030569" ;
+        a <http://www.w3.org/ns/prov#Entity>
+    ], [
+        <http://purl.org/dc/terms/source> <https://www.mdpi.com/185614> ;
+        <http://purl.org/dc/terms/title> "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en ;
+        <http://schema.org/identifier> "https://dx.doi.org/10.3390%2Fs17030569" ;
+        a <http://www.w3.org/ns/prov#Entity>
+    ] .
+
+<http://schema.landrs.org/schema/UnderwaterGlider>
+    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "An underwater glider is a type of autonomous underwater vehicle (AUV) that employs variable-buoyancy propulsion instead of traditional propellers or thrusters. It employs variable buoyancy in a similar way to a profiling float but unlike a float which can only move up and down an underwater glider is fitted with hydrofoils (underwater wings) that allow it to glide forward while descending through the water. At a certain depth the glider switches to positive buoyancy to climb back up and the cycle is then repeated."@en ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Underwater Glider"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/ieee1872-owl/cora-bare#Robot>, <http://schema.landrs.org/schema/AUV>, <http://schema.landrs.org/schema/AutonomousRobot>, <http://schema.landrs.org/schema/Product>, <http://schema.landrs.org/schema/Robot>, <http://schema.landrs.org/schema/RoboticVehice>, <http://schema.landrs.org/schema/Thing>, <http://schema.landrs.org/schema/UnderwaterRobot>, <http://schema.landrs.org/schema/UnderwaterVehicle>, <http://schema.landrs.org/schema/UnmotorizedVehicle>, <http://schema.landrs.org/schema/Vehicle>, <http://schema.org/Product>, <http://schema.org/Thing>, <http://schema.org/Vehicle>, <http://www.wikidata.org/entity/Q11012>, <http://www.wikidata.org/entity/Q257406>, <http://www.wikidata.org/entity/Q2634473>, <http://www.wikidata.org/entity/Q2916098>, <https://www.w3.org/2019/wot/td#Thing> ;
+    <http://www.w3.org/ns/prov#wasDerivedFrom> [
+        <http://purl.org/dc/terms/source> <https://www.mdpi.com/185614> ;
+        <http://purl.org/dc/terms/title> "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en ;
+        <http://schema.org/identifier> "https://dx.doi.org/10.3390%2Fs17030569" ;
+        a <http://www.w3.org/ns/prov#Entity>
+    ], [
+        <http://purl.org/dc/terms/source> <https://www.mdpi.com/185614> ;
+        <http://purl.org/dc/terms/title> "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en ;
+        <http://schema.org/identifier> "https://dx.doi.org/10.3390%2Fs17030569" ;
+        a <http://www.w3.org/ns/prov#Entity>
+    ] .
+
+<http://schema.landrs.org/schema/UnderwaterRobot>
+    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "Underwater Robots are vehicles that move autonomously underwater."@en ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Underwater Robot"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/Product>, <http://schema.landrs.org/schema/RoboticVehice>, <http://schema.landrs.org/schema/Thing>, <http://schema.landrs.org/schema/UnderwaterVehicle>, <http://schema.landrs.org/schema/Vehicle>, <http://schema.org/Product>, <http://schema.org/Thing>, <http://schema.org/Vehicle>, <https://www.w3.org/2019/wot/td#Thing> ;
+    <http://www.w3.org/ns/prov#wasDerivedFrom> [
+        <http://purl.org/dc/terms/source> <https://www.mdpi.com/185614> ;
+        <http://purl.org/dc/terms/title> "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en ;
+        <http://schema.org/identifier> "https://dx.doi.org/10.3390%2Fs17030569" ;
+        a <http://www.w3.org/ns/prov#Entity>
+    ], [
+        <http://purl.org/dc/terms/source> <https://www.mdpi.com/185614> ;
+        <http://purl.org/dc/terms/title> "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en ;
+        <http://schema.org/identifier> "https://dx.doi.org/10.3390%2Fs17030569" ;
+        a <http://www.w3.org/ns/prov#Entity>
+    ] .
+
+<http://schema.landrs.org/schema/UnderwaterVehicle>
+    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Underwater Vehicle"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/Product>, <http://schema.landrs.org/schema/Thing>, <http://schema.landrs.org/schema/Vehicle>, <http://schema.org/Product>, <http://schema.org/Thing>, <http://schema.org/Vehicle>, <https://www.w3.org/2019/wot/td#Thing> ;
+    <http://www.w3.org/ns/prov#wasDerivedFrom> [
+        <http://purl.org/dc/terms/source> <https://www.mdpi.com/185614> ;
+        <http://purl.org/dc/terms/title> "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en ;
+        <http://schema.org/identifier> "https://dx.doi.org/10.3390%2Fs17030569" ;
+        a <http://www.w3.org/ns/prov#Entity>
+    ], [
+        <http://purl.org/dc/terms/source> <https://www.mdpi.com/185614> ;
+        <http://purl.org/dc/terms/title> "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en ;
+        <http://schema.org/identifier> "https://dx.doi.org/10.3390%2Fs17030569" ;
+        a <http://www.w3.org/ns/prov#Entity>
+    ] .
+
+<http://schema.landrs.org/schema/UnmotorizedVehicle>
+    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Unmotorized Vehicle"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/Product>, <http://schema.landrs.org/schema/Thing>, <http://schema.landrs.org/schema/Vehicle>, <http://schema.org/Product>, <http://schema.org/Thing>, <http://schema.org/Vehicle>, <https://www.w3.org/2019/wot/td#Thing> ;
+    <http://www.w3.org/ns/prov#wasDerivedFrom> [
+        <http://purl.org/dc/terms/source> <https://www.mdpi.com/185614> ;
+        <http://purl.org/dc/terms/title> "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en ;
+        <http://schema.org/identifier> "https://dx.doi.org/10.3390%2Fs17030569" ;
+        a <http://www.w3.org/ns/prov#Entity>
+    ], [
+        <http://purl.org/dc/terms/source> <https://www.mdpi.com/185614> ;
+        <http://purl.org/dc/terms/title> "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en ;
+        <http://schema.org/identifier> "https://dx.doi.org/10.3390%2Fs17030569" ;
+        a <http://www.w3.org/ns/prov#Entity>
+    ] .
+
+<http://schema.landrs.org/schema/UxV>
+    <http://daselab.org/ContextualizedWinstonPartWhole#isPartOf> _:430 ;
+    <http://schema.landrs.org/schema/isPartOf> _:430 ;
+    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "An unmanned vehicle or uncrewed vehicle is a vehicle without a person on board. Uncrewed vehicles can either be remote controlled or remote guided vehicles or they can be autonomous vehicles which are capable of sensing their environment and navigating on their own."@en ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Unmanned Vehicle"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/Product>, <http://schema.landrs.org/schema/Thing>, <http://schema.landrs.org/schema/Vehicle>, <http://schema.org/Product>, <http://schema.org/Thing>, <http://schema.org/Vehicle>, <http://www.w3.org/ns/sosa/Platform>, <http://www.wikidata.org/entity/Q1527901>, <https://www.w3.org/2019/wot/td#Thing> ;
+    <http://www.w3.org/2002/07/owl#equivalentClass> <http://www.wikidata.org/entity/Q1527901> ;
+    <http://www.w3.org/2004/02/skos/core#altLabel> "UxV"@en ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Unmanned Vehicle"@en .
+
+<http://schema.landrs.org/schema/Vehicle>
+    <http://schema.org/sameAs> <http://schema.org/Vehicle> ;
+    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "A vehicle is a device that is designed or used to transport people or cargo over land water air or through space."@en ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Vehicle"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/Product>, <http://schema.landrs.org/schema/Thing>, <http://schema.org/Product>, <http://schema.org/Thing>, <http://schema.org/Vehicle>, <http://www.w3.org/2002/07/owl#Thing>, <https://www.w3.org/2019/wot/td#Thing> ;
+    <http://www.w3.org/2002/07/owl#equivalentClass> <http://schema.org/Vehicle> .
+
+<http://schema.landrs.org/schema/Vessel>
+    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "Vehicle that is a watercraft boat or ship. Note: Wikidata definition of vessel includes spaceship this landrs:Vessel is a subClassOf wikidata vessel."@en ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Vessel"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/MotorizedVehicle>, <http://schema.landrs.org/schema/Product>, <http://schema.landrs.org/schema/SurfaceVehicle>, <http://schema.landrs.org/schema/Thing>, <http://schema.landrs.org/schema/Vehicle>, <http://schema.org/Product>, <http://schema.org/Thing>, <http://schema.org/Vehicle>, <http://www.wikidata.org/entity/Q16391167>, <https://www.w3.org/2019/wot/td#Thing> ;
+    <http://www.w3.org/ns/prov#wasDerivedFrom> [
+        <http://purl.org/dc/terms/source> <https://www.mdpi.com/185614> ;
+        <http://purl.org/dc/terms/title> "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en ;
+        <http://schema.org/identifier> "https://dx.doi.org/10.3390%2Fs17030569" ;
+        a <http://www.w3.org/ns/prov#Entity>
+    ], [
+        <http://purl.org/dc/terms/source> <https://www.mdpi.com/185614> ;
+        <http://purl.org/dc/terms/title> "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en ;
+        <http://schema.org/identifier> "https://dx.doi.org/10.3390%2Fs17030569" ;
+        a <http://www.w3.org/ns/prov#Entity>
+    ] .
+
+<http://schema.landrs.org/schema/additionalProperty>
+    <http://schema.org/domainIncludes> <http://schema.landrs.org/schema/Product> ;
+    <http://schema.org/rangeIncludes> <http://schema.org/PropertyValue> ;
+    a rdf:Property ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "A property-value pair representing an additional characteristics of the entitity e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/> Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width http://schema.org/color http://schema.org/gtin13 ...) will typically expect such data to be provided using those properties rather than using the generic property/value mechanism." ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "additionalProperty" ;
+    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://schema.org/additionalProperty> .
+
+<http://schema.landrs.org/schema/attribute>
+    <http://schema.org/domainIncludes> <http://schema.landrs.org/schema/Branch> ;
+    <http://schema.org/sameAs> <http://automotive.eurecom.fr/vsso#attribute> ;
+    a rdf:Property, <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "Attribute signals that do not change during the power cycle of a vehicle."@en ;
+    <http://www.w3.org/2000/01/rdf-schema#domain> <http://daselab.org/ContextualizedWinstonPartWhole#PO-Component-Type>, <http://schema.landrs.org/schema/Branch>, <http://schema.landrs.org/schema/Component>, <http://schema.landrs.org/schema/Product>, <http://schema.landrs.org/schema/Thing>, <http://schema.org/Product>, <http://schema.org/Thing>, <http://www.w3.org/2002/07/owl#Thing>, <http://www.wikidata.org/entity/Q811909> ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Attribute"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://schema.landrs.org/schema/attribute> ;
+    <http://www.w3.org/2002/07/owl#equivalentProperty> <http://schema.landrs.org/schema/attribute> .
+
+<http://schema.landrs.org/schema/bodyType>
+    <http://purl.org/dc/terms/source> <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group> ;
+    <http://schema.org/domainIncludes> <http://schema.org/Vehicle> ;
+    <http://schema.org/isPartOf> <http://auto.schema.org> ;
+    <http://schema.org/rangeIncludes> <http://schema.org/QualitativeValue>, <http://schema.org/Text>, <http://schema.org/URL> ;
+    a rdf:Property ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the design and body style of the vehicle (e.g. quadcopter glider."@en ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "bodyType"@en .
+
+<http://schema.landrs.org/schema/category>
+    <http://purl.org/dc/terms/source> <https://github.com/schemaorg/schemaorg/issues/1741>, <https://github.com/schemaorg/schemaorg/issues/2490> ;
+    <http://schema.org/category> "issue-1741" ;
+    <http://schema.org/domainIncludes> <http://schema.landrs.org/schema/Product> ;
+    <http://schema.org/rangeIncludes> <http://schema.org/Text>, <http://schema.org/Thing> ;
+    a rdf:Property ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy." ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "category" ;
+    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://schema.org/category> .
+
+<http://schema.landrs.org/schema/component>
+    <http://ontologydesignpatterns.org/opla#isNativeTo> <https://raw.githubusercontent.com/cogan-shimizu-wsu/WinstonPartWhole/master/WinstonPartWhole.owl> ;
+    a rdf:Property, <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "Winston Component part-of relation po-component"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Winston ODP Component p"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://daselab.org/WinstonPartWhole#po-component> ;
+    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://schema.landrs.org/schema/component> ;
+    <http://www.w3.org/2002/07/owl#equivalentClass> <http://daselab.org/WinstonPartWhole#po-component> ;
+    <http://www.w3.org/2002/07/owl#equivalentProperty> <http://schema.landrs.org/schema/component> .
+
+<http://schema.landrs.org/schema/componentPosition>
+    <http://schema.org/domainIncludes> <http://schema.landrs.org/schema/Branch> ;
+    <http://schema.org/sameAs> <http://automotive.eurecom.fr/vsso#position> ;
+    a rdf:Property, <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "Position of the branch within the vehicle"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#domain> <http://daselab.org/ContextualizedWinstonPartWhole#PO-Component-Type>, <http://schema.landrs.org/schema/Branch>, <http://schema.landrs.org/schema/Component>, <http://schema.landrs.org/schema/Product>, <http://schema.landrs.org/schema/Thing>, <http://schema.org/Product>, <http://schema.org/Thing>, <http://www.w3.org/2002/07/owl#Thing>, <http://www.wikidata.org/entity/Q811909> ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "component position"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://schema.landrs.org/schema/componentPosition> ;
+    <http://www.w3.org/2002/07/owl#equivalentProperty> <http://schema.landrs.org/schema/componentPosition> .
+
+<http://schema.landrs.org/schema/depth>
+    <http://purl.org/dc/terms/source> <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms> ;
+    <http://schema.org/domainIncludes> <http://schema.landrs.org/schema/Product> ;
+    <http://schema.org/rangeIncludes> <http://schema.org/Distance>, <http://schema.org/QuantitativeValue> ;
+    a rdf:Property ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "The depth of the item." ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "depth" ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/depth> .
+
+<http://schema.landrs.org/schema/hasProtocol>
+    <http://schema.org/domainIncludes> <http://schema.landrs.org/schema/Signal> ;
+    <http://schema.org/rangeIncludes> <http://schema.landrs.org/schema/signalProtocol> ;
+    a rdf:Property, <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "Type a protocol a signal uses" ;
+    <http://www.w3.org/2000/01/rdf-schema#domain> <http://schema.landrs.org/schema/Signal>, <https://www.w3.org/2019/wot/td#PropertyAffordance> ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "hasProtocol"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.landrs.org/schema/SignalProtocol> ;
+    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://schema.landrs.org/schema/hasProtocol> ;
+    <http://www.w3.org/2002/07/owl#equivalentProperty> <http://schema.landrs.org/schema/hasProtocol> .
+
+<http://schema.landrs.org/schema/hasSignal>
+    <http://schema.org/domainIncludes> <http://schema.landrs.org/schema/Branch> ;
+    <http://schema.org/rangeIncludes> <http://schema.landrs.org/schema/ActuableSignal>, <http://schema.landrs.org/schema/ObservableSignal> ;
+    a rdf:Property, <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "Property of having signals in a branch"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#domain> <http://automotive.eurecom.fr/vsso#Branch> ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "has signal"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#range> [
+        <http://www.w3.org/2002/07/owl#unionOf> <http://automotive.eurecom.fr/vsso#ActuableSignal>, <http://automotive.eurecom.fr/vsso#ObservableSignal>
+    ], [
+        <http://www.w3.org/2002/07/owl#unionOf> <http://automotive.eurecom.fr/vsso#ActuableSignal>, <http://automotive.eurecom.fr/vsso#ObservableSignal>
+    ] ;
+    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://schema.landrs.org/schema/hasSignal> ;
+    <http://www.w3.org/2002/07/owl#equivalentProperty> <http://schema.landrs.org/schema/hasSignal> .
+
+<http://schema.landrs.org/schema/hasWhole>
+    <http://ontologydesignpatterns.org/opla#isNativeTo> <https://raw.githubusercontent.com/cogan-shimizu-wsu/ContextualizedWinstonPartWhole/master/ContextualizedWinstonPartWhole.owl> ;
+    <http://schema.org/domainIncludes> <http://schema.landrs.org/schema/Component> ;
+    <http://schema.org/inverseOf> <http://schema.landrs.org/schema/isPartOf> ;
+    <http://schema.org/rangeIncludes> <http://www.w3.org/2002/07/owl#Thing> ;
+    a rdf:Property, <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "Winston ODP Whole relation"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "hasWhole"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://daselab.org/ContextualizedWinstonPartWhole#hasWhole>, <http://schema.landrs.org/schema/hasWhole> ;
+    <http://www.w3.org/2002/07/owl#equivalentProperty> <http://daselab.org/ContextualizedWinstonPartWhole#hasWhole>, <http://schema.landrs.org/schema/hasWhole> ;
+    <http://www.w3.org/2002/07/owl#inverseOf> <http://schema.landrs.org/schema/isPartOf> .
+
+<http://schema.landrs.org/schema/height>
+    <http://schema.org/domainIncludes> <http://schema.landrs.org/schema/Product> ;
+    <http://schema.org/rangeIncludes> <http://schema.org/Distance>, <http://schema.org/QuantitativeValue> ;
+    a rdf:Property ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "The height of the item." ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "height" ;
+    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://schema.org/height> .
+
+<http://schema.landrs.org/schema/isAccessoryOrSparePartFor>
+    <http://purl.org/dc/terms/source> <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms> ;
+    <http://schema.org/domainIncludes> <http://schema.landrs.org/schema/Product> ;
+    <http://schema.org/rangeIncludes> <http://schema.landrs.org/schema/Product> ;
+    a rdf:Property ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "A pointer to another product (or multiple products) for which this product is an accessory or spare part." ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "isAccessoryOrSparePartFor" ;
+    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://schema.org/isAccessoryOrSparePartFor> .
+
+<http://schema.landrs.org/schema/isConsumableFor>
+    <http://purl.org/dc/terms/source> <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms> ;
+    <http://schema.org/domainIncludes> <http://schema.landrs.org/schema/Product> ;
+    <http://schema.org/rangeIncludes> <http://schema.landrs.org/schema/Product> ;
+    a rdf:Property ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "A pointer to another product (or multiple products) for which this product is a consumable." ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "isConsumableFor" ;
+    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://schema.org/isConsumableFor> .
+
+<http://schema.landrs.org/schema/isPartOf>
+    <http://ontologydesignpatterns.org/opla#isNativeTo> <https://raw.githubusercontent.com/cogan-shimizu-wsu/ContextualizedWinstonPartWhole/master/ContextualizedWinstonPartWhole.owl> ;
+    <http://schema.org/domainIncludes> <http://www.w3.org/2002/07/owl#Thing> ;
+    <http://schema.org/inverseOf> <http://schema.landrs.org/schema/hasWhole> ;
+    <http://schema.org/rangeIncludes> <http://schema.landrs.org/schema/Component> ;
+    a rdf:Property, <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "Winston ODP PartOf relation for component-integral object."@en ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "component"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://daselab.org/ContextualizedWinstonPartWhole#isPartOf>, <http://schema.landrs.org/schema/isPartOf> ;
+    <http://www.w3.org/2002/07/owl#equivalentProperty> <http://daselab.org/ContextualizedWinstonPartWhole#isPartOf>, <http://schema.landrs.org/schema/isPartOf> ;
+    <http://www.w3.org/2002/07/owl#inverseOf> <http://schema.landrs.org/schema/hasWhole> .
+
+<http://schema.landrs.org/schema/isRelatedTo>
+    <http://purl.org/dc/terms/source> <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms> ;
+    <http://schema.org/domainIncludes> <http://schema.landrs.org/schema/Product> ;
+    <http://schema.org/rangeIncludes> <http://schema.landrs.org/schema/Product> ;
+    a rdf:Property ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "A pointer to another somehow related product (or multiple products)." ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "isRelatedTo" ;
+    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://schema.org/isRelatedTo> .
+
+<http://schema.landrs.org/schema/isSimilarTo>
+    <http://purl.org/dc/terms/source> <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms> ;
+    <http://schema.org/domainIncludes> <http://schema.org/Product> ;
+    <http://schema.org/rangeIncludes> <http://schema.org/Product> ;
+    a rdf:Property ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "A pointer to another functionally similar product (or multiple products)." ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "isSimilarTo" ;
+    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://schema.org/isSimilarTo> .
+
+<http://schema.landrs.org/schema/isVariantOf>
+    <http://purl.org/dc/terms/source> <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms> ;
+    <http://schema.org/domainIncludes> <http://schema.landrs.org/schema/ProductModel> ;
+    <http://schema.org/rangeIncludes> <http://schema.landrs.org/schema/ProductModel> ;
+    a rdf:Property ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "A pointer to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model unless defined locally. This is not transitive." ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "isVariantOf" ;
+    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://schema.org/isVariantOf> .
+
+<http://schema.landrs.org/schema/manufacturer>
+    <http://schema.org/domainIncludes> <http://schema.org/Product> ;
+    <http://schema.org/rangeIncludes> <http://schema.org/Organization> ;
+    a rdf:Property ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "The manufacturer of the product." ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "manufacturer" ;
+    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://schema.org/manufacturer> .
+
+<http://schema.landrs.org/schema/material>
+    <http://schema.org/domainIncludes> <http://schema.landrs.org/schema/Product> ;
+    <http://schema.org/rangeIncludes> <http://schema.landrs.org/schema/Product>, <http://schema.org/Text>, <http://schema.org/URL> ;
+    a rdf:Property ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "A material that something is made from e.g. leather wool cotton paper." ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "material" ;
+    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://schema.org/material> .
+
+<http://schema.landrs.org/schema/model>
+    <http://schema.org/domainIncludes> <http://schema.landrs.org/schema/Product> ;
+    <http://schema.org/rangeIncludes> <http://schema.landrs.org/schema/ProductModel>, <http://schema.org/Text> ;
+    a rdf:Property ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "The model of the product. Use with the URL of a ProductModel or a textual representation of the model identifier. The URL of the ProductModel can be from an external source. It is recommended to additionally provide strong product identifiers via the gtin8/gtin13/gtin14 and mpn properties." ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "model" ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/model> .
+
+<http://schema.landrs.org/schema/mpn>
+    <http://purl.org/dc/terms/source> <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms> ;
+    <http://schema.org/domainIncludes> <http://schema.landrs.org/schema/Product>, <http://schema.org/Demand>, <http://schema.org/Offer> ;
+    <http://schema.org/rangeIncludes> <http://schema.org/Text> ;
+    a rdf:Property ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "The Manufacturer Part Number (MPN) of the product or the product to which the offer refers." ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "mpn" ;
+    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://schema.org/mpn> .
+
+<http://schema.landrs.org/schema/predecessorOf>
+    <http://purl.org/dc/terms/source> <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms> ;
+    <http://schema.org/domainIncludes> <http://schema.landrs.org/schema/ProductModel> ;
+    <http://schema.org/rangeIncludes> <http://schema.landrs.org/schema/ProductModel> ;
+    a rdf:Property ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "A pointer from a previous often discontinued variant of the product to its newer variant." ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "predecessorOf" ;
+    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://schema.org/predecessorOf> .
+
+<http://schema.landrs.org/schema/weight>
+    <http://purl.org/dc/terms/source> <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms> ;
+    <http://schema.org/domainIncludes> <http://schema.landrs.org/schema/Product> ;
+    <http://schema.org/rangeIncludes> <http://schema.org/QuantitativeValue> ;
+    a rdf:Property ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "The weight of the product or person." ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "weight" ;
+    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://schema.org/weight> .
+
+<http://schema.landrs.org/schema/width>
+    <http://schema.org/domainIncludes> <http://schema.landrs.org/schema/Product> ;
+    <http://schema.org/rangeIncludes> <http://schema.org/Distance>, <http://schema.org/QuantitativeValue> ;
+    a rdf:Property ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "The width of the item." ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "width" ;
+    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://schema.org/width> .
+
+<http://schema.org/Event>
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/dc/dcmitype/Event>, <http://schema.landrs.org/schema/Event>, <http://schema.landrs.org/schema/Thing>, <http://schema.org/Thing>, <http://www.w3.org/2002/07/owl#Thing> ;
+    <http://www.w3.org/2002/07/owl#equivalentClass> <http://purl.org/dc/dcmitype/Event>, <http://schema.landrs.org/schema/Event> .
+
+<http://schema.org/Intangible>
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/Intangible>, <http://schema.landrs.org/schema/Thing>, <http://schema.org/Thing>, <http://www.w3.org/2002/07/owl#Thing> ;
+    <http://www.w3.org/2002/07/owl#equivalentClass> <http://schema.landrs.org/schema/Intangible> .
+
+<http://schema.org/Product>
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/Product>, <http://schema.landrs.org/schema/Thing>, <http://schema.org/Thing>, <http://www.w3.org/2002/07/owl#Thing> ;
+    <http://www.w3.org/2002/07/owl#equivalentClass> <http://schema.landrs.org/schema/Product> .
+
+<http://schema.org/ProductModel>
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/Product>, <http://schema.landrs.org/schema/ProductModel>, <http://schema.landrs.org/schema/Thing>, <http://schema.org/Product>, <http://schema.org/Thing>, <http://www.w3.org/2002/07/owl#Thing> ;
+    <http://www.w3.org/2002/07/owl#equivalentClass> <http://schema.landrs.org/schema/ProductModel> .
+
+<http://schema.org/PropertyValue>
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/Intangible>, <http://schema.landrs.org/schema/PropertyValue>, <http://schema.landrs.org/schema/StructuredValue>, <http://schema.landrs.org/schema/Thing>, <http://schema.org/Intangible>, <http://schema.org/StructuredValue>, <http://schema.org/Thing>, <http://www.w3.org/2002/07/owl#Thing> ;
+    <http://www.w3.org/2002/07/owl#equivalentClass> <http://schema.landrs.org/schema/PropertyValue> .
+
+<http://schema.org/QuantitativeValue>
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/Intangible>, <http://schema.landrs.org/schema/QuantitativeValue>, <http://schema.landrs.org/schema/StructuredValue>, <http://schema.landrs.org/schema/Thing>, <http://schema.org/Intangible>, <http://schema.org/StructuredValue>, <http://schema.org/Thing>, <http://www.w3.org/2002/07/owl#Thing> ;
+    <http://www.w3.org/2002/07/owl#equivalentClass> <http://schema.landrs.org/schema/QuantitativeValue> .
+
+<http://schema.org/StructuredValue>
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/Intangible>, <http://schema.landrs.org/schema/StructuredValue>, <http://schema.landrs.org/schema/Thing>, <http://schema.org/Intangible>, <http://schema.org/Thing>, <http://www.w3.org/2002/07/owl#Thing> ;
+    <http://www.w3.org/2002/07/owl#equivalentClass> <http://schema.landrs.org/schema/StructuredValue> .
+
+<http://schema.org/Thing>
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/Thing>, <http://www.w3.org/2002/07/owl#Thing> ;
+    <http://www.w3.org/2002/07/owl#equivalentClass> <http://schema.landrs.org/schema/Thing>, <http://www.w3.org/2002/07/owl#Thing> .
+
+<http://schema.org/Vehicle>
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/Product>, <http://schema.landrs.org/schema/Thing>, <http://schema.landrs.org/schema/Vehicle>, <http://schema.org/Product>, <http://schema.org/Thing>, <http://www.w3.org/2002/07/owl#Thing> ;
+    <http://www.w3.org/2002/07/owl#equivalentClass> <http://schema.landrs.org/schema/Vehicle> .
+
+<http://schema.org/domainIncludes>
+    a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+
+<http://schema.org/rangeIncludes>
+    a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+
+<http://schema.org/successorOf>
+    <http://purl.org/dc/terms/source> <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms> ;
+    <http://schema.org/domainIncludes> <http://schema.landrs.org/schema/ProductModel> ;
+    <http://schema.org/rangeIncludes> <http://schema.landrs.org/schema/ProductModel> ;
+    a rdf:Property ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "A pointer from a newer variant of a product  to its previous often discontinued predecessor." ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "successorOf" ;
+    <http://www.w3.org/2002/07/owl#subPropertyOf> <http://schema.org/successorOf> .
+
+<http://schema.org/version>
+    a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+
+<http://www.w3.org/2002/07/owl#Nothing>
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/vocommons/voaf#Vocabulary>, <http://schema.landrs.org/schema/Thing>, <http://schema.org/Thing>, <http://www.w3.org/2002/07/owl#Thing>, <http://xmlns.com/foaf/0.1/Agent> .
+
+<http://www.w3.org/2002/07/owl#Thing>
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/Thing>, <http://schema.org/Thing> ;
+    <http://www.w3.org/2002/07/owl#equivalentClass> <http://schema.landrs.org/schema/Thing>, <http://schema.org/Thing> .
+
+<http://www.w3.org/2004/02/skos/core#definition>
+    a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+
+<http://www.w3.org/2004/02/skos/core#example>
+    a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+
+<http://www.w3.org/2004/02/skos/core#note>
+    a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+
+<http://www.wikidata.org/entity/Q11481471>
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/FlightControlSystem> ;
+    <http://www.w3.org/2002/07/owl#equivalentClass> <http://schema.landrs.org/schema/FlightControlSystem> .
+
+<http://www.wikidata.org/entity/Q1527901>
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/Product>, <http://schema.landrs.org/schema/Thing>, <http://schema.landrs.org/schema/UxV>, <http://schema.landrs.org/schema/Vehicle>, <http://schema.org/Product>, <http://schema.org/Thing>, <http://schema.org/Vehicle>, <http://www.w3.org/2002/07/owl#Thing>, <http://www.w3.org/ns/sosa/Platform> ;
+    <http://www.w3.org/2002/07/owl#equivalentClass> <http://schema.landrs.org/schema/UxV> .
+
+<http://www.wikidata.org/entity/Q222946>
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/Airframe>, <http://schema.landrs.org/schema/Body>, <http://schema.landrs.org/schema/Product>, <http://schema.landrs.org/schema/Thing>, <http://schema.org/Product>, <http://schema.org/Thing>, <http://www.w3.org/2002/07/owl#Thing> ;
+    <http://www.w3.org/2002/07/owl#equivalentClass> <http://schema.landrs.org/schema/Airframe> .
+
+<http://www.wikidata.org/entity/Q811909>
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://daselab.org/ContextualizedWinstonPartWhole#PO-Component-Type>, <http://schema.landrs.org/schema/Component>, <http://schema.landrs.org/schema/Product>, <http://schema.landrs.org/schema/Thing>, <http://schema.org/Product>, <http://schema.org/Thing>, <http://www.w3.org/2002/07/owl#Thing> ;
+    <http://www.w3.org/2002/07/owl#equivalentClass> <http://daselab.org/ContextualizedWinstonPartWhole#PO-Component-Type>, <http://schema.landrs.org/schema/Component> .
+
+<http://xmlns.com/foaf/0.1/Agent>
+    a <http://www.w3.org/2002/07/owl#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.landrs.org/schema/Thing>, <http://schema.org/Thing>, <http://www.w3.org/2002/07/owl#Thing>, <http://xmlns.com/foaf/0.1/Agent> ;
+    <http://www.w3.org/2002/07/owl#equivalentClass> <http://xmlns.com/foaf/0.1/Agent> .
+
+<http://xmlns.com/foaf/0.1/name>
+    a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+
+_:430
+    <http://daselab.org/ContextualizedWinstonPartWhole#hasWhole> <http://schema.landrs.org/schema/Body>, <http://schema.landrs.org/schema/UxV> ;
+    <http://schema.landrs.org/schema/hasWhole> <http://schema.landrs.org/schema/Body>, <http://schema.landrs.org/schema/UxV> ;
+    a <http://daselab.org/ContextualizedWinstonPartWhole#PO-Component-Type>, <http://schema.landrs.org/schema/Component>, <http://schema.landrs.org/schema/Product>, <http://schema.landrs.org/schema/Thing>, <http://schema.landrs.org/schema/UAVComponent>, <http://schema.org/Product>, <http://schema.org/Thing>, <http://www.w3.org/2002/07/owl#Thing>, <http://www.wikidata.org/entity/Q28816538>, <http://www.wikidata.org/entity/Q811909> .
+
+_:446
+    <http://daselab.org/ContextualizedWinstonPartWhole#hasWhole> <http://schema.landrs.org/schema/GroundControlStation>, <http://schema.landrs.org/schema/UAS> ;
+    <http://schema.landrs.org/schema/hasWhole> <http://schema.landrs.org/schema/GroundControlStation>, <http://schema.landrs.org/schema/UAS> ;
+    a <http://daselab.org/ContextualizedWinstonPartWhole#PO-Component-Type>, <http://schema.landrs.org/schema/Component>, <http://schema.landrs.org/schema/Product>, <http://schema.landrs.org/schema/Thing>, <http://schema.org/Product>, <http://schema.org/Thing>, <http://www.w3.org/2002/07/owl#Thing>, <http://www.wikidata.org/entity/Q811909> .
+
+_:447
+    <http://daselab.org/ContextualizedWinstonPartWhole#hasWhole> <http://schema.landrs.org/schema/CommunicationSystem>, <http://schema.landrs.org/schema/UAS> ;
+    <http://schema.landrs.org/schema/hasWhole> <http://schema.landrs.org/schema/CommunicationSystem>, <http://schema.landrs.org/schema/UAS> ;
+    a <http://daselab.org/ContextualizedWinstonPartWhole#PO-Component-Type>, <http://schema.landrs.org/schema/Component>, <http://schema.landrs.org/schema/Product>, <http://schema.landrs.org/schema/Thing>, <http://schema.landrs.org/schema/UAVComponent>, <http://schema.org/Product>, <http://schema.org/Thing>, <http://www.w3.org/2002/07/owl#Thing>, <http://www.wikidata.org/entity/Q28816538>, <http://www.wikidata.org/entity/Q811909> .
+
+_:448
+    <http://daselab.org/ContextualizedWinstonPartWhole#hasWhole> <http://schema.landrs.org/schema/Autopilot>, <http://schema.landrs.org/schema/FlightControlSystem> ;
+    <http://schema.landrs.org/schema/hasWhole> <http://schema.landrs.org/schema/Autopilot>, <http://schema.landrs.org/schema/FlightControlSystem> ;
+    a <http://daselab.org/ContextualizedWinstonPartWhole#PO-Component-Type>, <http://schema.landrs.org/schema/Component>, <http://schema.landrs.org/schema/Product>, <http://schema.landrs.org/schema/Thing>, <http://schema.org/Product>, <http://schema.org/Thing>, <http://www.w3.org/2002/07/owl#Thing>, <http://www.wikidata.org/entity/Q811909> .
+
+_:449
+    <http://daselab.org/ContextualizedWinstonPartWhole#hasWhole> <http://schema.landrs.org/schema/Payload>, <http://schema.landrs.org/schema/UAS> ;
+    <http://schema.landrs.org/schema/hasWhole> <http://schema.landrs.org/schema/Payload>, <http://schema.landrs.org/schema/UAS> ;
+    a <http://daselab.org/ContextualizedWinstonPartWhole#PO-Component-Type>, <http://schema.landrs.org/schema/Component>, <http://schema.landrs.org/schema/Product>, <http://schema.landrs.org/schema/Thing>, <http://schema.org/Product>, <http://schema.org/Thing>, <http://www.w3.org/2002/07/owl#Thing>, <http://www.wikidata.org/entity/Q811909> .
+
+_:450
+    <http://daselab.org/ContextualizedWinstonPartWhole#hasWhole> <http://schema.landrs.org/schema/FlightControlSystem>, <http://schema.landrs.org/schema/FlightControllerBoard> ;
+    <http://schema.landrs.org/schema/hasWhole> <http://schema.landrs.org/schema/FlightControlSystem>, <http://schema.landrs.org/schema/FlightControllerBoard> ;
+    a <http://daselab.org/ContextualizedWinstonPartWhole#PO-Component-Type>, <http://schema.landrs.org/schema/Component>, <http://schema.landrs.org/schema/Product>, <http://schema.landrs.org/schema/Thing>, <http://schema.org/Product>, <http://schema.org/Thing>, <http://www.w3.org/2002/07/owl#Thing>, <http://www.wikidata.org/entity/Q811909> .
+

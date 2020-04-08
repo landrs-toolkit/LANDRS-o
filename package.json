@@ -1,0 +1,14 @@
+{
+  "name": "hylar-experiment",
+  "version": "1.0.0",
+  "description": "Experiments with the hylar+ reasoner",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "hylar": "^1.10.1"
+  }
+}

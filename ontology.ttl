@@ -65,7 +65,7 @@ schema:version a owl:AnnotationProperty .
 
 
 # URI for the fully dereferencable ontology
-<http://schema.landrs.org/rdf> a owl:Ontology , voaf:Vocabulary, prov:Entity ;
+<http://schema.landrs.org/rdf> a owl:Ontology , voaf:Vocabulary, prov:Entity, dcat:Dataset ;
   dcterms:title "Landrs Schema"@en ;
   dcterms:description "This ontology is developed as part of the Sloan Funded LANDRS project to advance UxV data interoperability"@en ;
   dcterms:creator [ a foaf:Agent, prov:Agent ; foaf:name "LANDRS: Linked and Networked Drones"@en ] ;
@@ -76,7 +76,12 @@ schema:version a owl:AnnotationProperty .
   vann:preferredNamespaceUri "http://schema.landrs.org/schema/" ;
   owl:versionInfo "0.0.1" ;
   schema:versionInfo "0.0.1" ;
-  opla:reusesPatternAsTemplate <https://raw.githubusercontent.com/cogan-shimizu-wsu/WinstonPartWhole/master/WinstonPartWhole.owl> .
+  opla:reusesPatternAsTemplate <https://raw.githubusercontent.com/cogan-shimizu-wsu/WinstonPartWhole/master/WinstonPartWhole.owl> ;
+  dcat:distribution [
+    dcat:accessURL <http://schema.landrs.org/rdf> ;
+    dcat:mediaType <https://www.iana.org/assignments/media-types/application/ld+json> ;
+    dcat:mediaType <https://www.iana.org/assignments/media-types/application/n-triples>
+  ] .
 
 #### Classes Derived from Schema.org
 landrs:Thing a rdfs:Class ;
@@ -84,7 +89,8 @@ landrs:Thing a rdfs:Class ;
   rdfs:comment "The most generic type of item."@en ;
   schema:sameAs schema:Thing ;
   owl:equivalentClass schema:Thing ;
-  owl:equivalentClass owl:Thing .
+  owl:equivalentClass owl:Thing ;
+  rdfs:isDefinedBy <http://schema.landrs.org/rdf> .
 
 landrs:Event a rdfs:Class ;
     rdfs:label "Event"@en ;

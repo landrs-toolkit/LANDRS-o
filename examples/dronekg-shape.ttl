@@ -8,6 +8,7 @@
 @prefix sosa-ext: <http://www.w3.org/ns/ssn/ext/> .
 @prefix ssn: <http://www.w3.org/ns/ssn/> .
 @prefix ssn-system: <http://www.w3.org/ns/ssn/systems/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 
 landrs:FlightControllerBoardShape
@@ -85,7 +86,7 @@ sh:property [
   sh:path sosa:sosa:observes ;
   sh:NodeKind sh:IRI ;
   sh:class sosa:ObservableProperty ;
-  sosa:minCount 1;
+  sh:minCount 1;
 ] ;
 sh:property [
       sh:path schema:description ;

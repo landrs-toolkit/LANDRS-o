@@ -1,0 +1,24 @@
+@prefix landrs: <https://schema.landrs.org/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix sosa-ext: <http://www.w3.org/ns/ssn/ext/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix ssn-system: <http://www.w3.org/ns/ssn/systems/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+<ld.landrs.org/id/MjJjZDQ1OTMtOTdkYi00MGQ3LWJhMzctOGU5ZGUwNmU2ZjI0Cg==> a landrs:DataAquisition ;
+  prov:used <ld.landrs.org/id/ZThlYjc5MTAtMTQ3OC00NjA0LWFkOTctYzU0MDM4NGFmNzlkCg==> ;
+  prov:wasInformedBy <ld.landrs.org/id/ZThlYjc5MTAtMTQ3OC00NjA0LWFkOTctYzU0MDM4NGFmNzlkCg==> ;
+  prov:startedAtTime "2011-07-14T01:01:01Z"^^xsd:dateTime;;
+  prov:endedAtTime "2011-07-14T02:02:02Z"^^xsd:dateTime;
+.
+
+
+<ld.landrs.org/id/MWE4MTU1MmUtZmVjMi00NTBjLWIyODItODJiZWIyNjVhNmJhCg==> a landrs:Flight .
+
+<ld.landrs.org/id/ZThlYjc5MTAtMTQ3OC00NjA0LWFkOTctYzU0MDM4NGFmNzlkCg==> a landrs:DataSource .

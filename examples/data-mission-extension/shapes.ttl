@@ -1,0 +1,48 @@
+@prefix landrs: <https://schema.landrs.org/schema/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix sosa-ext: <http://www.w3.org/ns/ssn/ext/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix ssn-system: <http://www.w3.org/ns/ssn/systems/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+landrs:DataAquisitionShape
+  a sh:NodeShape ;
+  sh:targetClass landrs:DataAquisition;
+####
+# FlightControllerBoard mandatory properties
+####
+sh:property [
+      sh:path prov:prov:startedAtTime ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ;
+      sh:datatype xsd:dateTime;
+ ] ;
+ sh:property [
+      sh:path prov:prov:endAtTime ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ;
+      sh:datatype xsd:dateTime;
+ ] ;
+ sh:property [
+   sh:path prov:qualifiedAssociation ;
+   sh:NodeKind sh:IRI ;
+   sh:class landrs:DataPlanAssociation ;
+   sh:minCount 1;
+ ] ;
+sh:property [
+   sh:path prov:used ;
+   sh:NodeKind sh:IRI ;
+   sh:class landrs:DataSource ;
+   sh:minCount 1;
+ ] ;
+ sh:property [
+   sh:path prov:wasInformedBy ;
+   sh:NodeKind sh:IRI ;
+   sh:class landrs:Flight ;
+   sh:minCount 1;
+ ] .

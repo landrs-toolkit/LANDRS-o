@@ -68,7 +68,7 @@ schema:version a owl:AnnotationProperty .
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/n-triples>
   ] ;
   owl:imports landrsrdf: .
-  
+
 
 #################################################################
 #    Object Properties
@@ -78,7 +78,7 @@ schema:version a owl:AnnotationProperty .
 gf:hadPlan rdf:type owl:ObjectProperty ;
            rdfs:domain gf:DataPlanAssociation ;
            rdfs:range gf:DataCapturePlan ;
-           rdfs:label "hadPlan" . 
+           rdfs:label "hadPlan" .
 
 
 ###  http://schema.landrs.org/hasDataSource
@@ -131,8 +131,8 @@ landrs:servesTrajectory rdf:type owl:ObjectProperty ;
 landrs:DataAquisition rdf:type  owl:Class ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty landrs:qualifiedAssociation ;
-                                  owl:someValuesFrom landrs:DataplanAssociation 
-                                ] ;   
+                                  owl:someValuesFrom landrs:DataplanAssociation
+                                ] ;
                       rdfs:isDefinedBy landrsrdf: .
 
 
@@ -140,7 +140,7 @@ landrs:DataAquisition rdf:type  owl:Class ,
 landrs:DataCapturePlan  rdf:type  owl:Class ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty landrs:wasGeneratedBy ;
-                                    owl:someValuesFrom landrs:DataCapturePlanningActivity 
+                                    owl:someValuesFrom landrs:DataCapturePlanningActivity
                                   ] ;
                         rdfs:isDefinedBy landrsrdf: .
 
@@ -151,10 +151,11 @@ landrs:DataCapturePlanningActivity  rdf:type owl:Class ;
 
 
 ###  https://schema.landrs.org/schema/DataPlanAssociation
-landrs:DataPlanAssociation  rdf:type  owl:Class ,
+landrs:DataPlanAssociation  rdf:type  owl:Class ;
+                            rdfs:subClassOf
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty landrs:hadPlan ;
-                                        owl:someValuesFrom landrs:DataCapturePlan 
+                                        owl:someValuesFrom landrs:DataCapturePlan
                                       ] ;
                             rdfs:isDefinedBy landrsrdf: .
 

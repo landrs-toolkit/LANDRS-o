@@ -27,6 +27,7 @@
 @prefix step: <http://www.purl.org/net/step#> .
 @prefix wd: <http://www.wikidata.org/entity/> .
 @prefix wdt: <http://www.wikidata.org/prop/direct/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 
 # Sample Drone Knowledge Graph

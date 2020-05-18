@@ -33,64 +33,64 @@
 #################################################################
 
 ###  https://schema.landrs.org/schema/hadPlan
-prov:hadPlan  rdf:type owl:ObjectProperty ;
+prov:hadPlan  rdf:type rdf:Property ;
               rdfs:label "hadPlan" .
 
 
 ###  https://schema.landrs.org/schema/hadRole
-prov:hadRole  rdf:type owl:ObjectProperty ;
+prov:hadRole  rdf:type rdf:Property ;
               rdfs:domain landrs:FlightPlanAssociation ;
               rdfs:range landrs:Pilot ;
               rdfs:label "hadRole" .
 
 
 ###  http://www.w3.org/ns/prov#qualifiedAssociation
-prov:qualifiedAssociation rdf:type owl:ObjectProperty ;
+prov:qualifiedAssociation rdf:type rdf:Property ;
                           rdfs:domain gf:DataAquisition ;
                           rdfs:range gf:DataPlanAssociation ;
                           rdfs:label "prov:qualifiedAssociation" .
 
 ###  https://schema.landrs.org/schema/wasGeneratedBy
-prov:wasGeneratedBy rdf:type owl:ObjectProperty ;
+prov:wasGeneratedBy rdf:type rdf:Property ;
                     rdfs:label "wasGeneratedBy" .
 
 ###  http://www.w3.org/ns/prov#used
-prov:used rdf:type owl:ObjectProperty ;
+prov:used rdf:type ordf:Property ;
           rdfs:domain gf:DataAquisition ;
           rdfs:range gf:DataSource ;
           rdfs:label "prov:used" .
 
 
 ###  http://www.w3.org/ns/prov#wasGeneratedBy
-prov:wasGeneratedBy rdf:type owl:ObjectProperty ;
+prov:wasGeneratedBy rdf:type rdf:Property ;
                     rdfs:domain gf:ObservationCollection ;
                     rdfs:range gf:DataAquisition ;
                     rdfs:label "prov:wasGeneratedBy" .
 
 
 ###  http://www.w3.org/ns/prov#wasInformedBy
-prov:wasInformedBy rdf:type owl:ObjectProperty ;
+prov:wasInformedBy rdf:type rdf:Property ;
                    rdfs:domain gf:DataAquisition ;
                    rdfs:range gf:Flight ;
                    rdfs:label "prov:wasInformedBy" .
 
 
 ##  http://purl.org/dc/terms/format
-dct:format rdf:type owl:ObjectProperty ;
+dct:format rdf:type rdf:Property ;
            rdfs:domain gf:DataSource ;
            rdfs:range dct:MediaTypeOrExtent ;
            rdfs:label "dct:format" .
 
 
 ###  http://www.w3.org/ns/dcat#frequency
-dcat:frequency rdf:type owl:ObjectProperty ;
+dcat:frequency rdf:type rdf:Property ;
                rdfs:domain gf:DataSource ;
                rdfs:range dct:Frequency ;
                rdfs:label "dcat:frequency" .
 
 
 ###  http://www.w3.org/ns/dcat#servesDataset
-dcat:servesDataset rdf:type owl:ObjectProperty ;
+dcat:servesDataset rdf:type rdf:Property ;
                    rdfs:domain gf:DataSource ;
                    rdfs:range gf:ObservationCollection ;
                    rdfs:label "dcat:servesDataset" .

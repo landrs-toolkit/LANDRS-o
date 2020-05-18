@@ -1,7 +1,10 @@
 @prefix landrs: <https://schema.landrs.org/schema/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix schema: <http://schema.org/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
@@ -46,3 +49,75 @@ sh:property [
    sh:class landrs:Flight ;
    sh:minCount 1;
  ] .
+
+landrs:DataSourceShape
+  a sh:NodeShape ;
+  sh:targetClass landrs:DataSource;
+####
+# FlightControllerBoard mandatory properties
+####
+ sh:property [
+   sh:path lands:producedBy ;
+   sh:NodeKind sh:IRI ;
+   sh:class landrs:SensorPayload ;
+   sh:minCount 1;
+ ] ;
+ # Note accrualPeriodicty may not be right
+ sh:property [
+   sh:path dcat:servesDataSet ;
+   sh:NodeKind sh:IRI ;
+   sh:class ssn-ext:ObservationCollection ;
+ ] .
+
+
+ landrs: ObservationCollectionShape
+  a sh:NodeShape ;
+  sh:targetClass landrs:ObservationCollection;
+  sh:property [
+      sh:path dct:description ;
+      sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+      sh:severity sh:Violation ;
+    ] ;
+    sh:property [
+      sh:path dct:hasVersion ;
+      sh:class dcat:Dataset ;
+            sh:severity sh:Violation ;
+    ] ;
+    sh:property [
+      sh:path dct:modified ;
+      sh:maxCount 1 ;
+            sh:severity sh:Violation ;
+      sh:shape :DateOrDateTimeDataType ;
+    ] ;
+     sh:property [
+      sh:path dct:title ;
+      sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+      sh:severity sh:Violation ;
+    ] ;
+    sh:property [
+      sh:path sosa:sosa:observedProperty ;
+      sh:NodeKind sh:IRI ;
+      sh:class sosa:ObservableProperty ;
+
+    ];
+    sh:property [
+      sh:path sosa:sosa:madeBySensor ;
+      sh:NodeKind sh:IRI ;
+      sh:class sosa:Sensor ;
+    ] ;
+    sh:property [
+      sh:path ssn-ext:hasMember ;
+      sh:minCount 1 ;
+      sh:nodeKind sh:IRI ;
+      sh:class sosa:Observation ;
+      sh:severity sh:Violation ;
+    ];
+    sh:property [
+      sh:path sosa:hasFeatureOfInterest ;
+      sh:nodeKind sh:IRI ;
+      sh:class sosa:FeatureOfInterest ;
+    ]
+
+

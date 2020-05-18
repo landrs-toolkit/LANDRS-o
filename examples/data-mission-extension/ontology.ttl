@@ -128,7 +128,8 @@ landrs:servesTrajectory rdf:type owl:ObjectProperty ;
 #################################################################
 
 ###  https://schema.landrs.org/schema/DataAquisition
-landrs:DataAquisition rdf:type  owl:Class ,
+landrs:DataAquisition rdf:type  owl:Class ;
+                      rdfs:subClassOf
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty landrs:qualifiedAssociation ;
                                   owl:someValuesFrom landrs:DataplanAssociation
@@ -137,7 +138,8 @@ landrs:DataAquisition rdf:type  owl:Class ,
 
 
 ###  https://schema.landrs.org/schema/DataCapturePlan
-landrs:DataCapturePlan  rdf:type  owl:Class ,
+landrs:DataCapturePlan  rdf:type  owl:Class ;
+                        rdfs:subClassOf
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty landrs:wasGeneratedBy ;
                                     owl:someValuesFrom landrs:DataCapturePlanningActivity
@@ -161,7 +163,8 @@ landrs:DataPlanAssociation  rdf:type  owl:Class ;
 
 
 ###  https://schema.landrs.org/schema/Flight
-landrs:Flight rdf:type  owl:Class ,
+landrs:Flight rdf:type  owl:Class ;
+              rdfs:subClassOf
                         [ rdf:type owl:Restriction ;
                           owl:onProperty landsr:qualifiedAssociation ;
                           owl:someValuesFrom landrs:FlightPlanAssociation
@@ -170,7 +173,8 @@ landrs:Flight rdf:type  owl:Class ,
 
 
 ###  https://schema.landrs.org/schema/FlightPlan
-landrs:FlightPlan rdf:type  owl:Class ,
+landrs:FlightPlan rdf:type  owl:Class ;
+                  rdfs:subClassOf
                             [ rdf:type owl:Restriction ;
                               owl:onProperty landrs:wasGeneratedBy ;
                               owl:someValuesFrom landrs:FlightPlanningActivity
@@ -179,7 +183,8 @@ landrs:FlightPlan rdf:type  owl:Class ,
 
 
 ###  https://schema.landrs.org/schema/FlightPlanAssociation
-landrs:FlightPlanAssociation  rdf:type  owl:Class ,
+landrs:FlightPlanAssociation  rdf:type  owl:Class ;
+                              rdfs:subClassOf
                                         [ rdf:type owl:Restriction ;
                                           owl:onProperty landrs:hadPlan ;
                                           owl:someValuesFrom landrs:FlightPlan

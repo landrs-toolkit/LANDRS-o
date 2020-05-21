@@ -118,8 +118,8 @@ landrs:location rdf:type owl:ObjectProperty ;
 
 ###  http://schema.landrs.org/schema/providesParticipantRole
 landrs:providesParticipantRole rdf:type owl:ObjectProperty ;
-                           rdfs:domains landrs:Flight ;
-                           rdfs:range landrs:Uav ;
+                           rdfs:domains landrs:Event ;
+                           rdfs:range landrs:ParticipantRole ;
                            rdfs:label "providesParticipantRole" .
 
 

@@ -147,8 +147,8 @@ landrs:location rdf:type rdf:Property  ;
 
 ###  http://schema.landrs.org/schema/providesParticipantRole
 landrs:providesParticipantRole rdf:type rdf:Property ;
-                           schema:domainIncludes landrs:Flight ;
-                           schema:rangeIncludes landrs:Uav ;
+                           schema:domainIncludes landrs:Event ;
+                           schema:rangeIncludes landrs:ParticipantRole ;
                            rdfs:label "providesParticipantRole" .
 
 

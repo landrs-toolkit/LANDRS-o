@@ -13,12 +13,16 @@
 @prefix ssn-system: <http://www.w3.org/ns/ssn/systems/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+
+
+####
+# DataAquisitionShape
+####
 landrs:DataAquisitionShape
   a sh:NodeShape ;
   sh:targetClass landrs:DataAquisition;
-####
-# FlightControllerBoard mandatory properties
-####
+
+# Mandatory properties 
 sh:property [
       sh:path prov:prov:startedAtTime ;
       sh:minCount 1 ;
@@ -50,29 +54,14 @@ sh:property [
    sh:minCount 1;
  ] .
 
-landrs:DataSourceShape
-  a sh:NodeShape ;
-  sh:targetClass landrs:DataSource;
 ####
-# FlightControllerBoard mandatory properties
+# ObservationCollectionShape
 ####
- sh:property [
-   sh:path lands:producedBy ;
-   sh:NodeKind sh:IRI ;
-   sh:class landrs:SensorPayload ;
-   sh:minCount 1;
- ] ;
- # Note accrualPeriodicty may not be right
- sh:property [
-   sh:path dcat:servesDataSet ;
-   sh:NodeKind sh:IRI ;
-   sh:class ssn-ext:ObservationCollection ;
- ] .
-
-
- landrs: ObservationCollectionShape
+ landrs:ObservationCollectionShape
   a sh:NodeShape ;
   sh:targetClass landrs:ObservationCollection;
+
+# Mandatory properties 
   sh:property [
       sh:path dct:description ;
       sh:minCount 1 ;
@@ -119,5 +108,61 @@ landrs:DataSourceShape
       sh:nodeKind sh:IRI ;
       sh:class sosa:FeatureOfInterest ;
     ]
+.
 
+
+####
+# DataSourceShape
+####
+landrs:DataSourceShape
+  a sh:NodeShape ;
+  sh:targetClass landrs:DataSource;
+
+ sh:property [
+   sh:path lands:producedBy ;
+   sh:NodeKind sh:IRI ;
+   sh:class landrs:SensorPayload ;
+   sh:minCount 1;
+ ] ;
+ # Note accrualPeriodicty may not be right
+ sh:property [
+   sh:path dcat:servesDataSet ;
+   sh:NodeKind sh:IRI ;
+   sh:class ssn-ext:ObservationCollection ;
+ ]
+ .
+
+####
+# FlightShape
+####
+landrs:FlightShape
+  a sh:NodeShape ;
+  sh:targetClass landrs:Flight;
+
+# Mandatory properties 
+sh:property [
+      sh:path prov:startedAtTime ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ;
+      sh:datatype xsd:dateTime;
+ ] ;
+ sh:property [
+      sh:path prov:endAtTime ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ;
+      sh:datatype xsd:dateTime;
+ ] ;
+ sh:property [
+   sh:path landrs:hasSpatioTemporalExtent ;
+   sh:NodeKind sh:IRI ;
+   sh:class landrs:SpatialTemporalAggregate ;
+   sh:minCount 1; # ?
+ ] ;
+ sh:property [
+   sh:path landrs:providesParticipantRole ;
+   sh:NodeKind sh:IRI ;
+   sh:class landrs:UAV ;
+   sh:minCount 1; # ?
+ ] ;
+ .
 

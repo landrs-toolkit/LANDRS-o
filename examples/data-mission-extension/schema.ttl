@@ -1,8 +1,6 @@
 @prefix : <http://schema.landrs.org/schema/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix gf: <http://schema.landrs.org/> .
 @prefix dct: <http://purl.org/dc/terms/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix ssn: <http://www.w3.org/ns/ssn/> .
 @prefix wgs: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
@@ -18,14 +16,8 @@
 @prefix landrs: <http://schema.landrs.org/schema/> .
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix ssn-ext: <http://www.w3.org/ns/ssn/ext/> .
-@prefix foaf: <http://xmlns.com/foaf/spec/> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix tagg: <https://www.w3.org/2006/time/agg#> .
-@prefix time: <http://www.w3.org/2006/time#> .
-@prefix ssn-ext: <http://www.w3.org/ns/ssn/ext/> .
+@prefix schema: <https://schema.org/> .
 @base <http://schema.landrs.org/> .
-
 
 
 #################################################################
@@ -46,8 +38,8 @@ prov:hadRole  rdf:type rdf:Property ;
 
 ###  http://www.w3.org/ns/prov#qualifiedAssociation
 prov:qualifiedAssociation rdf:type rdf:Property ;
-                          rdfs:domain gf:DataAquisition ;
-                          rdfs:range gf:DataPlanAssociation ;
+                          rdfs:domain landrs:DataAquisition ;
+                          rdfs:range landrs:DataPlanAssociation ;
                           rdfs:label "prov:qualifiedAssociation" .
 
 ###  https://schema.landrs.org/schema/wasGeneratedBy
@@ -55,102 +47,109 @@ prov:wasGeneratedBy rdf:type rdf:Property ;
                     rdfs:label "wasGeneratedBy" .
 
 ###  http://www.w3.org/ns/prov#used
-prov:used rdf:type ordf:Property ;
-          rdfs:domain gf:DataAquisition ;
-          rdfs:range gf:DataSource ;
+prov:used rdf:type rdf:Property ;
+          rdfs:domain landrs:DataAquisition ;
+          rdfs:range landrs:DataSource ;
           rdfs:label "prov:used" .
 
 
 ###  http://www.w3.org/ns/prov#wasGeneratedBy
 prov:wasGeneratedBy rdf:type rdf:Property ;
-                    rdfs:domain gf:ObservationCollection ;
-                    rdfs:range gf:DataAquisition ;
+                    rdfs:domain landrs:ObservationCollection ;
+                    rdfs:range landrs:DataAquisition ;
                     rdfs:label "prov:wasGeneratedBy" .
 
 
 ###  http://www.w3.org/ns/prov#wasInformedBy
 prov:wasInformedBy rdf:type rdf:Property ;
-                   rdfs:domain gf:DataAquisition ;
-                   rdfs:range gf:Flight ;
+                   rdfs:domain landrs:DataAquisition ;
+                   rdfs:range landrs:Flight ;
                    rdfs:label "prov:wasInformedBy" .
 
 
 ##  http://purl.org/dc/terms/format
 dct:format rdf:type rdf:Property ;
-           rdfs:domain gf:DataSource ;
+           rdfs:domain landrs:DataSource ;
            rdfs:range dct:MediaTypeOrExtent ;
            rdfs:label "dct:format" .
 
 
 ###  http://www.w3.org/ns/dcat#frequency
 dcat:frequency rdf:type rdf:Property ;
-               rdfs:domain gf:DataSource ;
+               rdfs:domain landrs:DataSource ;
                rdfs:range dct:Frequency ;
                rdfs:label "dcat:frequency" .
 
 
 ###  http://www.w3.org/ns/dcat#servesDataset
 dcat:servesDataset rdf:type rdf:Property ;
-                   rdfs:domain gf:DataSource ;
-                   rdfs:range gf:ObservationCollection ;
+                   rdfs:domain landrs:DataSource ;
+                   rdfs:range landrs:ObservationCollection ;
                    rdfs:label "dcat:servesDataset" .
 
 ### LANDRS Object Properties
 
-###  http://schema.landrs.org/component
-gf:component rdf:type rdf:Property ;
-             schema:domainIncludes gf:SensorPayload ;
-             schema:rangeIncludes gf:Uav ;
+###  http://schema.landrs.org/schema/component
+landrs:component rdf:type rdf:Property ;
+             schema:domainIncludes landrs:SensorPayload ;
+             schema:rangeIncludes landrs:Uav ;
              rdfs:label "component" .
 
 
-###  http://schema.landrs.org/hadPlan
-gf:hadPlan rdf:type rdf:Property;
-           schema:domainIncludes gf:DataPlanAssociation ;
-           schema:rangeIncludes gf:DataCapturepPlan ;
+###  http://schema.landrs.org/schema/hadPlan
+landrs:hadPlan rdf:type rdf:Property;
+           schema:domainIncludes landrs:DataPlanAssociation ;
+           schema:rangeIncludes landrs:DataCapturepPlan ;
            rdfs:label "hadPlan" .
 
 
-###  http://schema.landrs.org/hasDataSource
-gf:hasDataSource rdf:type rdf:Property ;
-                 schema:domainIncludes gf:DataSource ;
-                 schema:rangeIncludes  gf:DataSource ;
+###  http://schema.landrs.org/schema/hasDataSource
+landrs:hasDataSource rdf:type rdf:Property ;
+                 schema:domainIncludes landrs:DataSource ;
+                 schema:rangeIncludes  landrs:DataSource ;
                  rdfs:label "hasDataSource" .
 
 
-###  http://schema.landrs.org/hasSpatioTemporalExtent
-gf:hasSpatioTemporalExtent rdf:type rdf:Property ;
-                           schema:domainIncludes gf:Flight ;
-                           schema:rangeIncludes gf:SpatialTemporalAggregate ;
+###  http://schema.landrs.org/schema/hasSpatioTemporalExtent
+landrs:hasSpatioTemporalExtent rdf:type rdf:Property ;
+                           schema:domainIncludes landrs:Flight ;
+                           schema:rangeIncludes landrs:SpatialTemporalAggregate ;
                            rdfs:label "hasSpatioTemporalExtent" .
 
-
-###  http://schema.landrs.org/producedBy
-gf:producedBy rdf:type rdf:Property ;
-              schema:domainIncludes gf:DataSource ;
-              schema:rangeIncludes gf:SensorPayload ;
+###  http://schema.landrs.org/schema/producedBy
+landrs:producedBy rdf:type rdf:Property ;
+              schema:domainIncludes landrs:DataSource ;
+              schema:rangeIncludes landrs:SensorPayload ;
               rdfs:label "producedBy" .
 
 
-###  http://schema.landrs.org/provides
-gf:provides rdf:type rdf:Property ;
-            schema:domainIncludes gf:SensorPayload ;
-            schema:rangeIncludes gf:DataSource ;
+###  http://schema.landrs.org/schema/provides
+landrs:provides rdf:type rdf:Property ;
+            schema:domainIncludes landrs:SensorPayload ;
+            schema:rangeIncludes landrs:DataSource ;
             rdfs:label "provides" .
 
 
-###  http://schema.landrs.org/providesParticipantRole
-gf:providesParticipantRole rdf:type rdf:Property ;
-                           schema:domainIncludes gf:Flight ;
-                           schema:rangeIncludes gf:Uav ;
-                           rdfs:label "providesParticipantRole" .
-
-
-###  http://schema.landrs.org/servesTrajectory
+###  http://schema.landrs.org/schema/servesTrajectory
 landrs:servesTrajectory rdf:type rdf:Property  ;
-                        schema:domainIncludes gf:TrajectorySource ;
-                        schema:rangeIncludes gf:TrajectoryObservationCollection ;
+                        schema:domainIncludes landrs:TrajectorySource ;
+                        schema:rangeIncludes landrs:TrajectoryObservationCollection ;
                         rdfs:label "servesTrajectory" .
+
+
+# New properties
+###  http://schema.landrs.org/schema/location
+landrs:location rdf:type rdf:Property  ;
+                rdfs:subPropertyOf schema:location ;                     
+                schema:domainIncludes landrs:Event ;
+                schema:rangeIncludes  landrs:Place ;
+                rdfs:label "location" .
+
+###  http://schema.landrs.org/schema/providesParticipantRole
+landrs:providesParticipantRole rdf:type rdf:Property ;
+                           schema:domainIncludes landrs:Flight ;
+                           schema:rangeIncludes landrs:Uav ;
+                           rdfs:label "providesParticipantRole" .
 
 
 #################################################################
@@ -158,27 +157,27 @@ landrs:servesTrajectory rdf:type rdf:Property  ;
 #################################################################
 
 ###  http://www.w3.org/ns/dcat#Dataset
-dcat:Dataset rdf:type owl:Class ;
+dcat:Dataset rdf:type rdfs:Class ;
              rdfs:label "dcat:Dataset" .
 
 
 ###  http://www.w3.org/ns/prov#Activity
-prov:Activity rdf:type owl:Class ;
+prov:Activity rdf:type rdfs:Class ;
               rdfs:label "prov:Activity" .
 
 
 ###  http://www.w3.org/ns/prov#Association
-prov:Association rdf:type owl:Class ;
+prov:Association rdf:type rdfs:Class ;
                  rdfs:label "prov:Association" .
 
 
 ###  http://www.w3.org/ns/prov#Plan
-prov:Plan rdf:type owl:Class ;
+prov:Plan rdf:type rdfs:Class ;
           rdfs:label "prov:Plan" .
 
 
 ###  http://www.w3.org/ns/prov#Role
-prov:Role rdf:type owl:Class ;
+prov:Role rdf:type rdfs:Class ;
           rdfs:label "prov:Role" .
 
 
@@ -206,12 +205,6 @@ landrs:DataCapturePlanningActivity  rdf:type rdfs:Class ;
 landrs:DataPlanAssociation  rdf:type rdfs:Class ;
                             rdfs:subClassOf prov:Association ;
                             rdfs:label "DataPlanAssociation" .
-
-
-###  https://schema.landrs.org/schema/Flight
-landrs:Flight rdf:type rdfs:Class ;
-              rdfs:subClassOf prov:Activity ;
-              rdfs:label "Flight" .
 
 
 ###  https://schema.landrs.org/schema/FlightPlan
@@ -251,81 +244,90 @@ landrs:Role rdf:type rdfs:Class ;
             rdfs:subClassOf prov:Role ;
             rdfs:label "Role" .
 
-###  http://schema.landrs.org/DataSource
-gf:DataSource rdf:type rdfs:Class;
+###  http://schema.landrs.org/schema/DataSource
+landrs:DataSource rdf:type rdfs:Class;
               rdfs:subClassOf dcat:DataService ;
               rdfs:comment "Any source of observational data from a sensor or sensor system hosted by a drone and is provided by some software API or API service" ;
               rdfs:label "Data Source" .
 
 
-###  http://schema.landrs.org/DataAquisition
-gf:DataAquisition rdf:type rdfs:Class ;
+###  http://schema.landrs.org/schema/DataAquisition
+landrs:DataAquisition rdf:type rdfs:Class ;
                   rdfs:label "DataAquisition" .
 
 
-###  http://schema.landrs.org/DataCapturePlan
-gf:DataCapturePlan rdf:type rdfs:Class ;
+###  http://schema.landrs.org/schema/DataCapturePlan
+landrs:DataCapturePlan rdf:type rdfs:Class ;
                    rdfs:label "DataCapturePlan" .
 
 
-###  http://schema.landrs.org/DataPlanAssociation
-gf:DataPlanAssociation rdf:type rdfs:Class ;
+###  http://schema.landrs.org/schema/DataPlanAssociation
+landrs:DataPlanAssociation rdf:type rdfs:Class ;
                        rdfs:label "DataPlanAssociation" .
 
 
-###  http://schema.landrs.org/Event
-gf:Event rdf:type rdfs:Class ;
+###  http://schema.landrs.org/schema/Event
+landrs:Event rdf:type rdfs:Class ;
          rdfs:comment "Event from A Core Pattern for Events" ;
          rdfs:label "Event" .
 
-
-###  http://schema.landrs.org/Flight
-gf:Flight rdf:type rdfs:Class ;
-          rdfs:subClassOf gf:Event ,
+###  https://schema.landrs.org/schema/Flight
+landrs:Flight rdf:type rdfs:Class ;
+          rdfs:subClassOf landrs:Event ,
                           prov:Activity ;
           rdfs:label "Flight" .
 
 
-###  http://schema.landrs.org/ObservationCollection
-gf:ObservationCollection rdf:type rdfs:Class ;
+###  http://schema.landrs.org/schema/ObservationCollection
+landrs:ObservationCollection rdf:type rdfs:Class ;
                          rdfs:subClassOf dcat:Dataset ,
                                          prov:Entity ,
                                          ssn-ext:ObservationCollection ;
                          rdfs:label "Observation Collection" .
 
 
-###  http://schema.landrs.org/SensorPayload
-gf:SensorPayload rdf:type rdfs:Class ;
+###  http://schema.landrs.org/schema/SensorPayload
+landrs:SensorPayload rdf:type rdfs:Class ;
                  rdfs:subClassOf ssn:System ;
                  rdfs:comment "Hardware Component of a drone system that provides a data source" ;
                  rdfs:label "Sensor Payload" .
 
 
-###  http://schema.landrs.org/SpatialTemporalAggregate
-gf:SpatialTemporalAggregate rdf:type rdfs:Class ;
+###  http://schema.landrs.org/schema/SpatialTemporalAggregate
+landrs:SpatialTemporalAggregate rdf:type rdfs:Class ;
                             rdfs:subClassOf wgs:SpatialThing ,
                                             tagg:TemporalAggregate ;
                             rdfs:label "SpatialTemporalAggregate" .
 
 
-###  http://schema.landrs.org/TrajectoryObservationCollection
-gf:TrajectoryObservationCollection rdf:type rdfs:Class ;
-                                   rdfs:subClassOf gf:ObservationCollection ,
-                                                   gf:SpatialTemporalAggregate ;
+###  http://schema.landrs.org/schema/TrajectoryObservationCollection
+landrs:TrajectoryObservationCollection rdf:type rdfs:Class ;
+                                   rdfs:subClassOf landrs:ObservationCollection ,
+                                                   landrs:SpatialTemporalAggregate ;
                                    rdfs:label "TrajectoryObservationCollection" .
 
 
-###  http://schema.landrs.org/TrajectorySource
-gf:TrajectorySource rdf:type rdfs:Class ;
-                    rdfs:subClassOf gf:DataSource ;
+###  http://schema.landrs.org/schema/TrajectorySource
+landrs:TrajectorySource rdf:type rdfs:Class ;
+                    rdfs:subClassOf landrs:DataSource ;
                     rdfs:label "TrajectorySource" .
 
 
-###  http://schema.landrs.org/Uav
-gf:Uav rdf:type rdfs:Class ;
+###  http://schema.landrs.org/schema/Uav
+landrs:Uav rdf:type rdfs:Class ;
        rdfs:label "UAV" .
+  
+# New classes
+###  http://schema.landrs.org/schema/Event
+landrs:Event rdf:type rdfs:Class ;
+                  rdfs:subClassOf schema:Event ;
+                  rdfs:label "Event" .
 
+ ###  http://schema.landrs.org/schema/Place
+landrs:Place rdf:type rdfs:Class ;
+                  rdfs:subClassOf schema:Place ;
+                  rdfs:label "Place" .
 
-
-
-
+###  http://schema.landrs.org/schema/ParticipantRole
+landrs:ParticipantRole rdf:type rdfs:Class ;
+                  rdfs:label "ParticipantRole" .

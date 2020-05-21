@@ -14,12 +14,15 @@
 
 <ld.landrs.org/id/MjJjZDQ1OTMtOTdkYi00MGQ3LWJhMzctOGU5ZGUwNmU2ZjI0Cg==> a landrs:DataAquisition ;
   prov:used <ld.landrs.org/id/ZThlYjc5MTAtMTQ3OC00NjA0LWFkOTctYzU0MDM4NGFmNzlkCg==> ;
-  prov:wasInformedBy <ld.landrs.org/id/ZThlYjc5MTAtMTQ3OC00NjA0LWFkOTctYzU0MDM4NGFmNzlkCg==> ;
-  prov:startedAtTime "2011-07-14T01:01:01Z"^^xsd:dateTime;;
+  prov:wasInformedBy <ld.landrs.org/id/MWE4MTU1MmUtZmVjMi00NTBjLWIyODItODJiZWIyNjVhNmJhCg==> ;
+  prov:qualifiedAssociation <ld.landrs.org/id/QjI1QzQ2QjctMzgyRC00MTgxLUIxMzgtMTI2RUU5NDlFNUExCg==> ;
+  prov:startedAtTime "2011-07-14T01:01:01Z"^^xsd:dateTime;
   prov:endedAtTime "2011-07-14T02:02:02Z"^^xsd:dateTime;
 .
-
 
 <ld.landrs.org/id/MWE4MTU1MmUtZmVjMi00NTBjLWIyODItODJiZWIyNjVhNmJhCg==> a landrs:Flight .
 
 <ld.landrs.org/id/ZThlYjc5MTAtMTQ3OC00NjA0LWFkOTctYzU0MDM4NGFmNzlkCg==> a landrs:DataSource .
+
+<ld.landrs.org/id/QjI1QzQ2QjctMzgyRC00MTgxLUIxMzgtMTI2RUU5NDlFNUExCg==> a landrs:DataPlanAssociation .
+
